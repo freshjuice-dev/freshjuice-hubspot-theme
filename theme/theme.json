@@ -1,0 +1,23 @@
+{
+  "label": "FreshJuice",
+  "author": {
+    "name": "Alex Zappa",
+    "email": "alex@zappa.dev",
+    "url": "https://alex.zappa.dev"
+	},
+  "documentation_url": "https://github.com/reatlat/hubspot-theme-freshjuice",
+  "example_url": "https://143910617.hs-sites-eu1.com",
+  "preview_path": "./templates/home.html",
+  "screenshot_path": "./images/template-previews/home.png",
+  "enable_domain_stylesheets": false,
+  "license": "GPL-3.0-or-later",
+  "responsive_breakpoints": [
+    {
+      "name": "mobile",
+      "mediaQuery": "@media (max-width: 767px)",
+      "previewWidth": {
+        "value": 375
+      }
+    }
+  ]
+}

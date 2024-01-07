@@ -1,0 +1,12 @@
+{
+  "global": false,
+  "content_types": [
+    "BLOG_POST"
+  ],
+  "icon": "../../images/module-icons/fresh-juice.svg",
+  "host_template_types": [
+    "BLOG_POST"
+  ],
+  "label": "Related Posts",
+  "is_available_for_new_content": true
+}

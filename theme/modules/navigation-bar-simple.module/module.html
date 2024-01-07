@@ -1,0 +1,58 @@
+{% from '../../macros/slugify.html' import slugify %}
+{% from '../../macros/random-int.html' import random_int %}
+
+{%- macro get_navbar_logo(classes) -%}
+  <a href="{{ request.full_url | replace(request.path, '') }}" class="{{ classes or '-fj-m-1.5 fj-p-1.5' }}">
+    <span class="fj-sr-only">{{ module.logo_image.alt or 'Company name' }}</span>
+    {% if module.logo_image.src %}
+      {% set loadingAttr = module.logo_image.loading != 'disabled' ? '' : '' %}
+      <img src="{{ module.logo_image.src }}"
+           class="fj-h-14 fj-w-auto"
+           alt="{{ module.logo_image.alt or 'Company' }} logo"
+           width="{{ module.logo_image.width }}"
+           height="{{ module.logo_image.height }}"
+           loading="{{ module.logo_image.loading or 'eager' }}">
+    {% endif %}
+  </a>
+{%- endmacro -%}
+
+{% set main_menu = menu(module.menu_id) %}
+
+
+<header class="fj-bg-white fj-py-3">
+
+  <nav class="container !fj-py-0 fj-flex fj-items-center fj-justify-between" aria-label="Global">
+
+    {# Logo #}
+    <div class="fj-flex lg:fj-flex-1">
+      {{ get_navbar_logo() }}
+    </div>
+
+
+    {# CTA #}
+    {% if module.call_to_actions.title %}
+      <div class="fj-flex fj-flex-1 fj-justify-end fj-items-center fj-gap-8">
+        {% if module.call_to_actions.style == "ghost" %}
+          {% set cta_style = "fj-button fj-button--ghost fj-button--small" %}
+        {% elif module.call_to_actions.style == "primary" %}
+          {% set cta_style = "fj-button fj-button--small" %}
+        {% else %}
+          {% set cta_style = "fj-text-sm fj-font-semibold fj-leading-6 fj-text-current" %}
+        {% endif %}
+        {% set href = module.call_to_actions.link.url.href %}
+        {% if module.call_to_actions.link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% endif %}
+        <a href="{{ href }}"
+           class="{{ cta_style }} fj-whitespace-nowrap"
+           {% if module.call_to_actions.link.open_in_new_tab %}target="_blank"{% endif %}
+          {% if module.call_to_actions.link.rel %}rel="{{ module.call_to_actions.link.rel }}"{% endif %}
+        >{{ module.call_to_actions.title | striptags | safe }}</a>
+      </div>
+    {% endif %}
+
+
+  </nav>
+
+</header>
+

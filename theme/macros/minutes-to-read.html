@@ -1,0 +1,25 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{# Helpers: minutes_to_read #}
+{# Returns the how much mins to read #}
+
+{# How to import this macro to my module #}
+{# {% from '[folder]/minutes-to-read.html' import minutes_to_read %} #}
+
+{# How to use this macro #}
+{# {{ minutes_to_read(content, '<span>', ' min read</span>') }} #}
+
+{%- macro minutes_to_read(content, before = '<span>', after = '</span>') -%}
+
+{%- set initialPostWords = content.post_body | striptags | wordcount -%}
+{%- set calculatedPostWords = (initialPostWords/100) * 100 -%}
+{%- set finishedPostWords = calculatedPostWords | divide(300) | round(2) -%}
+{%- set number = finishedPostWords | round -%}
+{%- if number < 1 -%}
+{%- else -%}
+{{ before }}{{ number }}{{ after }}
+{%- endif -%}
+
+{%- endmacro -%}

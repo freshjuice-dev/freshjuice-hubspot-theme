@@ -1,0 +1,45 @@
+[ {
+  "id" : "6da5e7a3-cfbc-6125-8ceb-a278b6793aaa",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "inline_help_text" : "Make sure to use a video title that is optimized for search engines.",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Play Video"
+}, {
+  "id" : "64f87685-85d3-6986-52b6-d00a8a2cd2cc",
+  "name" : "url",
+  "display_width" : null,
+  "label" : "Url",
+  "inline_help_text" : "Please consider using YouTube links like https://www.youtube.com/watch?v=_mEC54eTuGw",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "https://www.youtube.com/watch?v=_mEC54eTuGw"
+}, {
+  "id" : "66978f41-598e-12c5-d604-f38a3056352e",
+  "name" : "thumbnail",
+  "display_width" : null,
+  "label" : "Thumbnail (optional)",
+  "inline_help_text" : "Leave this section empty to use the default YouTube thumbnail.",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+} ]

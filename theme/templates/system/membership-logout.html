@@ -1,0 +1,39 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: FreshJuice - membership logout
+  screenshotPath: ../../images/template-previews/membership-logout.png
+-->
+
+{% extends "../layouts/base.html" %}
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "Membership | Logout" %}
+
+
+{% block header %}
+  {% global_partial path="../partials/header-no-navigation.html" %}
+{% endblock %}
+
+
+{% block body %}
+  <section class="fj-min-h-screenSinNav systems-page">
+    <div class="container">
+      <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md">
+        {% module_block module "content" path="@hubspot/rich_text", no_wrapper=True %}
+          {% module_attribute "html" %}
+            <h1>You are signed out</h1>
+            <p>
+              Sign back in<br/>
+              Or return to the <a href="/">home page</a>
+            </p>
+          {% end_module_attribute %}
+        {% end_module_block %}
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+
+{% block footer %}
+  {% global_partial path="../partials/footer-for-lp.html" %}
+{% endblock footer %}

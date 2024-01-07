@@ -1,0 +1,27 @@
+{
+  "content_tags": [
+    {
+      "name": "OTHER_INDUSTRY",
+      "source": "MARKETPLACE"
+    },
+    {
+      "name": "COMPATIBLE_ANY",
+      "source": "MARKETPLACE"
+    }
+  ],
+  "extra_classes": "widget-type-logo",
+  "global": false,
+  "content_types": [
+    "ANY"
+  ],
+  "master_language": "en",
+  "categories": [
+    "media"
+  ],
+  "icon": "../../images/module-icons/fresh-juice.svg",
+  "host_template_types": [
+    "ANY"
+  ],
+  "label": "Logo (Enhanced)",
+  "is_available_for_new_content": true
+}

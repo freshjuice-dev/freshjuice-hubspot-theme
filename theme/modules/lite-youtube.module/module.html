@@ -1,0 +1,25 @@
+{% if module.url is string_containing "youtube.com/watch?v=" %}
+  {% set video_id = module.url | split('watch?v=') | last %}
+{% elif module.url is string_containing "youtu.be/" %}
+  {% set video_id = module.url | split('youtu.be/') | last | split('?') | first %}
+{% else %}
+  {% set video_id = "_mEC54eTuGw" %} {# ... Don't get angry with me, I never caused you no pain ... #}
+{% endif %}
+
+{% if module.thumbnail.src %}
+  {% set video_thumbnail = resize_image_url(module.thumbnail.src, 1280, 720, 1280) %}
+{% else %}
+  {% set video_thumbnail = "https://i.ytimg.com/vi/" ~ video_id ~ "/hqdefault.jpg" %}
+{% endif %}
+
+{# {{ get_asset_url('../../js/vendor/lite-yt-embed.js') }} #}
+<div class="fj-aspect-video fj-rounded-md fj-overflow-hidden"
+     x-init="loadScript(`//cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.js`)">
+  <lite-youtube videoid="{{ video_id }}"
+                class="fj-aspect-video fj-w-full"
+                style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=)">
+    <img src="{{ video_thumbnail }}" alt="Preview image for {{ module.title or 'Video' }}"
+         class="fj-aspect-video fj-w-full fj-h-full fj-object-cover fj-object-center !fj-m-0 fj-leading-none fj-absolute"
+         width="1280" height="720" loading="eager">
+  </lite-youtube>
+</div>

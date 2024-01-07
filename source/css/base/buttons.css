@@ -1,0 +1,43 @@
+.button,
+.fj-button,
+.hs-button,
+.hs-blog-post-listing__post-button {
+
+  @apply fj-transition-all fj-duration-300 fj-ease-in-out;
+  @apply fj-inline-block;
+  @apply fj-px-6 fj-py-3;
+  @apply fj-font-bold;
+  @apply fj-text-center;
+  @apply fj-cursor-pointer;
+  @apply fj-leading-none;
+  @apply fj-whitespace-nowrap;
+  @apply fj-align-middle;
+  @apply fj-select-none;
+  @apply fj-rounded-md;
+  @apply fj-text-base;
+  @apply fj-tracking-wider;
+  @apply fj-uppercase;
+
+  @apply fj-bg-blue-600 fj-text-white hover:fj-bg-blue-500 hover:fj-text-white;
+  @apply fj-border-2 fj-border-blue-600 hover:fj-border-blue-500;
+
+  &.secondary {
+    @apply fj-bg-white fj-text-blue-600 hover:fj-bg-blue-600 hover:fj-text-white;
+    @apply fj-border-2 fj-border-blue-600 hover:fj-border-blue-500;
+  }
+
+  &--ghost {
+    @apply fj-bg-transparent fj-text-blue-600 hover:fj-bg-blue-600 hover:fj-text-white;
+    @apply fj-border-2 fj-border-blue-600 hover:fj-border-blue-500;
+  }
+
+  &--small {
+    @apply fj-px-4 fj-py-1.5;
+    @apply fj-text-sm;
+  }
+
+  &--square {
+    @apply fj-rounded-none;
+  }
+
+}

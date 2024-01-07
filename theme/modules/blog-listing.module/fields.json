@@ -1,0 +1,138 @@
+[ {
+  "id" : "73da1718-a989-f766-a0e0-32e92ff18b3f",
+  "name" : "selected_blog",
+  "display_width" : null,
+  "label" : "Blog",
+  "inline_help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "type" : "blog"
+}, {
+  "id" : "7756e529-cd1d-035b-557e-9343cc5ff767",
+  "name" : "show_tags_filter",
+  "display_width" : null,
+  "label" : "Show Tags Filter?",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "3c5ad683-ef78-927f-f708-73050e6c0869",
+  "name" : "show_search_bar",
+  "display_width" : null,
+  "label" : "Show Search Bar?",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "9b087463-351e-4e01-2829-e13e92cfbc09",
+  "name" : "search_label_text",
+  "display_width" : null,
+  "label" : "Search Label text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_search_bar",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Search blog"
+}, {
+  "id" : "e3ff7964-b01c-6fea-6732-faaaf59adfe8",
+  "name" : "search_placeholder_text",
+  "display_width" : null,
+  "label" : "Search Placeholder text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_search_bar",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Type your search request"
+}, {
+  "id" : "15f89742-4966-20b2-8a72-d620a4950224",
+  "name" : "filter_label_text",
+  "display_width" : null,
+  "label" : "Filter Label text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_tags_filter",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Filter by tag"
+}, {
+  "id" : "52d9dedc-1bb0-f3f1-bb1b-bf79dde7304a",
+  "name" : "filter_placeholder_text",
+  "display_width" : null,
+  "label" : "Filter Placeholder text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_tags_filter",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "All"
+}, {
+  "id" : "44bdc10a-f271-1313-5ab9-f8eabb1c6c1a",
+  "name" : "show_featured_article",
+  "display_width" : null,
+  "label" : "Show Featured Article?",
+  "required" : true,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "75c0df14-0183-2630-5130-d196500e50af",
+  "name" : "featured_article",
+  "display_width" : null,
+  "label" : "Featured Article",
+  "inline_help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_featured_article",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "page"
+} ]

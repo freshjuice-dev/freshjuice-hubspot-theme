@@ -1,0 +1,41 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  label: FreshJuice - 404 Not Found
+  screenshotPath: ../../images/template-previews/404.png
+-->
+{% extends "../layouts/base.html" %}
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "404 Not Found" %}
+
+{% block body %}
+<section class="fj-min-h-screenSinNav fj-grid fj-items-center error-page" data-error="404">
+  <div class="container fj-grid fj-gap-8 md:fj-grid-cols-2 fj-items-center">
+    <div class="fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md">
+      {% module_block module "content" path="@hubspot/rich_text", no_wrapper=True %}
+        {% module_attribute "html" %}
+          <p><small><b>{{ pageTitle }}</b></small></p>
+          <h1>
+            Ahhhhhhh!<br/>
+            <small>This page does not exist</small>
+          </h1>
+          <p>
+            <em>
+              Don't get angry with me<br/>
+              I never caused you no pain...
+            </em>
+          </p>
+          <p>
+            You can go back to <a href="/">homepage</a>.<br/>
+            Or sit here and listen to some music.
+          </p>
+        {% end_module_attribute %}
+      {% end_module_block %}
+    </div>
+      {% module "light-youtube"
+        path="../../modules/lite-youtube",
+        label="YouYube",
+        no_wrapper=True %}
+  </div>
+</section>
+{% endblock body %}

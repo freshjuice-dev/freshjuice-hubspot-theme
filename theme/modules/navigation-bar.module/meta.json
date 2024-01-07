@@ -1,0 +1,27 @@
+{
+  "content_tags": [
+    {
+      "name": "NAVIGATION",
+      "source": "USER"
+    }
+  ],
+  "global": false,
+  "content_types": [
+    "LANDING_PAGE",
+    "SITE_PAGE",
+    "BLOG_LISTING",
+    "BLOG_POST"
+  ],
+  "inline_help_text": "The navigation bar at the top of a website includes the logo, buttons for taking action (like \"log in\" or \"buy now\"), and a menu with options for different pages or sections of the site.",
+  "categories": [
+    "FUNCTIONALITY"
+  ],
+  "icon": "../../images/module-icons/fresh-juice.svg",
+  "host_template_types": [
+    "PAGE",
+    "BLOG_POST",
+    "BLOG_LISTING"
+  ],
+  "label": "Navigation Bar",
+  "is_available_for_new_content": true
+}

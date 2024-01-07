@@ -1,0 +1,34 @@
+<!--
+  templateType: email_subscription_preferences_page
+  isAvailableForNewContent: true
+  label: FreshJuice - email subscription preferences
+  screenshotPath: ../../images/template-previews/subscription-preferences.png
+-->
+{% extends "../layouts/base.html" %}
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "Subscription preferences" %}
+
+
+{% block header %}
+  {% global_partial path="../partials/header-no-navigation.html" %}
+{% endblock %}
+
+
+{% block body %}
+  <section class="fj-min-h-screenSinNav systems-page">
+    <div class="container">
+      <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md">
+        <div class="form-container email-preferences-form">
+          {% module "subscription_preferences"
+            path="@hubspot/email_subscriptions"
+          %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+
+{% block footer %}
+  {% global_partial path="../partials/footer-for-lp.html" %}
+{% endblock footer %}

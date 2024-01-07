@@ -1,0 +1,137 @@
+/* System pages */
+
+.systems-page {
+
+  .header {
+    background-color: transparent;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .success {
+    background-color: #CDE3CC;
+    border: 1.5px solid #4F7D24;
+    border-radius: 6px;
+    color: #4F7D24;
+    display: inline-block;
+    margin: 1.4rem 0;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  form input {
+    max-width: 100%;
+  }
+
+  form input[type='submit'] {
+    margin: 0.7rem 0;
+    display: block;
+  }
+
+}
+
+
+/* Search pages */
+.hs-search-highlight {
+  font-weight: bold;
+}
+
+/* Password prompt */
+
+.password-prompt input[type=password] {
+  height: auto !important;
+  margin-bottom: 1.4rem;
+}
+
+.systems-page #hs-login-widget-remember,
+.systems-page #hs-login-widget-remember ~ label {
+  display: inline-block;
+  margin-bottom: 0.175rem;
+}
+
+.systems-page #hs_login_reset {
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+/* Backup unsubscribe */
+
+.backup-unsubscribe #email-prefs-form div {
+  padding-bottom: 0 !important;
+}
+
+.backup-unsubscribe input[type=email] {
+  font-size: 0.875rem !important;
+  margin-bottom: 1.4rem;
+  padding: 0.7rem !important;
+}
+
+/* Subscription preferences */
+
+#email-prefs-form .item.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#email-prefs-form .item.disabled input:disabled {
+  cursor: not-allowed;
+}
+
+/* Membership pages */
+
+#hs-membership-form a[class*='show-password'] {
+  font-size: 0.75rem;
+}
+
+/* Input error messages */
+
+.form-input-validation-message ul.hs-error-msgs {
+  padding-left: 0;
+  margin: 0;
+}
+
+.form-input-validation-message ul.hs-error-msgs li {
+  margin: 0;
+}
+
+.form-floating-alert-wrapper .form-floating-alert {
+  padding: 0.5rem !important;
+
+  .form-floating-alert-close-button {
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50px;
+    @apply fj-flex fj-justify-center fj-items-center fj-leading-none;
+  }
+}
+
+.hs_cos_wrapper_type_password_reset_request .hs-membership-global-error:not(:empty) {
+  background-color: #fdedee;
+  border: 1px solid #f8a9ad;
+  position: relative;
+  margin: 1rem 0 12px;
+  padding: 0.5rem;
+  text-align: center;
+  display: block;
+}
+
+.email-preferences-form {
+  h2, p {
+    @apply !fj-m-0;
+  }
+
+  .email-prefs {
+    @apply fj-grid fj-gap-4;
+  }
+
+  .hs-button {
+    @apply fj-w-fit;
+  }
+
+  [for="globalunsub"],
+  .fakelabel {
+    @apply fj-flex fj-items-center fj-gap-2;
+  }
+}

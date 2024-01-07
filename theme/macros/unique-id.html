@@ -1,0 +1,5 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{% macro unique_id() %}{% set parts = [random_int(), random_int(), random_int(), random_int(), random_int()] %}{{ parts|join('_') }}{% endmacro %}

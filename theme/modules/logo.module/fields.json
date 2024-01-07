@@ -1,0 +1,69 @@
+[ {
+  "id" : "12216f57-c9d2-9c7d-f634-68b45c16c4cf",
+  "name" : "img",
+  "display_width" : null,
+  "label" : "",
+  "required" : false,
+  "locked" : false,
+  "show_loading" : true,
+  "type" : "logo",
+  "default" : {
+    "override_inherited_src" : false,
+    "src" : null,
+    "alt" : null,
+    "loading" : "disabled"
+  }
+}, {
+  "id" : "c9a2e678-7c48-f0c6-e65b-e885bd2c429b",
+  "name" : "link",
+  "display_width" : null,
+  "label" : "Link URL",
+  "help_text" : "If no url is specified, your logo will link to your primary domain",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "0555927e-66cc-b51a-e43e-25e77ad6dd6d",
+  "name" : "open_in_new_tab",
+  "display_width" : null,
+  "label" : "Open link in new tab when visitors click",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "c9a2e678-7c48-f0c6-e65b-e885bd2c429b",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : null,
+    "access" : null
+  },
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "6f1c93f9-3615-283f-086d-f154bf01f125",
+  "name" : "heading_level",
+  "display_width" : null,
+  "label" : "Heading level",
+  "help_text" : "Choose a heading level. H1 is the largest, followed by H2, and so on",
+  "required" : true,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "12216f57-c9d2-9c7d-f634-68b45c16c4cf",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "(?=.*\\\"override_inherited_src\\\"\\:true)(?=.*\\\"src\\\"\\:null)(^((?!suppress_company_name\\\"\\:true).)*$)",
+    "property" : null,
+    "operator" : "MATCHES_REGEX",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "h1"
+} ]

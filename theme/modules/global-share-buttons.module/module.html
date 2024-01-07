@@ -1,0 +1,46 @@
+{% set buttonName = {
+  "fb": "Facebook",
+  "vk": "VK",
+  "tw": "Twitter",
+  "tg": "Telegram",
+  "pk": "Pocket",
+  "re": "Reddit",
+  "ev": "Evernote",
+  "in": "LinkedIn",
+  "pi": "Pinterest",
+  "sk": "Skype",
+  "wa": "WhatsApp",
+  "ok": "Odnoklassniki",
+  "tu": "Tumblr",
+  "hn": "Hacker News",
+  "xi": "Xing",
+  "mail": "EMail",
+  "print": "Print",
+  "copy": "Copy",
+  "share": "WebShare API"
+} %}
+
+
+<div class="fj-flex fj-flex-col sm:fj-flex-row sm:fj-items-center fj-gap-4 sm:fj-gap-8"
+     x-init="loadScript(`//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js`)">
+
+  <div class="fj-text-lg md:fj-text-xl fj-font-semibold fj-whitespace-nowrap">Share Post</div>
+
+  <div class="share-btn fj-flex fj-flex-wrap fj-gap-4"
+       data-title="{{ content.name|safe|striptags }}"
+       data-desc="{{ content.meta_description|safe|striptags }}"
+       data-url="{{ content.absolute_url }}">
+
+    {% for item in module.share_button %}
+      <a data-id="{{ item }}"
+         href="#" @click="$event.preventDefault()"
+         class="fj-transition-all fj-cursor-pointer hover:fj-scale-125 [&>svg]:fj-size-8">
+        {% set icon_path = '../../images/icons/social/' + item + '.svg.html' %}
+        {% include icon_path %}
+        <span class="fj-sr-only">{{ buttonName[item] }}</span>
+      </a>
+    {% endfor %}
+
+
+  </div>
+</div>

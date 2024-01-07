@@ -1,0 +1,118 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Blog Post - Modern
+  screenshotPath: ../images/template-previews/blog-post.png
+-->
+
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<article class="">
+
+  <header class="article__header fj-bg-gradient-60 fj-from-orange-100 fj-via-red-100 fj-to-amber-100 fj-min-h-56 md:fj-min-h-96 fj-flex fj-justify-center fj-items-center">
+    <div class="container fj-w-full fj-text-center fj-prose sm:fj-prose-lg md:fj-prose-xl fj-text-balance">
+      <h1>{{ content.name | striptags }}</h1>
+      <div class="article__header__meta md:fj-text-lg">
+        Posted by
+        <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}"
+           class="fj-text-current"
+           rel="author">{{ content.blog_post_author.display_name }}</a>
+        on
+        <time datetime="{{ content.publish_date }}" class="">{{ content.publish_date_localized }}</time>
+      </div>
+    </div>
+  </header>
+
+  <div class="container article__body">
+    <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md">
+
+      <nav class="fj-min-h-9 fj-leading-none" x-html='`
+        <a class="fj-inline-flex fj-items-center fj-gap-2 fj-group fj-no-underline" href="{{ group.absolute_url }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="fj-size-5 group-hover:-fj-translate-x-2 fj-transition-transform" width="48" height="48"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg>
+          <span>Back to Blog</span>
+        </a>
+      `'>
+      </nav>
+
+      {% if request.domain == 'preview.hs-sites.com' %}
+        {{ content.post_body }}
+      {% else %}
+        {{ content.post_body_rss }}
+      {% endif %}
+
+      {% if content.tag_list %}
+        <ul class="article__tags fj-list-none fj-flex fj-flex-wrap fj-gap-2 !fj-p-0">
+          {% for tag in content.tag_list %}
+            <li class="!fj-m-0 !fj-p-0 fj-italic">
+              <a class="fj-no-underline hover:fj-underline"
+                 href="{{ blog_tag_url(group.id, tag.slug) }}"
+                 rel="tag">#{{ tag.name }}</a>{% if not loop.last %},{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+
+  <footer class="container article__footer !fj-pt-0">
+    <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl">
+
+      {% if content.blog_post_author %}
+      <hr>
+
+      {% module "global-post-author"
+        path="../modules/global-post-author",
+        label="Post Author",
+        no_wrapper=True
+      %}
+      {% endif %}
+
+      <hr>
+
+      {% module "global-share-buttons"
+        path="../modules/global-share-buttons",
+        label="Share Buttons",
+        no_wrapper=True
+      %}
+
+    </div>
+  </footer>
+
+</article>
+
+
+{% if group.allow_comments %}
+<section class="blog-comments fj-bg-gradient-10 fj-from-amber-100 fj-via-rose-50 fj-to-orange-100">
+  <div class="container">
+    <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl [&_form]:fj-bg-transparent">
+      <h3>Comments</h3>
+      <div class="blog-comments__form">
+        {% module "blog_comments"
+          path="@hubspot/blog_comments",
+          label="Blog comments",
+          no_wrapper=True
+        %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+
+<section class="fj-bg-rose-50">
+  <div class="container">
+    <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl fj-text-center fj-mb-8 md:fj-mb-12">
+      <h2>Related Posts</h2>
+    </div>
+    {% module "related-posts"
+      path="../modules/related-posts",
+      label="Related Posts",
+      layout="row",
+      no_wrapper=True
+    %}
+  </div>
+</section>
+
+
+{% endblock body %}

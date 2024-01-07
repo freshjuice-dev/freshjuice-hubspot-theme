@@ -1,0 +1,180 @@
+{% from '../../macros/slugify.html' import slugify %}
+{% from '../../macros/minutes-to-read.html' import minutes_to_read %}
+
+{% set blog_id = module.selected_blog.id or group.id %}
+
+{% if module.show_featured_article %}
+  {% if module.featured_article %}
+    {% set featured_post = content_by_id(module.featured_article) %}
+  {% else %}
+    {% set featured_post = blog_recent_posts(blog_id, 1) | first %}
+  {% endif %}
+{% endif %}
+
+{% if module.show_search_bar or module.show_tags_filter or blog_author or tag %}
+  {% set my_tags = blog_tags(blog_id, 250) %}
+  {% set currentURL = content.absolute_url | split('/page/') | first | regex_replace('^(http|https):', '') %}
+
+  <div class="fj-grid fj-gap-8 md:fj-items-end md:fj-grid-cols-2 lg:fj-grid-cols-3 md:fj-gap-12 fj-mb-8 md:fj-mb-12">
+
+    {% if blog_author or tag %}
+
+      <div class="fj-prose sm:fj-prose-lg md:fj-prose-xl !fj-leading-none">
+        <a class="fj-inline-flex fj-items-center fj-gap-2 fj-group fj-no-underline" href="{{ group.absolute_url }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="fj-size-5 group-hover:-fj-translate-x-2 fj-transition-transform" width="48" height="48"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg>
+          <span>Back to Blog</span>
+        </a>
+      </div>
+
+    {% elif module.show_search_bar %}
+
+      {% set search_page = site_settings.content_search_results_page_path %}
+      {% unless (search_page is string_containing "//") %}
+        {% set search_page = "/" ~ search_page %}
+      {% endunless %}
+      {% set search_page = search_page|regex_replace("http:", "") %}
+
+      <form class="fj-w-full"
+            data-hs-do-not-collect="true"
+            x-ref="searchForm"
+            x-data="{
+              action: `{{ search_page }}`,
+              formData: {
+                q: `{{ request.query_dict.q or '' }}`,
+                type: `{{ request.query_dict.type or 'BLOG_POST' }}`
+              },
+              submitSearchForm() {
+                if (this.formData.q.length > 0) {
+                  this.$refs.searchForm.action = this.action + `?q=${this.formData.q}&type=${this.formData.type}`;
+                  this.$refs.searchForm.submit();
+                }
+              }
+            }"
+            @submit="submitSearchForm()"
+            action="{{ search_page }}">
+        <label for="blog-search" class="{{ "fj-sr-only" if not module.search_label_text }}">{{ module.search_label_text or "Search blog" }}</label>
+        <div class="fj-relative">
+          <input type="text"
+                 id="blog-search" name="q"
+                 placeholder="{{ module.search_placeholder_text }}"
+                 class="!fj-pr-10" value="" x-model="formData.q">
+          <span class="fj-absolute fj-z-10 fj-top-0 fj-right-0 fj-h-full fj-px-2.5 fj-flex fj-items-center fj-cursor-pointer fj-rounded-full"
+                @click="submitSearchForm()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="fj-size-6" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+          </span>
+        </div>
+        <input type="hidden" name="type" value="BLOG_POST" x-model="formData.type">
+        <button class="fj-sr-only" aria-label="Search">Search</button>
+      </form>
+
+    {% endif %}
+
+    {% if not blog_author and module.show_tags_filter %}
+    <form class="fj-w-full md:fj-col-start-2 lg:fj-col-start-3"
+          x-data="{tag:'{{ currentURL }}'}"
+          x-init="$watch('tag', value => window.location.href = value)"
+          @submit.prevent="$event.preventDefault()">
+      <label for="tag-select" class="{{ "fj-sr-only" if not module.filter_label_text }}">{{ module.filter_label_text or "Filter by tag" }}</label>
+      <select name="tag-select" id="tag-select" x-model="tag">
+        <option {{ 'selected="selected"' if currentURL == group.absolute_url | regex_replace('^(http|https):', '') }}
+          value="{{ group.absolute_url | regex_replace('^(http|https):', '') }}">{{ module.filter_placeholder_text or "All" }}</option>
+        {% for item in my_tags %}
+          <option {{ 'selected="selected"' if currentURL == blog_tag_url(group.id, item.slug) | regex_replace('^(http|https):', '') }}
+            value="{{ blog_tag_url(group.id, item.slug) | regex_replace('^(http|https):', '') }}">{{ item }}</option>
+        {% endfor %}
+      </select>
+    </form>
+    {% endif %}
+
+  </div>
+{% endif %}
+
+<div class="fj-grid fj-gap-8 md:fj-grid-cols-2 lg:fj-grid-cols-3 md:fj-gap-12">
+
+  {% if module.show_featured_article and not (blog_author or tag) %}
+    <article class="fj-rounded-md fj-border fj-border-stone-200 fj-relative fj-group fj-transition-all fj-ease-in-out fj-duration-200 hover:fj-shadow-xl md:fj-col-span-2 lg:fj-col-span-3 md:fj-grid-cols-2 md:fj-gap-12 fj-grid fj-overflow-hidden fj-bg-amber-50"
+             id="{{ slugify(featured_post.name) }}"
+             data-post-id="{{ featured_post.id }}">
+          <div class="">
+              {% if featured_post.featured_image %}
+                {% set featured_image = resize_image_url( featured_post.featured_image, 600, 315, 600 ) %}
+              {% endif %}
+              <img src="{{ featured_image or 'https://source.unsplash.com/600x315/?fresh+juice' }}"
+                   alt="{{ featured_post.name | striptags | safe }}"
+                   width="600" height="315"
+                   class="fj-m-0 fj-w-full md:fj-h-full fj-object-cover fj-aspect-video"/>
+          </div>
+          <div class="fj-text-balance fj-p-4 md:fj-p-8 md:fj-pl-0 fj-pb-14 md:fj-pb-16">
+            <span class="fj-text-xs fj-font-bold fj-uppercase fj-text-stone-500 fj-tracking-wider fj-mb-3 fj-flex fj-justify-between fj-gap-4">
+              <span>Featured</span>
+              <span>{{ minutes_to_read(featured_post, '', ' min read') }}</span>
+            </span>
+            <h2 class="fj-text-xl md:fj-text-2xl lg:fj-text-4xl fj-mb-3">
+              <a href="{{ featured_post.absolute_url }}"
+                 class="!fj-no-underline !fj-text-current !fj-font-bold"
+                 aria-label="Read full post: {{ featured_post.title | striptags }}">
+                <span class="fj-absolute fj-z-10 fj-inset-0"></span>
+                {{ featured_post.name | striptags | safe }}
+              </a>
+            </h2>
+            <p class="fj-line-clamp-3 fj-text-base md:fj-text-lg lg:fj-text-xl">
+              {% set post_words = featured_post.post_body | replace('&nbsp;', ' ') | striptags | trim | safe | split(' ') %}
+              {% if post_words | length %}
+                {% for word in post_words[0:55] %}
+                  {% if not loop.last %}{{ word + ' ' }}{% else %}{{ word|cut('.') }}&hellip;{% endif %}
+                {% endfor %}
+              {% else %}
+                {{ featured_post.meta_description | striptags | safe }}
+              {% endif %}
+            </p>
+            <span class="fj-absolute fj-right-4 md:fj-right-8 fj-bottom-5 group-hover:fj-underline fj-text-base">Read more</span>
+          </div>
+    </article>
+  {% endif %}
+
+  {# Blog listing #}
+  {% for content in contents %}
+    {% if content.id != featured_post.id or (blog_author or tag) %}
+      <article class="fj-rounded-md fj-border fj-border-stone-200 fj-relative fj-group fj-transition-all fj-ease-in-out fj-duration-200 hover:fj-shadow-xl fj-flex fj-flex-col fj-overflow-hidden fj-bg-amber-50"
+               id="{{ slugify(content.title) }}"
+               data-post-id="{{ content.id }}">
+        <div class="fj-aspect-video">
+          {% if content.featured_image %}
+            {% set featured_image = resize_image_url( content.featured_image, 360, 189, 360 ) %}
+          {% endif %}
+          <img src="{{ featured_image or 'https://source.unsplash.com/600x315/?fresh+juice' }}"
+               alt="{{ content.name | striptags | safe }}"
+               width="360" height="189"
+               class="fj-m-0 fj-w-full fj-object-cover fj-aspect-video"/>
+        </div>
+        <div class="fj-text-balance fj-pt-4 fj-px-4 fj-pb-14">
+          <span class="fj-text-xs fj-font-bold fj-uppercase fj-text-stone-500 fj-tracking-wider fj-mb-3 fj-flex fj-justify-between fj-gap-4">
+            <span>{{ content.publish_date|format_date('MMM d, yyyy') }}</span>
+            <span>{{ minutes_to_read(content, '', ' min read') }}</span>
+          </span>
+          <h2 class="fj-text-xl fj-mb-3">
+            <a href="{{ content.absolute_url }}"
+               class="!fj-no-underline !fj-text-current !fj-font-bold"
+               aria-label="Read full post: {{ content.title | striptags }}">
+              <span class="fj-absolute fj-z-10 fj-inset-0"></span>
+              {{ content.title | striptags }}
+            </a>
+          </h2>
+          <p class="fj-line-clamp-3 fj-text-base md:fj-text-lg lg:fj-text-xl">
+            {% set post_words = content.post_body | replace('&nbsp;', ' ') | striptags | trim | safe | split(' ') %}
+            {% if post_words | length %}
+              {% for word in post_words[0:55] %}
+                {% if not loop.last %}{{ word + ' ' }}{% else %}{{ word|cut('.') }}&hellip;{% endif %}
+              {% endfor %}
+            {% else %}
+              {{ content.meta_description | striptags | safe }}
+            {% endif %}
+          </p>
+          <span class="fj-absolute fj-right-4 fj-bottom-5 group-hover:fj-underline fj-text-base">Read more</span>
+        </div>
+      </article>
+    {% endif %}
+
+  {% endfor %}
+
+</div>

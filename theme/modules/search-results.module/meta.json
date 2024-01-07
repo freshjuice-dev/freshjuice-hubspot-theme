@@ -1,0 +1,40 @@
+{
+  "content_tags": [
+    {
+      "name": "SEARCH",
+      "source": "MARKETPLACE"
+    },
+    {
+      "name": "COMPATIBLE_BLOG",
+      "source": "MARKETPLACE"
+    },
+    {
+      "name": "COMPATIBLE_PAGE",
+      "source": "MARKETPLACE"
+    },
+    {
+      "name": "SEARCH",
+      "source": "USER"
+    }
+  ],
+  "global": false,
+  "content_types": [
+    "LANDING_PAGE",
+    "SITE_PAGE",
+    "BLOG_LISTING",
+    "BLOG_POST"
+  ],
+  "master_language": "en",
+  "inline_help_text": "This module is used with the search input module. When your visitors search a term in the search input module, any page with this module can show their results. <a href=\"https://knowledge.hubspot.com/design-manager/set-up-a-results-page-to-use-a-search-field-on-your-site\">Learn more.</a>",
+  "categories": [
+    "functionality"
+  ],
+  "icon": "../../../mV0_d-web-default-modules_hubspot/img/icon/edited-search-1.svg",
+  "host_template_types": [
+    "PAGE",
+    "BLOG_POST",
+    "BLOG_LISTING"
+  ],
+  "label": "Search Results",
+  "is_available_for_new_content": true
+}

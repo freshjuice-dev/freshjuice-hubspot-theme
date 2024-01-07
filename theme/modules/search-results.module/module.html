@@ -1,0 +1,164 @@
+{##
+ # URL query parameters are passed through to the HubSpot content search API.
+ #
+ # q=<search term> term to be searched for
+ #
+ # Content type to search can be specified with the following types.
+ # type=SITE_PAGE, LANDING_PAGE, BLOG_POST, LISTING_PAGE, and KNOWLEDGE_ARTICLE
+ # Multiple content types can be searched by additional "type" query params.
+ # ex. type=BLOG_POST&type=LISTING_PAGE
+ #
+ # offset=<offset> beginning offset of the result set
+ # limit=<limit> page size
+ #
+ # See: https://developers.hubspot.com/docs/api/cms/site-search
+ #
+ #}
+
+{% if request.query_dict.term %}
+  {% set search_query = request.query_dict.term %}
+{% elif request.query_dict.q %}
+  {# v3 search api support #}
+  {% set search_query = request.query_dict.q %}
+{% endif %}
+
+<div class="fj-grid fj-gap-16"
+     x-data="{
+        status: { loading: true, searchStats: false, searchResults: false, pagination: false, returnBtn: false },
+        searchStatus: '',
+        searchResults: '',
+        pagination: { prev: false, next: false },
+        responseData: { limit: 0, offset: 0, page: 0, results: [], searchTerm: '{{ search_query }}', total: 0 },
+        searchParams: {
+          ...{ q:  `{{ search_query }}`, offset: {{ request.query_dict.offset or 0 }}, limit: {{ request.query_dict.limit or 10 }} },
+          ..._GET()
+        },
+        navigateTo(page) {
+          debugLog(`navigateTo: ${page}`);
+          scrollToTop();
+          switch (page) {
+            case 'prev': this.searchParams.offset = parseInt(this.searchParams.offset) - parseInt(this.searchParams.limit); break;
+            case 'next': this.searchParams.offset = parseInt(this.searchParams.offset) + parseInt(this.searchParams.limit); break;
+          }
+          window.history.replaceState({}, '', `?${new URLSearchParams(this.searchParams).toString()}`);
+          this.fetchResults(this);
+        },
+        axiosReadyListener() {
+          let that = this;
+          window.addEventListener('message', event => { if (event.data === 'axiosReady') { debugLog('axiosReady'); that.fetchResults(that) } });
+        },
+        resetSearch() {
+          this.status = { loading: true,searchStats: false,searchResults: false,pagination: false, returnBtn: false };
+          this.responseData = { limit: 0, offset: 0, page: 0, results: [], searchTerm: '{{ search_query }}', total: 0 };
+          this.searchStatus = '';
+          this.searchResults = '';
+          this.pagination = { prev: false, next: false };
+        },
+        fetchResults(that) {
+          that.resetSearch();
+          that.searchParams.analytics = 'true';
+          if (that.searchParams.term) {
+            that.searchParams.q = that.searchParams.term;
+            delete that.searchParams.term;
+          }
+          let searchParams = new URLSearchParams(that.searchParams);
+          let searchQueryString = searchParams.toString();
+          axios.get(`/_hcms/v3/site-search/search?${searchQueryString}`)
+            .then(response => {
+              debugLog('searchResponse', response);
+              that.responseData = response.data;
+              that.renderResults(that, response.data);
+              that.renderPagination(that, response.data);
+              that.status.loading = false;
+              that.status.returnBtn = true;
+            })
+            .catch(error => {
+              console.error('searchError', error);
+              that.renderError(that, error);
+              that.status.loading = false;
+              that.status.returnBtn = true;
+            });
+        },
+        renderResults(that, data) {
+          if (data.results.length > 0 && data.total > data.offset) {
+            let start = data.offset + 1;
+            let end = (data.offset + data.limit) < data.total ? data.offset + data.limit : data.total;
+            that.searchStatus = `Displaying ${start} – ${end} of ${data.total} results.`;
+            that.searchResults = data.results.map(result => {
+              return `<li class=''>
+                <a href='${result.url}'>
+                  <h3 class='fj-text-xl md:fj-text-2xl fj-font-semibold fj-text-blue-600 hover:fj-text-blue-800'>${result.title}</h3>
+                </a>
+                <p>${result.description}</p>
+              </li>`;
+            }).join('');
+            that.status.searchResults = true;
+          } else if (data.total > 0) {
+            that.searchParams.offset = 0;
+            that.fetchResults(that);
+          } else {
+            that.searchStatus = `<p>Sorry. There were no results for &ldquo;{{ search_query }}&rdquo;.</p><p>Try rewording your query, or browse through our site.</p>`;
+            that.status.returnBtn = true;
+          }
+          that.status.searchStats = true;
+        },
+        renderError(that, error) {
+          that.searchStatus = `<p>Ohhh no! Something went wrong. Please try again later.</p><p>${error.message}.</p>`;
+          that.status.searchStats = true;
+        },
+        renderPagination(that, data) {
+          if (data.total > data.limit && data.total > data.offset) {
+            if (data.page > 0) that.pagination.prev = true;
+            if ((data.total - data.offset - data.limit) > 0) that.pagination.next = true;
+            that.status.pagination = true;
+          }
+        }
+     }"
+     x-init="axiosReadyListener();loadScript(`//cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js`,`defer`,()=>{postMessage(`axiosReady`)})">
+
+  {# Loading #}
+  <div class="fj-grid fj-text-center" x-show="status.loading">
+    {# <!-- [ldio] generated by https://loading.io/spinner/ripple/-ripple-circle-scale-round-radar-radio --> #}
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+      <circle cx="50" cy="50" r="0" fill="none" stroke="#e90c59" stroke-width="2">
+        <animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline" begin="0s"></animate>
+        <animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1" calcMode="spline" begin="0s"></animate>
+      </circle><circle cx="50" cy="50" r="0" fill="none" stroke="#8ef046" stroke-width="2">
+        <animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline" begin="-0.5s"></animate>
+        <animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1" calcMode="spline" begin="-0.5s"></animate>
+      </circle>
+    </svg>
+    {# <p class="fj-m-0 fj-text-2xl">searching...</p> #}
+  </div>
+
+  {# Search Status #}
+  <div class="md:fj-text-xl" x-cloak x-show="status.searchStats" x-ref="searchStats" x-html="searchStatus"></div>
+
+  {# Results #}
+  <ul class="fj-space-y-4 md:fj-space-y-8 md:fj-text-xl" x-cloak x-show="status.searchResults" x-ref="searchResults" x-html="searchResults"></ul>
+
+  {# Pagination #}
+  <div class="fj-flex fj-justify-between fj-gap-8 md:fj-text-xl fj-whitespace-nowrap" x-cloak x-show="status.pagination" x-ref="pagination">
+    <div class="fj-flex-1 fj-flex-grow fj-text-left">
+      <div class="fj-inline-flex fj-items-center fj-gap-2 fj-group fj-cursor-pointer hover:fj-text-blue-800" @click="navigateTo('prev')" x-show="pagination.prev">
+        <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="fj-size-5 group-hover:-fj-translate-x-2 fj-transition-transform" width="48" height="48"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg></span>
+        <span>Previous page</span>
+      </div>
+    </div>
+    <div class="fj-flex-1 fj-flex-grow fj-text-right">
+      <div class="fj-inline-flex fj-justify-end fj-items-center fj-gap-2 fj-group fj-cursor-pointer hover:fj-text-blue-800" @click="navigateTo('next')" x-show="pagination.next">
+        <span>Next page</span>
+        <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="fj-size-5 group-hover:fj-translate-x-2 fj-transition-transform" width="48" height="48"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg></span>
+      </div>
+    </div>
+  </div>
+
+  {# Return Button #}
+  <div class="md:fj-text-xl fj-whitespace-nowrap" x-cloak x-show="status.returnBtn && window.history.length > 1">
+    <div class="fj-inline-flex fj-items-center fj-gap-2 fj-group fj-cursor-pointer hover:fj-text-blue-800" @click="window.history.back()">
+      <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="fj-size-5 group-hover:-fj-translate-x-2 fj-transition-transform" width="48" height="48"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg></span>
+      <span x-text="searchParams.type===`BLOG_POST`?`Back to Blog`:`Return to Previous page`">Return to Previous page</span>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,52 @@
+{% set current_page = current_page_num == 0 ? 1 : current_page_num %}
+
+{# sets variable for total pages #}
+{% set total_pages = contents.total_page_count %}
+
+{% if total_pages > 1 %}
+<div class="fj-flex fj-gap-4 fj-text-xl md:fj-text-2xl fj-font-bold fj-justify-center fj-select-none">
+
+  {% for x in range(0,total_pages) %}
+
+  {% if current_page == loop.index %}
+  {% set item_classes = 'fj-pointer-events-none fj-inline-flex fj-justify-center fj-items-center fj-shrink-0 fj-size-12 fj-aspect-box fj-scale-125 fj-text-current' %}
+  {% else %}
+  {% set item_classes = 'fj-inline-flex fj-justify-center fj-items-center fj-shrink-0 fj-size-12 fj-aspect-box' %}
+  {% endif %}
+
+  {% if total_pages > 5 and loop.index != 1 and loop.index != total_pages and loop.index != current_page %}
+
+    {% if ( loop.index - 1 == current_page or loop.index + 1 == current_page ) or ( loop.index == 2 and current_page == 4 ) or ( loop.index == total_pages - 1 and current_page == total_pages - 3 ) %}
+      <a class="{{ item_classes }}{% if loop.index != 2 and loop.index != total_pages - 1 %} fj-hidden md:fj-inline-flex{% endif %}"
+         href="{{ blog_page_link(loop.index) }}">{{loop.index}}</a>
+    {% elif loop.index - 2 == current_page or loop.index + 2 == current_page %}
+      <span class="fj-hidden md:fj-flex fj-justify-center fj-items-center fj-size-12">...</span>
+      {% if current_page > loop.index %}
+        <a class="{{ item_classes }} md:fj-hidden"
+           href="{{ blog_page_link(current_page - 1) }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="fj-size-6 fj-inline-block"><rect width="256" height="256" fill="none"/><polyline points="160 208 80 128 160 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+        </a>
+      {% else %}
+        <a class="{{ item_classes }} md:fj-hidden"
+           href="{{ blog_page_link(current_page + 1) }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="fj-size-6 fj-inline-block"><rect width="256" height="256" fill="none"/><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+        </a>
+      {% endif %}
+    {% endif %}
+
+  {% else %}
+
+    {% set page_link = blog_page_link(loop.index) %}
+    {% if loop.index == 1 %}
+      {% set page_link = page_link | replace('/page/1', '') %}
+    {% endif %}
+
+    <a class="{{ item_classes }}"
+       href="{{ page_link }}">{{loop.index}}</a>
+
+  {% endif %}
+
+  {% endfor %}
+
+</div>
+{% endif %}

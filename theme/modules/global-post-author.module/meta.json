@@ -1,0 +1,13 @@
+{
+  "global": true,
+  "content_types": [
+    "BLOG_POST"
+  ],
+  "smart_type": "NOT_SMART",
+  "icon": "../../images/module-icons/fresh-juice.svg",
+  "host_template_types": [
+    "BLOG_POST"
+  ],
+  "label": "Post Author",
+  "is_available_for_new_content": false
+}

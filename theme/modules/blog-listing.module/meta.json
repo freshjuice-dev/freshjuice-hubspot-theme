@@ -1,0 +1,21 @@
+{
+  "content_tags": [
+    {
+      "name": "BLOG",
+      "source": "USER"
+    }
+  ],
+  "global": false,
+  "content_types": [
+    "BLOG_LISTING"
+  ],
+  "categories": [
+    "BLOG"
+  ],
+  "icon": "../../images/module-icons/fresh-juice.svg",
+  "host_template_types": [
+    "BLOG_LISTING"
+  ],
+  "label": "Blog Listing",
+  "is_available_for_new_content": true
+}

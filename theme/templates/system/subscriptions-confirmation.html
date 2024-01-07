@@ -1,0 +1,32 @@
+<!--
+  templateType: email_subscriptions_confirmation_page
+  isAvailableForNewContent: true
+  label: FreshJuice - email subscriptions confirmation
+  screenshotPath: ../../images/template-previews/subscriptions-confirmation.png
+-->
+{% extends "../layouts/base.html" %}
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "Confirm subscriptions" %}
+
+
+{% block header %}
+  {% global_partial path="../partials/header-no-navigation.html" %}
+{% endblock %}
+
+
+{% block body %}
+  <section class="fj-min-h-screenSinNav systems-page">
+    <div class="container">
+      <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md">
+        {% module "subscriptions_confirmation"
+          path="@hubspot/email_subscriptions_confirmation"
+        %}
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+
+{% block footer %}
+  {% global_partial path="../partials/footer-for-lp.html" %}
+{% endblock footer %}

@@ -1,0 +1,29 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{# Helpers: slugify #}
+{# Returns the slug version of a string #}
+
+{# Parameters #}
+{# string | String to convert into a slug | Required #}
+
+{# How to import this macro to my module #}
+{# {% from '[folder]/slugify.html' import slugify %} #}
+
+{# How to use this macro #}
+{# {{ slugify('Give me slug') }} #}
+
+{%- macro slugify(text) -%}
+
+{%- set output = text %}
+{%- set output = output | string | lower | safe | striptags -%}
+{%- set output = output | regex_replace("[\t\n\f\r ]", "-") -%}   {# replace spaces with - #}
+{%- set output = output | regex_replace("[^0-9A-Za-z_-]", "") -%} {# remove all non-word characters #}
+{%- set output = output | regex_replace("-+", "-") -%}            {# replace multiple - with single - #}
+{%- set output = output | regex_replace("^[-]", "") -%}           {# trim - from start of text #}
+{%- set output = output | regex_replace("[-]$", "") -%}           {# trim - from end of text #}
+
+{{- output -}}
+
+{%- endmacro -%}

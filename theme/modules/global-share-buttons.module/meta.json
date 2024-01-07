@@ -1,0 +1,26 @@
+{
+  "content_tags": [
+    {
+      "name": "SOCIAL",
+      "source": "USER"
+    },
+    {
+      "name": "BLOG_POST",
+      "source": "USER"
+    }
+  ],
+  "global": true,
+  "content_types": [
+    "BLOG_POST"
+  ],
+  "smart_type": "NOT_SMART",
+  "categories": [
+    "SOCIAL"
+  ],
+  "icon": "../../images/module-icons/fresh-juice.svg",
+  "host_template_types": [
+    "BLOG_POST"
+  ],
+  "label": "Share Buttons",
+  "is_available_for_new_content": false
+}

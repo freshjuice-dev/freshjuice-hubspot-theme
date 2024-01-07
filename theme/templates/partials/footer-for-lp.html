@@ -1,0 +1,23 @@
+<!--
+  templateType: global_partial
+  label: Footer for Landing Pages
+-->
+<footer class="footer fj-bg-gradient-135 fj-from-amber-100 fj-via-red-100 fj-to-orange-200 [&>.container]:">
+  {% dnd_area "footer"
+    label="Footer for Landing Pages",
+    class="footer__container fj-max-w-full [&_.dnd-section]:fj-py-4"
+  %}
+
+    {% dnd_section class="fj-p-0" %}
+      {% dnd_column %}
+        {% dnd_row %}
+          {% dnd_module path="../../modules/global-footer-lp" %}
+            {# Global footer here #}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+  {% end_dnd_area %}
+</footer>
+

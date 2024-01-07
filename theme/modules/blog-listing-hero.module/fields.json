@@ -1,0 +1,99 @@
+[ {
+  "id" : "217a4f7f-60dc-488a-6c11-ce66092ee440",
+  "name" : "blog_name",
+  "display_width" : null,
+  "label" : "Blog name",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "{{blog.name}}"
+}, {
+  "id" : "4d9bbebc-dd42-d9a2-645a-575444da2be0",
+  "name" : "blog_description",
+  "display_width" : null,
+  "label" : "Blog description",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "{{blog.description}}"
+}, {
+  "id" : "c6e60aeb-03c7-8eb5-ce11-c12eb742e2f5",
+  "name" : "blog_author_listing",
+  "display_width" : null,
+  "label" : "Blog Author Listing",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "edf31b4f-edd6-9a2b-9a05-e2b0c60ed96b",
+    "name" : "subheading",
+    "display_width" : null,
+    "label" : "Subheading",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Posts by"
+  }, {
+    "id" : "093fbfa0-b45d-22a2-e234-bc30cba46d5a",
+    "name" : "show_headshot",
+    "display_width" : null,
+    "label" : "Show Headshot?",
+    "required" : true,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "b2f5ecf4-5bd9-abd8-bae9-1224ca2676a4",
+    "name" : "show_social_profiles",
+    "display_width" : null,
+    "label" : "Show Social Profiles?",
+    "required" : true,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "subheading" : "Posts by",
+    "show_headshot" : true,
+    "show_social_profiles" : true
+  }
+}, {
+  "id" : "be0b3950-4e50-eedb-bef7-2857a8e47be8",
+  "name" : "blog_tag_listing",
+  "display_width" : null,
+  "label" : "Blog Tag Listing",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0d68f3de-8d81-7d37-5daa-fa0ca6cf0c56",
+    "name" : "subheading",
+    "display_width" : null,
+    "label" : "Subheading",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Posts about"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "subheading" : "Posts about"
+  }
+} ]

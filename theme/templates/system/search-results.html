@@ -1,0 +1,39 @@
+<!--
+  templateType: search_results_page
+  isAvailableForNewContent: true
+  label: FreshJuice - search results
+  screenshotPath: ../../images/template-previews/search-results.png
+-->
+{% extends "../layouts/base.html" %}
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "Search results" %}
+
+{% if request.query_dict.term %}
+  {% set search_query = request.query_dict.term %}
+{% elif request.query_dict.q %}
+  {# v3 search api support #}
+  {% set search_query = request.query_dict.q %}
+{% endif %}
+
+{% block body %}
+
+<header class="article__header fj-bg-gradient-60 fj-from-orange-100 fj-via-red-100 fj-to-amber-100 fj-min-h-56 md:fj-min-h-96 fj-flex fj-justify-center fj-items-center">
+  <div class="container fj-w-full fj-text-center fj-prose sm:fj-prose-lg md:fj-prose-xl fj-text-balance">
+    <h1>Search results for &ldquo;{{ search_query | escape }}&rdquo;</h1>
+  </div>
+</header>
+
+<section class="fj-min-h-96">
+  <div class="container">
+    {% module "search_results"
+      path="../../modules/search-results",
+      title={
+        "show_title": "false"
+      }
+    %}
+  </div>
+</section>
+
+
+
+{% endblock body %}

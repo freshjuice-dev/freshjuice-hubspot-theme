@@ -1,0 +1,58 @@
+{# This macro is used to format each recent post card and gets passed to the related_blog_posts HubL tag below #}
+{% macro related_posts(post, count, total) %}
+
+  {% if count == 1 %}
+    <div class="fj-grid fj-gap-8 {{ 'md:fj-grid-cols-3' if module.layout == 'row' }}{{ 'fj-not-prose md:fj-grid-cols-2 lg:fj-grid-cols-1' if module.layout == 'col' }}">
+  {% endif %}
+
+  <article class="fj-rounded-md fj-border fj-bg-white fj-border-stone-200 fj-relative fj-group fj-transition-all fj-ease-in-out fj-duration-200 hover:fj-shadow-xl"
+           aria-label="Blog post summary: {{ post.name }}">
+
+    <div class="article__thumbnail fj-rounded-t fj-overflow-clip fj-aspect-video">
+      {% if post.featured_image %}
+          <img class="fj-w-full fj-h-auto fj-object-cover fj-aspect-video"
+               src="{{ resize_image_url( post.featured_image, 0, 0, 400 ) }}"
+               loading="lazy"
+               width="400"
+               alt="Featured image: {{ post.featured_image_alt_text or post.name | striptags }}">
+      {% endif %}
+    </div>
+
+    <div class="article__content fj-px-4 fj-pt-5 fj-pb-14">
+      <h3 class="fj-text-xl md:fj-text-2xl fj-text-balance">
+        <a href="{{ post.absolute_url }}"
+           class="!fj-no-underline !fj-text-current !fj-font-bold"
+           aria-label="Read full post: {{ post.name | striptags }}">
+          <span class="fj-absolute fj-z-10 fj-inset-0"></span>
+          {{ post.name }}
+        </a>
+      </h3>
+      {# {{ post.post_summary | striptags | truncatehtml(100) }} #}
+      <span class="fj-absolute fj-right-4 fj-bottom-5 group-hover:fj-underline fj-text-base">Read more</span>
+    </div>
+  </article>
+
+  {% if count == total %}
+    </div>
+  {% endif %}
+
+{% endmacro %}
+
+
+{% if module.layout == 'col' %}
+
+  {% related_blog_posts
+    limit=4,
+    no_wrapper=True,
+    post_formatter="related_posts"
+  %}
+
+{% else %}
+
+  {% related_blog_posts
+    limit=3,
+    no_wrapper=True,
+    post_formatter="related_posts"
+  %}
+
+{% endif %}

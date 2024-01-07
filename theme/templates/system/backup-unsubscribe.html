@@ -1,0 +1,35 @@
+<!--
+  templateType: email_backup_unsubscribe_page
+  isAvailableForNewContent: true
+  label: FreshJuice - email backup unsubscribe
+  screenshotPath: ../../images/template-previews/backup-unsubscribe.png
+-->
+{% extends "../layouts/base.html" %}
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "Unsubscribe" %}
+
+
+{% block header %}
+  {% global_partial path="../partials/header-no-navigation.html" %}
+{% endblock %}
+
+
+{% block body %}
+  <section class="fj-min-h-screenSinNav systems-page">
+    <div class="container">
+      <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md">
+        <div class="form-container email-preferences-form">
+          {% module "backup_unsubscribe"
+            extra_classes="backup-unsubscribe",
+            path="@hubspot/email_simple_subscription"
+          %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+
+{% block footer %}
+  {% global_partial path="../partials/footer-for-lp.html" %}
+{% endblock footer %}

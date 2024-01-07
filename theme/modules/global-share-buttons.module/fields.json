@@ -1,0 +1,21 @@
+[ {
+  "id" : "7cff457d-a78b-2214-98a8-d5fa0c3037ff",
+  "name" : "share_button",
+  "display_width" : null,
+  "label" : "Share button",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 5
+  },
+  "display" : "select",
+  "choices" : [ [ "fb", "Facebook" ], [ "vk", "VK" ], [ "tw", "exTwitter" ], [ "tg", "Telegram" ], [ "pk", "Pocket" ], [ "re", "Reddit" ], [ "ev", "Evernote" ], [ "in", "LinkedIn" ], [ "pi", "Pinterest" ], [ "sk", "Skype" ], [ "wa", "WhatsApp" ], [ "ok", "Odnoklassniki" ], [ "tu", "Tumblr" ], [ "hn", "Hacker News" ], [ "xi", "Xing" ], [ "mail", "EMail" ], [ "print", "Print" ], [ "copy", "Copy" ], [ "share", "WebShare API" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : [ "tw", "in", "fb", "re", "print" ]
+} ]

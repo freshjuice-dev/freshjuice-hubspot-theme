@@ -1,0 +1,62 @@
+<!--
+  templateType: membership_register_page
+  isAvailableForNewContent: true
+  label: FreshJuice - membership registration
+  screenshotPath: ../../images/template-previews/membership-register.png
+-->
+{% extends "../layouts/base.html" %}
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "Membership | Register" %}
+
+
+{% block header %}
+  {% global_partial path="../partials/header-no-navigation.html" %}
+{% endblock header %}
+
+
+{% block body %}
+<section class="fj-min-h-screenSinNav systems-page">
+  <div class="container">
+    <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md">
+      {% module "content"
+        path="@hubspot/rich_text",
+        html="<h1>Welcome!</h1><p>Set up your password to sign in and see the content you now have access to.</p>"
+      %}
+      <div class="form-container fj-not-prose"
+           x-init="
+             document.querySelectorAll('.hs-register-widget-show-password').forEach(el => {
+               el.addEventListener('click', (event) => {
+                 event.preventDefault();
+                 let input = el.nextElementSibling;
+                 el.innerHTML = input.type === 'password' ? 'Hide password' : 'Show password';
+                 input.type = input.type === 'password' ? 'text' : 'password';
+               });
+             });
+           ">
+        {% member_register "my_register"
+          email_label="Email",
+          password_confirm_label="Confirm Password",
+          password_label="Password",
+          submit_button_text="Save Password",
+          show_password="Show password"
+        %}
+      </div>
+      <div>
+        {% module_block module "membership_admin_content"
+          label="Contact admin",
+          path="@hubspot/rich_text"
+        %}
+          {% module_attribute "html" %}
+            <p>Having trouble? <a href="{{"mailto:" ~ site_settings.membershipWebsiteAdmin}}">Contact the admin</a>.</p>
+          {% end_module_attribute %}
+        {% end_module_block %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+{% block footer %}
+  {% global_partial path="../partials/footer-for-lp.html" %}
+{% endblock footer %}

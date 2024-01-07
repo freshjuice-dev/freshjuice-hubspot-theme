@@ -1,0 +1,26 @@
+{% if module.url is string_containing "vimeo.com/" %}
+  {% set video_id = module.url | split('vimeo.com/') | last | split('?') | first | split('#') | first %}
+{% else %}
+  {% set video_id = "861680818" %} {# ... Don't get angry with me, I never caused you no pain ... #}
+{% endif %}
+
+{% if module.thumbnail.src %}
+  {% set video_thumbnail = resize_image_url(module.thumbnail.src, 1280, 720, 1280) %}
+{% else %}
+  {% set video_thumbnail = "https://i.vimeocdn.com/video/" ~ video_id ~ ".png?mw=1280&mh=720&q=70" %}
+{% endif %}
+
+{# {{ get_asset_url('../../js/vendor/lite-vimeo-embed.js') }} #}
+<div class="fj-aspect-video fj-rounded-md fj-overflow-hidden"
+     x-init="loadScript(`//cdn.jsdelivr.net/npm/lite-vimeo-embed@0.3.0/lite-vimeo-embed.min.js`)">
+  <lite-vimeo videoid="{{ video_id }}"
+              params="controls=0&start=0&modestbranding=2&rel=0&enablejsapi=1"
+              class="fj-aspect-video fj-w-full"
+              style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=)">
+    {% if module.thumbnail.src %}
+    <img src="{{ video_thumbnail }}" alt="Preview image for {{ module.title or 'Video' }}"
+         class="fj-aspect-video fj-w-full fj-h-full fj-object-cover fj-object-center !fj-m-0 fj-leading-none fj-absolute"
+         width="1280" height="720" loading="eager">
+    {% endif %}
+  </lite-vimeo>
+</div>

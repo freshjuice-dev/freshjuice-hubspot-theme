@@ -1,0 +1,37 @@
+{% unless (module.link is string_startingwith "http") or (module.link is string_startingwith "/") or (module.link is string_startingwith "mailto") or (module.link is string_startingwith "#") or !module.link %}
+  {% set link = "//" ~ module.link %}
+{% else %}
+  {% set link = module.link || "" %}
+{% endunless %}
+
+{% set loadingAttr = module.img.loading != "disabled" ? "{{ module.img.loading }}" : "" %}
+
+{% if module.img.override_inherited_src && module.img.src %}
+  {% logo "hs_logo_widget"
+    override_inherited_src="{{ module.img.override_inherited_src  }}",
+    alt="{{ module.img.alt }}",
+    src="{{ module.img.src }}",
+    link="{{ link }}",
+    width="{{ module.img.width }}",
+    height="{{ module.img.height }}",
+    open_in_new_tab="{{ module.open_in_new_tab }}"
+    loading="{{ loadingAttr }}"
+  %}
+{% elif module.img.override_inherited_src && !module.img.src %}
+  {% logo "hs_logo_widget"
+    heading_level="{{ module.heading_level }}",
+    link="{{ link }}",
+    open_in_new_tab="{{ module.open_in_new_tab }}"
+    override_inherited_src="{{ module.img.override_inherited_src }}",
+    src="",
+    suppress_company_name="{{ module.img.suppress_company_name }}"
+    loading="{{ loadingAttr }}"
+  %}
+
+{% else %}
+  {% logo "hs_logo_widget"
+    link="{{ link }}",
+    open_in_new_tab="{{ module.open_in_new_tab }}"
+    loading="{{ loadingAttr }}"
+  %}
+{% endif %}

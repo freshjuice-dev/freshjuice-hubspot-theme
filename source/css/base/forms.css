@@ -1,4 +1,199 @@
-@layer base {
+form {
+
+  .hs-recaptcha .grecaptcha-badge {
+    @apply fj-rounded-md fj-overflow-hidden;
+  }
+  fieldset {
+    @apply fj-relative;
+  }
+
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea,
+  select {
+    @apply fj-block fj-w-full fj-rounded-lg fj-border fj-border-gray-300 fj-bg-white fj-text-gray-900 placeholder:fj-text-stone-600 focus:fj-border-blue-500 focus:fj-ring-blue-500;
+
+    /* font-size: 1rem; */
+    /* line-height: 1.5rem; */
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    min-height: 44px;
+  }
+
+  .radio-rows {
+    .inputs-list {
+      @apply fj-flex;
+
+      li {
+        @apply fj-mr-12;
+      }
+    }
+  }
+
+  [type="radio"] {
+    @apply fj-mr-2;
+  }
+
+  ul.hs-error-msgs {
+    @apply fj-text-sm;
+    @apply fj-list-none fj-m-0 fj-p-0;
+
+    label {
+      @apply fj-text-red-500;
+    }
+  }
+
+  .is-invalid,
+  .error,
+  .invalid,
+  [aria-invalid="true"] {
+
+  }
 
 }
 
+
+
+
+/*
+form,
+.submitted-message {
+  {{ body_font.style }};
+  {{ form_border }};
+  border-top-left-radius: {{ form_top_left_corner_radius }};
+  border-top-right-radius: {{ form_top_right_corner_radius }};
+  border-bottom-left-radius: {{ form_bottom_left_corner_radius }};
+  border-bottom-right-radius: {{ form_bottom_right_corner_radius }};
+  background-color: {{ form_bg_color }};
+  {{ form_padding }};
+}
+*/
+
+/* Form title
+
+.form-title {
+  {{ form_title_border}};
+  {{ form_title_spacing }};
+  {{ form_title_font.style }};
+  border-top-left-radius: {{ form_title_top_left_corner_radius }};
+  border-top-right-radius: {{ form_title_top_right_corner_radius }};
+  border-bottom-left-radius: {{ form_title_bottom_left_corner_radius }};
+  border-bottom-right-radius: {{ form_title_bottom_right_corner_radius }};
+  font-size: {{ form_title_font.size  ~ form_title_font.size_unit }};
+  color: {{ form_title_font.color }};
+  background-color: {{ form_title_bg_color }};
+}
+*/
+
+/* Labels
+
+form label {
+  color: {{ form_label_font_color }};
+}
+*/
+
+/* Help text
+
+form legend {
+  color: {{ form_help_text_font_color }};
+}
+*/
+
+/* Inputs
+
+form input[type=text],
+form input[type=search],
+form input[type=email],
+form input[type=password],
+form input[type=tel],
+form input[type=number],
+form input[type=file],
+form select,
+form textarea {
+  {{ form_field_border }}
+  background-color: {{ form_field_bg_color }};
+  color: {{ form_field_font_color }};
+  border-radius: {{ form_field_corner_radius }};
+}
+*/
+
+/* Form placeholder text
+
+::-webkit-input-placeholder {
+  color: {{ form_field_placeholder_color }};
+}
+
+::-moz-placeholder {
+  color: {{ form_field_placeholder_color }};
+}
+
+:-ms-input-placeholder {
+  color: {{ form_field_placeholder_color }};
+}
+
+::placeholder {
+  color: {{ form_field_placeholder_color }};
+}
+*/
+
+/* Inputs - date picker
+
+.hs-fieldtype-date .input .hs-dateinput:before {
+  color: {{ form_field_placeholder_color }};
+}
+
+.fn-date-picker td.is-selected .pika-button {
+  background: {{ primary_color }};
+}
+
+.fn-date-picker td .pika-button:hover {
+  background-color: {{ primary_color }} !important;
+}
+
+.fn-date-picker td.is-today .pika-button {
+  color: {{ primary_color }};
+}
+*/
+
+/* Submit button
+
+form input[type=submit],
+form .hs-button {
+  {{ form_submit_button_border }};
+  {{ form_submit_button_spacing }};
+  {{ form_submit_button_font.style }};
+  color: {{form_submit_button_font.color}};
+  font-size: {{form_submit_button_font.size ~ form_submit_button_font.size_unit}};
+  background-color: {{ form_submit_button_bg_color }};
+  border-radius: {{ button_corner_radius }};
+  text-transform: {{ button_text_transform }};
+}
+
+form input[type=submit]:hover,
+form input[type=submit]:focus,
+form .hs-button:hover,
+form .hs-button:focus {
+  background-color: {{ form_submit_button_bg_color_hover }};
+  color: {{form_submit_button_color_hover}};
+  {{ form_submit_button_border_hover }};
+}
+
+form input[type=submit]:active,
+form .hs-button:active {
+  background-color: rgba({{ color_variant(theme.buttons.background.color.color, 40)|convert_rgb }}, {{ theme.buttons.background.color.opacity / 100 }});
+  border-color: {{ color_variant(theme.buttons.border.border.top.color, 40) }};
+}
+*/

@@ -1,0 +1,20 @@
+[ {
+  "id" : "f86c63ec-cd18-adf7-bd87-b3fe8347d44e",
+  "name" : "copyrights",
+  "display_width" : null,
+  "label" : "Copyrights",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "default" : "©&nbsp;{{ year }} Your Company, Inc. All&nbsp;rights&nbsp;reserved."
+}, {
+  "id" : "fd71c31f-0e8e-b6a7-6275-965d8bf4061b",
+  "name" : "footer_legal_menu",
+  "display_width" : null,
+  "label" : "Footer Legal Menu (optional)",
+  "inline_help_text" : "The footer legal menu consists of links or options typically placed at the bottom of a webpage, providing access to legal information such as terms and conditions, privacy policies, and copyright notices.",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu",
+  "default" : 89839894221
+} ]

@@ -1,0 +1,92 @@
+[ {
+  "id" : "8894aae0-39ca-ac76-1eaf-c91ebeb0a520",
+  "name" : "logo_image",
+  "display_width" : null,
+  "label" : "Logo",
+  "required" : true,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/raw_assets/public/FreshJuice/images/fresh-juice-logo.png",
+    "alt" : "Fresh Juice",
+    "size_type" : "auto",
+    "width" : 512,
+    "height" : 512,
+    "max_width" : 512,
+    "max_height" : 512,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "eec64ec4-dcc1-ac8a-4b0e-0b4b8aac9dbe",
+  "name" : "call_to_actions",
+  "display_width" : null,
+  "label" : "Call to Actions",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "2b3aa489-14ec-a6d4-1336-e43ac4775db0",
+    "name" : "style",
+    "display_width" : null,
+    "label" : "Style",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "link", "Plain link" ], [ "ghost", "Ghost Button" ], [ "primary", "Primary Button" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "primary"
+  }, {
+    "id" : "bb670a24-25b9-9d8f-ba99-81a8f6287034",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Link Name",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : ""
+  }, {
+    "id" : "a5e5d6c5-2c96-d974-c197-26ddb8e25b9b",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "style" : "primary",
+    "title" : "Link Name",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+} ]

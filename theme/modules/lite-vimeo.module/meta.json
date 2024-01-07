@@ -1,0 +1,27 @@
+{
+  "content_tags": [
+    {
+      "name": "VIDEO",
+      "source": "USER"
+    }
+  ],
+  "global": false,
+  "content_types": [
+    "LANDING_PAGE",
+    "SITE_PAGE",
+    "BLOG_LISTING",
+    "BLOG_POST"
+  ],
+  "inline_help_text": "Renders faster than a sneeze. Provide videos with a supercharged focus on visual performance. This custom element renders just like the real thing, but approximately 224× faster.",
+  "categories": [
+    "BODY_CONTENT"
+  ],
+  "icon": "fontawesome-5.14.0:Vimeo%20Square",
+  "host_template_types": [
+    "PAGE",
+    "BLOG_POST",
+    "BLOG_LISTING"
+  ],
+  "label": "Lite Vimeo",
+  "is_available_for_new_content": true
+}
