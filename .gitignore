@@ -1,0 +1,19 @@
+# Apple macOS
+.DS_Store
+.DS_Store?
+*/.DS_Store
+
+# Node files
+node_modules
+
+# IntelliJ IDEA
+.idea
+
+# Work directories
+_temp/*
+hubspot.config.yml
+package-lock.json
+
+# Misc
+*.log
+NOTEPAD

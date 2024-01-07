@@ -1,0 +1,16 @@
+/* Base */
+@import "tailwindcss/base";
+@import "base/reset.css";
+@import "base/animations.css";
+@import "base/typography.css";
+@import "base/forms.css";
+
+/* 3rd party styles */
+@import "lite-youtube-embed";
+
+/* Components */
+@import "tailwindcss/components";
+
+/* Utils */
+@import "tailwindcss/utilities";
+@import "utilities/utils.css";

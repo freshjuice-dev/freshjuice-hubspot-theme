@@ -1,0 +1,131 @@
+/* stylelint-disable property-no-vendor-prefix */
+/* stylelint-disable no-duplicate-selectors */
+@layer base {
+  /* @font-face {
+    font-family: 'Pangram Pangram';
+    src: url('PangramPangram.woff') format('truetype');
+    font-weight: 100;
+  } */
+
+  /* For a Variable font, use the following CSS code.
+  For an italic Variable font, use italic instead of
+  normal in the font-style parameter. */
+
+  html {
+    @apply ring-zenith-700;
+  }
+
+  /*
+	html:not(.no-fade-in) {
+		animation: 0.3s ease 0s normal backwards 1 fadeIn;
+	}
+  */
+
+  /* Set core root defaults */
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Add the correct font weight in Chrome, Edge, and Safari */
+  b,
+  strong {
+    font-weight: bold;
+  }
+
+  /* Prevent `sub` and `sup` elements from affecting the line height in all browsers */
+  sub,
+  sup {
+    position: relative;
+    font-size: 0.75em;
+    line-height: 0;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  svg,
+  img,
+  picture {
+    pointer-events: none;
+  }
+
+  img,
+  video,
+  picture {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* img[width] {
+    width: auto;
+  }
+  img[width][height] {
+    height: auto;
+  }
+
+  img[height] {
+    width: auto;
+  } */
+
+  /* Let SVG scale without boundaries */
+  /* img[src$=".svg"] {
+    width: 100%;
+    height: auto;
+    max-width: none;
+  } */
+
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul:where([role="list"]),
+  ol:where([role="list"]) {
+    list-style: none;
+  }
+
+  /* A elements that don't have a class get default styles */
+
+  /* a:where(:not([class])) {
+    text-decoration-skip-ink: auto;
+  } */
+
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  [x-cloak] {
+    display: none !important;
+  }
+
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

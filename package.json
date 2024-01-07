@@ -1,0 +1,55 @@
+{
+  "name": "hubspot-theme-freshjuice",
+  "version": "1.0.0",
+  "description": "Hubspot boilerplate theme",
+  "main": "index.js",
+  "scripts": {
+    "fetch:hubspot": "hs fetch --overwrite /FreshJuice ./theme",
+    "push:hubspot": "hs upload ./theme /FreshJuice",
+    "watch:hubspot": "hs watch ./theme /FreshJuice",
+    "watch:tailwind": "npx tailwindcss --postcss -i ./source/css/tailwind.css -o ./theme/css/tailwind.css --watch",
+    "start": "npm-run-all --parallel watch:*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/reatlat/hubspot-theme-freshjuice.git"
+  },
+  "keywords": [
+    "hubspot",
+    "theme",
+    "cms",
+    "hubspot-cms",
+    "alpinejs",
+    "tailwindcss",
+    "boilerplate"
+  ],
+  "author": {
+    "name": "Alex Zappa",
+    "email": "alex@zappa.dev",
+    "url": "https://alex.zappa.dev/"
+  },
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/reatlat/hubspot-theme-freshjuice/issues"
+  },
+  "homepage": "https://github.com/reatlat/hubspot-theme-freshjuice#readme",
+  "devDependencies": {
+    "alpinejs": "^3.13.3",
+    "autoprefixer": "^10.4.16",
+    "esbuild": "^0.19.11",
+    "flying-pages-module": "^2.1.4",
+    "lite-youtube-embed": "^0.3.0",
+    "node-html-to-image": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "postcss-discard-comments": "^6.0.1",
+    "postcss-easy-import": "^4.0.0",
+    "postcss-merge-rules": "^6.0.3",
+    "rimraf": "^5.0.5",
+    "slugify": "^1.6.6",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-safe-area": "^0.4.1"
+  }
+}
