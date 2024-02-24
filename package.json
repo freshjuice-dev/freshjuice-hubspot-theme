@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "fetch:hubspot": "hs fetch --overwrite /FreshJuice ./theme && ./scripts/post-fetch.sh",
-    "push:hubspot": "hs upload ./theme /FreshJuice",
+    "upload:hubspot": "hs upload ./theme /FreshJuice",
     "watch:hubspot": "hs watch ./theme /FreshJuice",
     "watch:tailwind": "npx tailwindcss --postcss -i ./source/css/tailwind.css -o ./theme/css/tailwind.css --watch",
     "build:tailwind": "npx tailwindcss --postcss -i ./source/css/tailwind.css -o ./theme/css/tailwind.css",
