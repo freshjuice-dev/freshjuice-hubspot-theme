@@ -3448,7 +3448,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     console.log("\n\n\n%c\u{1F379}", "color: #CA0000; background: #FFFF00; font-size: 200px; font-weight: bold; padding: 10px 36px; white-space: nowrap;");
     console.log("%cFresh Juice", "color: #CA0000; background: #FFFF00; font-size: 32px; font-weight: bold; padding: 10px 30px; white-space: nowrap;");
     console.log("%cIt`s a stunningly crafted starter theme for HubSpot CMS, meticulously assembled using the powerful combination of TailwindCSS and AlpineJS.", "font-size:18px");
-    console.log("%cFork me on GitHub:\nhttps://github.com/reatlat/hubspot-theme-freshjuice\n\n\n", "font-size:18px");
+    console.log("%cFork me on GitHub:\nhttps://github.com/freshjuice-dev/freshjuice-hubspot-theme\n\n\n", "font-size:18px");
     module_default.start();
     (0, import_flying_pages_module.default)({
       // Prefetch all pages by default

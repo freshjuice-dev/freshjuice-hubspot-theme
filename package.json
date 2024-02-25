@@ -1,5 +1,5 @@
 {
-  "name": "hubspot-theme-freshjuice",
+  "name": "freshjuice-hubspot-theme",
   "version": "1.0.0",
   "description": "Hubspot CMS theme boilerplate with TailwindCSS, AlpineJS, and more.",
   "main": "index.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/reatlat/hubspot-theme-freshjuice.git"
+    "url": "git+ssh://git@github.com/freshjuice-dev/freshjuice-hubspot-theme.git"
   },
   "keywords": [
     "hubspot",
@@ -35,9 +35,9 @@
   },
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/reatlat/hubspot-theme-freshjuice/issues"
+    "url": "https://github.com/freshjuice-dev/freshjuice-hubspot-theme/issues"
   },
-  "homepage": "https://github.com/reatlat/hubspot-theme-freshjuice#readme",
+  "homepage": "https://github.com/freshjuice-dev/freshjuice-hubspot-theme#readme",
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",

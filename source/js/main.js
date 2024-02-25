@@ -33,7 +33,7 @@ domReady(() => {
 
   console.log('%cFresh Juice', 'color: #CA0000; background: #FFFF00; font-size: 32px; font-weight: bold; padding: 10px 30px; white-space: nowrap;');
   console.log('%cIt`s a stunningly crafted starter theme for HubSpot CMS, meticulously assembled using the powerful combination of TailwindCSS and AlpineJS.', 'font-size:18px');
-  console.log('%cFork me on GitHub:\nhttps://github.com/reatlat/hubspot-theme-freshjuice\n\n\n', 'font-size:18px');
+  console.log('%cFork me on GitHub:\nhttps://github.com/freshjuice-dev/freshjuice-hubspot-theme\n\n\n', 'font-size:18px');
 
   Alpine.start();
   flyingPages({
