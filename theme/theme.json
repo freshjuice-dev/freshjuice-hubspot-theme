@@ -8,7 +8,7 @@
   "documentation_url": "https://github.com/freshjuice-dev/freshjuice-hubspot-theme",
   "example_url": "https://143910617.hs-sites-eu1.com",
   "preview_path": "./templates/home.html",
-  "screenshot_path": "./images/template-previews/home.png",
+  "screenshot_path": "./images/template-previews/blog-index.png",
   "enable_domain_stylesheets": false,
   "license": "GPL-3.0-or-later",
   "responsive_breakpoints": [
