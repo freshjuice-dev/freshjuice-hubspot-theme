@@ -35,6 +35,18 @@
     "email": "alex@zappa.dev",
     "url": "https://alex.zappa.dev/"
   },
+  "contributors": [
+    {
+      "name": "Alex Zappa",
+      "email": "alex@zappa.dev",
+      "url": "https://alex.zappa.dev/"
+    },
+    {
+      "name": "Aleksandr Zapparov",
+      "email": "alexander@zapparov.dev",
+      "url": "https://zapparov.dev/"
+    }
+  ],
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/freshjuice-dev/freshjuice-hubspot-theme/issues"
