@@ -11,6 +11,7 @@ node_modules
 
 # Work directories
 _temp/*
+_dist/*
 hubspot.config.yml
 package-lock.json
 
