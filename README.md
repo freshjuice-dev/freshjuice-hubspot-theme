@@ -2,6 +2,8 @@
 
 A modern, clean, and minimalistic boilerplate for HubSpot CMS themes. This boilerplate is designed to help you get started with your HubSpot CMS theme development quickly. It includes a modern frameworks and tools like Tailwind CSS, Alpine.js.
 
+[Demo website](https://freshjuice.dev/hubspot-theme/)
+
 ## Purpose
 
 This boilerplate is designed to help developers a head start on their HubSpot CMS theme development. While most of HubSpot themes are chunky and bloated, this boilerplate is designed to be minimalistic and load only required components. Solution for pixel perfect design and fast loading website.
@@ -47,7 +49,7 @@ This boilerplate is designed to help developers a head start on their HubSpot CM
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [releases on this repository](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/releases).
 
 ## License
 
