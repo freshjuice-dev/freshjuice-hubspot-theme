@@ -25,6 +25,45 @@
     mod
   ));
 
+  // source/js/modules/_debugLog.js
+  var require_debugLog = __commonJS({
+    "source/js/modules/_debugLog.js"(exports, module) {
+      module.exports = (...args) => {
+        if (location.hostname.match(/(.hs-sites|.hubspot)/g) || window.sessionStorage.juice)
+          console.log("\u{1F379}:", ...args);
+      };
+    }
+  });
+
+  // source/js/modules/_loadScript.js
+  var require_loadScript = __commonJS({
+    "source/js/modules/_loadScript.js"(exports, module) {
+      module.exports = (src, loading = "defer", callback) => {
+        if (!src.startsWith("http") && !src.startsWith("https")) {
+          src = src.startsWith("//") ? `https:${src}` : `https://${src}`;
+        }
+        if (document.querySelector(`script[src="${src}"]`)) {
+          return;
+        }
+        const script = document.createElement("script");
+        script.src = src;
+        if (loading === "defer")
+          script.defer = true;
+        if (loading === "async")
+          script.async = true;
+        script.crossOrigin = "anonymous";
+        script.onload = script.onreadystatechange = () => {
+          if (!exports.readyState || exports.readyState === "loaded" || exports.readyState === "complete") {
+            if (callback)
+              callback();
+            script.onload = script.onreadystatechange = null;
+          }
+        };
+        document.body.appendChild(script);
+      };
+    }
+  });
+
   // node_modules/flying-pages-module/flying-pages.js
   var require_flying_pages = __commonJS({
     "node_modules/flying-pages-module/flying-pages.js"(exports, module) {
@@ -147,52 +186,13 @@
     }
   });
 
-  // source/js/modules/_debugLog.js
-  var require_debugLog = __commonJS({
-    "source/js/modules/_debugLog.js"(exports, module) {
-      module.exports = (...args) => {
-        if (location.hostname.match(/(.hs-sites|.hubspot)/g) || window.sessionStorage.juice)
-          console.log("\u{1F379}:", ...args);
-      };
-    }
-  });
-
-  // source/js/modules/_loadScript.js
-  var require_loadScript = __commonJS({
-    "source/js/modules/_loadScript.js"(exports, module) {
-      module.exports = (src, loading = "defer", callback) => {
-        if (!src.startsWith("http") && !src.startsWith("https")) {
-          src = src.startsWith("//") ? `https:${src}` : `https://${src}`;
-        }
-        if (document.querySelector(`script[src="${src}"]`)) {
-          return;
-        }
-        const script = document.createElement("script");
-        script.src = src;
-        if (loading === "defer")
-          script.defer = true;
-        if (loading === "async")
-          script.async = true;
-        script.crossOrigin = "anonymous";
-        script.onload = script.onreadystatechange = () => {
-          if (!exports.readyState || exports.readyState === "loaded" || exports.readyState === "complete") {
-            if (callback)
-              callback();
-            script.onload = script.onreadystatechange = null;
-          }
-        };
-        document.body.appendChild(script);
-      };
-    }
-  });
-
   // source/js/modules/_getSearchParams.js
   var require_getSearchParams = __commonJS({
     "source/js/modules/_getSearchParams.js"(exports, module) {
-      var import_debugLog2 = __toESM(require_debugLog());
+      var import_debugLog3 = __toESM(require_debugLog());
       module.exports = (param = false, url = false) => {
         url = url ? url : window.location.href;
-        (0, import_debugLog2.default)(`getSearchParams: "${param}" from [${url}]`);
+        (0, import_debugLog3.default)(`getSearchParams: "${param}" from [${url}]`);
         const vars = {};
         url.replace(location.hash, "").replace(/[?&]+([^=&]+)=?([^&]*)?/gi, (m, key, value) => {
           vars[key] = value !== void 0 ? value : "";
@@ -210,6 +210,8 @@
   });
 
   // source/js/main.js
+  var import_debugLog2 = __toESM(require_debugLog());
+  var import_loadScript2 = __toESM(require_loadScript());
   var import_flying_pages_module = __toESM(require_flying_pages());
 
   // node_modules/alpinejs/dist/module.esm.js
@@ -3444,6 +3446,11 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     }
   }
   module_default.data("xDOM", DOM_default);
+  if (navigator.userAgent.indexOf("Safari") != -1 && navigator.userAgent.indexOf("Chrome") == -1) {
+    (0, import_loadScript2.default)("//cdn.jsdelivr.net/npm/balance-text@3.3.1/balancetext.min.js", "async", () => {
+      balanceText(document.querySelectorAll("[x-balance-text]"), { watch: true });
+    });
+  }
   domReady(() => {
     console.log("\n\n\n%c\u{1F379}", "color: #CA0000; background: #FFFF00; font-size: 200px; font-weight: bold; padding: 10px 36px; white-space: nowrap;");
     console.log("%cFresh Juice", "color: #CA0000; background: #FFFF00; font-size: 32px; font-weight: bold; padding: 10px 30px; white-space: nowrap;");
