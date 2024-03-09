@@ -23,9 +23,9 @@
               {% endif %}
             </div>
           {% endif %}
-          <p class="!fj-mb-2 !fj-mt-0">{{ module.blog_author_listing.subheading }}</p>
-          <h1>{{ blog_author.display_name }}</h1>
-          <p>{{ blog_author.bio }}</p>
+          <p class="!fj-mb-2 !fj-mt-0" x-balance-text>{{ module.blog_author_listing.subheading }}</p>
+          <h1 x-balance-text>{{ blog_author.display_name }}</h1>
+          <p x-balance-text>{{ blog_author.bio }}</p>
           {% if module.blog_author_listing.show_social_profiles and blog_author.has_social_profiles %}
             <div class="fj-flex fj-justify-center fj-items-center fj-gap-4 !fj-mb-0">
               {% if blog_author.website %}
@@ -56,12 +56,12 @@
           {% endif %}
           {% elif tag %}
           <p class="!fj-mb-2 !fj-mt-0">{{ module.blog_tag_listing.subheading }}</p>
-          <h1 class="!fj-mb-0">{{ page_meta.html_title | split(' | ') | last | split(' (') | first }}</h1> {# TODO make regex? #}
+          <h1 class="!fj-mb-0" x-balance-text>{{ page_meta.html_title | split(' | ') | last | split(' (') | first }}</h1> {# TODO make regex? #}
         {% endif %}
       </div>
     {% else %}
-      <h1 class="!fj-mt-0">{{ module.blog_name }}</h1>
-      <p class="!fj-mb-0">{{ module.blog_description }}</p>
+      <h1 class="!fj-mt-0" x-balance-text>{{ module.blog_name }}</h1>
+      <p class="!fj-mb-0" x-balance-text>{{ module.blog_description }}</p>
     {% endif %}
   </div>
 </header>

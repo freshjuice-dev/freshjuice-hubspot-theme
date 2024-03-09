@@ -12,7 +12,7 @@
 
   <header class="article__header fj-bg-gradient-60 fj-from-orange-100 fj-via-red-100 fj-to-amber-100 fj-min-h-56 md:fj-min-h-96 fj-flex fj-justify-center fj-items-center">
     <div class="container fj-w-full fj-text-center fj-prose sm:fj-prose-lg md:fj-prose-xl fj-text-balance">
-      <h1>{{ content.name | striptags }}</h1>
+      <h1 x-balance-text>{{ content.name | striptags }}</h1>
       <div class="article__header__meta md:fj-text-lg">
         Posted by
         <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}"
