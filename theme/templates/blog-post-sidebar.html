@@ -34,7 +34,7 @@
             <hr class="!fj-m-0">
           </div>
 
-          {% if request.domain == 'preview.hs-sites.com' %}
+          {% if request.query_dict._preview == 'true' %}
             {{ content.post_body }}
           {% else %}
             {{ content.post_body_rss }}
@@ -74,6 +74,34 @@
             label="Share Buttons",
             no_wrapper=True
           %}
+
+          {# Ppagination #}
+          {% if content.previous_post_name or content.next_post_name %}
+
+            <hr>
+
+            <div class="fj-flex fj-flex-wrap fj-gap-y-6 fj-gap-x-10 fj-justify-between fj-items-center fj-mt-8">
+              {% if content.previous_post_name %}
+                <div class="fj-mr-auto fj-ml-0">
+                  <a href="/{{ content.previous_post_slug }}"
+                     class="fj-flex fj-items-center fj-gap-2 fj-no-underline fj-group fj-leading-tight">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="fj-size-5 group-hover:-fj-translate-x-2 fj-transition-transform" width="48" height="48"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg>
+                    <span>{{ content.previous_post_name }}</span>
+                  </a>
+                </div>
+              {% endif %}
+              {% if content.next_post_name %}
+                <div class="fj-text-right fj-ml-auto fj-mr-0">
+                  <a href="/{{ content.next_post_slug }}"
+                     class="fj-flex fj-items-center fj-gap-2 fj-no-underline fj-group fj-leading-tight">
+                    <span>{{ content.next_post_name }}</span>
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="fj-size-5 group-hover:fj-translate-x-2 fj-transition-transform" width="48" height="48"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+
+          {% endif %}
 
           <hr>
 
