@@ -22,7 +22,7 @@
 
 
 <div class="fj-flex fj-flex-col sm:fj-flex-row sm:fj-items-center fj-gap-4 sm:fj-gap-8"
-     x-init="loadScript(`//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js`)">
+     x-intersect.once="loadScript(`//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js`)">
 
   <div class="fj-text-lg md:fj-text-xl fj-font-semibold fj-whitespace-nowrap">Share Post</div>
 
