@@ -13,7 +13,6 @@ node_modules
 _temp/*
 _dist/*
 hubspot.config.yml
-package-lock.json
 
 #Hubspot
 theme/modules/*/_locales
