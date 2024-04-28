@@ -38,11 +38,13 @@
   // source/js/modules/_loadScript.js
   var require_loadScript = __commonJS({
     "source/js/modules/_loadScript.js"(exports, module) {
-      module.exports = (src, loading = "defer", callback) => {
+      module.exports = (src, loading = "defer", callback, callbackForced = false) => {
         if (!src.startsWith("http") && !src.startsWith("https")) {
           src = src.startsWith("//") ? `https:${src}` : `https://${src}`;
         }
         if (document.querySelector(`script[src="${src}"]`)) {
+          if (callback && callbackForced)
+            callback();
           return;
         }
         const script = document.createElement("script");
@@ -182,6 +184,27 @@
         document.addEventListener("mouseover", mouseOverListener, listenerOptions);
         document.addEventListener("mouseout", mouseOutListener, listenerOptions);
         document.addEventListener("touchstart", touchStartListener, listenerOptions);
+      };
+    }
+  });
+
+  // source/js/modules/_loadStylesheet.js
+  var require_loadStylesheet = __commonJS({
+    "source/js/modules/_loadStylesheet.js"(exports, module) {
+      module.exports = (src, media, type) => {
+        if (!src.startsWith("http") && !src.startsWith("https")) {
+          src = src.startsWith("//") ? `https:${src}` : `https://${src}`;
+        }
+        if (document.querySelector(`link[href="${src}"]`)) {
+          return;
+        }
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.type = type || "text/css";
+        link.href = src;
+        if (media)
+          link.media = media;
+        document.head.appendChild(link);
       };
     }
   });
@@ -3527,12 +3550,14 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   // source/js/modules/Alpine.data/DOM.js
   var import_debugLog = __toESM(require_debugLog());
   var import_loadScript = __toESM(require_loadScript());
+  var import_loadStylesheet = __toESM(require_loadStylesheet());
   var import_getSearchParams = __toESM(require_getSearchParams());
   var DOM_default = () => {
     return {
       debugLog: (...args) => (0, import_debugLog.default)(...args),
       _GET: (param = false, url = false) => (0, import_getSearchParams.default)(param, url),
-      loadScript: (src, loading = "defer", callback) => (0, import_loadScript.default)(src, loading, callback),
+      loadScript: (src, loading = "defer", callback, callbackForced) => (0, import_loadScript.default)(src, loading, callback, callbackForced),
+      loadStylesheet: (src, media, type) => (0, import_loadStylesheet.default)(src, media, type),
       scrollToTop: () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       },
