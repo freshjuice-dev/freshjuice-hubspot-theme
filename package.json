@@ -1,6 +1,6 @@
 {
   "name": "freshjuice-hubspot-theme",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Hubspot CMS theme boilerplate with TailwindCSS, AlpineJS, and more.",
   "main": "index.js",
   "scripts": {
