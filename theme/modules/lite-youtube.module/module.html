@@ -14,7 +14,7 @@
 
 {# {{ get_asset_url('../../js/vendor/lite-yt-embed.js') }} #}
 <div class="fj-aspect-video fj-rounded-md fj-overflow-hidden"
-     x-init="loadScript(`//cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.js`)">
+     x-intersect.once="loadScript(`//cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.js`)">
   <lite-youtube videoid="{{ video_id }}"
                 class="fj-aspect-video fj-w-full"
                 style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=)">

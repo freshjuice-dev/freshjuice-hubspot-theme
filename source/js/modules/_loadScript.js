@@ -7,10 +7,10 @@
  * @param {string} src - The URL of the script to be loaded.
  * @param {string} [loading="defer"] - The loading strategy for the script. It can be either "defer" or "async".
  * @param {function} [callback] - A callback function to be executed when the script has finished loading.
- *
+ * @param callbackForced
  * @returns {void} - This function does not return anything.
  */
-module.exports = (src, loading = "defer", callback) => {
+module.exports = (src, loading = "defer", callback, callbackForced = false) => {
 
   // If the source does not start with "http" or "https", add "https" to the beginning of the source.
   if (!src.startsWith("http") && !src.startsWith("https")) {
@@ -20,6 +20,7 @@ module.exports = (src, loading = "defer", callback) => {
   // Check if a script with the same source already exists in the document.
   // If it does, the function returns immediately.
   if (document.querySelector(`script[src="${src}"]`)) {
+    if (callback && callbackForced) callback();
     return;
   }
 

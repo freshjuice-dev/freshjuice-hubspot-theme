@@ -12,7 +12,7 @@
 
 {# {{ get_asset_url('../../js/vendor/lite-vimeo-embed.js') }} #}
 <div class="fj-aspect-video fj-rounded-md fj-overflow-hidden"
-     x-init="loadScript(`//cdn.jsdelivr.net/npm/lite-vimeo-embed@0.3.0/lite-vimeo-embed.min.js`)">
+     x-intersect.once="loadScript(`//cdn.jsdelivr.net/npm/lite-vimeo-embed@0.3.0/lite-vimeo-embed.min.js`)">
   <lite-vimeo videoid="{{ video_id }}"
               params="controls=0&start=0&modestbranding=2&rel=0&enablejsapi=1"
               class="fj-aspect-video fj-w-full"

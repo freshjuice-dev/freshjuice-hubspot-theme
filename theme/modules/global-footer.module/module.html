@@ -35,9 +35,9 @@
         {% if module.logo.src %}
           {% set sizeAttrs = 'width="{{ module.logo.width / 2 }}" height="{{ module.logo.height / 2 }}"' %}
           {% if module.logo.size_type == 'auto' %}
-            {% set sizeAttrs = 'width="{{ module.logo.width / 2 }}" height="{{ module.logo.height / 2 }}" %}
+            {% set sizeAttrs = 'width="{{ module.logo.width / 2 }}" height="{{ module.logo.height / 2 }}"' %}
           {% elif module.logo.size_type == 'auto_custom_max' %}
-            {% set sizeAttrs = 'width="{{ module.logo.max_width / 2 }}" height="{{ module.logo.max_height / 2 }}" %}
+            {% set sizeAttrs = 'width="{{ module.logo.max_width / 2 }}" height="{{ module.logo.max_height / 2 }}"' %}
           {% endif %}
            {% set loadingAttr = module.logo.loading != 'disabled' ? 'loading="{{ module.logo.loading }}"' : '' %}
           <img class="fj-h-14 fj-w-auto" src="{{ module.logo.src }}" alt="{{ module.logo.alt or 'Company' }} logo" {{ loadingAttr }} {{ sizeAttrs }}>

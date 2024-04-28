@@ -451,8 +451,8 @@ table {
 
 /* Table cells */
 
-td,
-th {
+td:not[class],
+th:not[class] {
   {{ table_border }}
   {{ table_cell_spacing }}
   color: {{ table_font_color }};

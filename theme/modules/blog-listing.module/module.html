@@ -107,7 +107,9 @@
           <div class="fj-text-balance fj-p-4 md:fj-p-8 md:fj-pl-0 fj-pb-14 md:fj-pb-16">
             <span class="fj-text-xs fj-font-bold fj-uppercase fj-text-stone-500 fj-tracking-wider fj-mb-3 fj-flex fj-justify-between fj-gap-4">
               <span>Featured</span>
-              <span>{{ minutes_to_read(featured_post, '', ' min read') }}</span>
+              {% if module.show_read_time %}
+                <span>{{ minutes_to_read(featured_post, '', ' min read') }}</span>
+              {% endif %}
             </span>
             <h2 class="fj-text-xl md:fj-text-2xl lg:fj-text-4xl fj-mb-3">
               <a href="{{ featured_post.absolute_url }}"
@@ -150,7 +152,9 @@
         <div class="fj-text-balance fj-pt-4 fj-px-4 fj-pb-14">
           <span class="fj-text-xs fj-font-bold fj-uppercase fj-text-stone-500 fj-tracking-wider fj-mb-3 fj-flex fj-justify-between fj-gap-4">
             <span>{{ content.publish_date|format_date('MMM d, yyyy') }}</span>
-            <span>{{ minutes_to_read(content, '', ' min read') }}</span>
+            {% if module.show_read_time %}
+              <span>{{ minutes_to_read(content, '', ' min read') }}</span>
+            {% endif %}
           </span>
           <h2 class="fj-text-xl fj-mb-3">
             <a href="{{ content.absolute_url }}"
