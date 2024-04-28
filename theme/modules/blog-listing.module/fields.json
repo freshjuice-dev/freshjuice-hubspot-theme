@@ -135,4 +135,14 @@
     "access" : null
   },
   "type" : "page"
+}, {
+  "id" : "20429636-4149-6419-8775-c7e5695bb38f",
+  "name" : "show_read_time",
+  "display_width" : null,
+  "label" : "Show Read time?",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
 } ]
