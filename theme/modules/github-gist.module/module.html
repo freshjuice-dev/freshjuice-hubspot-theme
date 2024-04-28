@@ -1,0 +1,31 @@
+{% set gist_id = module.gist_embed_code | split('.js') | first | split('/') | last %}
+{% set widget_id = 'github-gist-' ~ name %}
+
+{#
+Select Gist Syntax Theme
+Preview: https://lonekorean.github.io/gist-syntax-themes/
+Available themes:
+  default | chaos | cobalt | idle-fingers | monokai | obsidian | one-dark | pastel-on-dark | solarized-dark | solarized-light | terminal | tomorrow-night | twilight
+#}
+{% set syntax_theme = 'default' %}
+
+<div id="{{ widget_id }}"
+     class="fj-not-prose"
+     data-id="{{ gist_id }}"
+  {{ 'data-file="' ~ module.file_name ~ '"' if module.file_name }}
+  {{ 'data-caption="' ~ module.caption ~ '"' if module.caption }}
+  {{ 'data-lines="' ~ module.lines ~ '"' if module.lines }}
+  {{ 'data-highlight-lines="' ~ module.highlight_lines ~ '"' if module.highlight_lines }}
+     data-show-footer="{{ module.show_footer }}"
+     data-show-line-numbers="{{ module.show_line_numbers }}"
+     data-lines-expanded="{{ module.lines_expanded }}"
+     x-intersect.once="
+       loadStylesheet('https://cdn.jsdelivr.net/npm/gist-simple@2/dist/gist-simple.min.css');
+       {{ 'loadStylesheet(`https://cdn.jsdelivr.net/npm/gist-syntax-themes@1.1.0/stylesheets/' ~ syntax_theme ~ '.min.css`);' if syntax_theme != 'default' }}
+       loadScript('https://cdn.jsdelivr.net/npm/gist-simple@2/dist/gist-simple.min.js', 'defer', ()=>{ gistSimple(document.querySelector('#{{ widget_id }}')) }, true);
+     ">
+  <noscript>
+    <p>please enable javascript to view the gist</p>
+  </noscript>
+</div>
+
