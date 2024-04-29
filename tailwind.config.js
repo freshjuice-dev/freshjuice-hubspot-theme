@@ -14,6 +14,16 @@ module.exports = {
       "cursive": ["'Caveat', cursive"],
     },
     extend: {
+      colors: {
+        cursor: {
+          500: "#FFFFFF",
+          DEFAULT: "#FFFFFF",
+        },
+        terminal: {
+          500: "#000000",
+          DEFAULT: "#000000",
+        }
+      },
       aspectRatio: {
         auto: "auto",
         box: "1",
