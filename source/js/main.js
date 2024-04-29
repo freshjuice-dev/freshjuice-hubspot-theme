@@ -5,6 +5,7 @@ import loadScript from './modules/_loadScript';
 import flyingPages from "flying-pages-module";
 import Alpine from "alpinejs";
 import intersect from "@alpinejs/intersect";
+import collapse from "@alpinejs/collapse";
 import dataDOM from "./modules/Alpine.data/DOM";
 
 // The window.Alpine = Alpine bit is optional, but is nice to have for
@@ -26,6 +27,7 @@ function domReady(callback) {
 
 // Add plugins to Alpine
 Alpine.plugin(intersect);
+Alpine.plugin(collapse);
 
 Alpine.data("xDOM", dataDOM);
 

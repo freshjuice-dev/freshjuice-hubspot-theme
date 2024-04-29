@@ -1,0 +1,66 @@
+[ {
+  "id" : "8bd8d0b7-dd10-01db-3a1f-f65c8b32cc8f",
+  "name" : "items",
+  "display_width" : null,
+  "label" : "Questions",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "1fcf58ba-3dfd-b383-91ea-11206c82d664",
+    "default" : 5
+  },
+  "children" : [ {
+    "id" : "1fcf58ba-3dfd-b383-91ea-11206c82d664",
+    "name" : "question",
+    "display_width" : null,
+    "label" : "Question",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Question"
+  }, {
+    "id" : "6338415d-a203-6e8f-df91-e2dacd023151",
+    "name" : "answer",
+    "display_width" : null,
+    "label" : "Answer",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam quod natus deleniti architecto eaque consequuntur ex, illo neque iste repellendus modi, quasi ipsa commodi saepe? Provident ipsa nulla earum."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "question" : "Question",
+    "answer" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam quod natus deleniti architecto eaque consequuntur ex, illo neque iste repellendus modi, quasi ipsa commodi saepe? Provident ipsa nulla earum."
+  }, {
+    "question" : "Question",
+    "answer" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam quod natus deleniti architecto eaque consequuntur ex, illo neque iste repellendus modi, quasi ipsa commodi saepe? Provident ipsa nulla earum."
+  }, {
+    "question" : "Question",
+    "answer" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam quod natus deleniti architecto eaque consequuntur ex, illo neque iste repellendus modi, quasi ipsa commodi saepe? Provident ipsa nulla earum."
+  }, {
+    "question" : "Question",
+    "answer" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam quod natus deleniti architecto eaque consequuntur ex, illo neque iste repellendus modi, quasi ipsa commodi saepe? Provident ipsa nulla earum."
+  }, {
+    "question" : "Question",
+    "answer" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam quod natus deleniti architecto eaque consequuntur ex, illo neque iste repellendus modi, quasi ipsa commodi saepe? Provident ipsa nulla earum."
+  } ]
+}, {
+  "id" : "035814d7-a42a-8fdb-a342-298cfa4ab12e",
+  "name" : "enable_faq_schema",
+  "display_width" : null,
+  "label" : "Enable FAQ Schema?",
+  "inline_help_text" : "Learn more about how to use the <a href=\"https://developers.google.com/search/docs/appearance/structured-data/faqpage\">FAQ Schema markup here</a>.",
+  "required" : true,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+} ]

@@ -1807,6 +1807,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
   margin-right:auto;
 }
 
+.fj-my-0{
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
 .fj-my-2{
   margin-top:0.5rem;
   margin-bottom:0.5rem;
@@ -1843,6 +1848,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-ml-0{
   margin-left:0px;
+}
+
+.fj-ml-4{
+  margin-left:1rem;
 }
 
 .fj-ml-auto{
@@ -1988,6 +1997,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   min-height:24rem;
 }
 
+.fj-min-h-\[16rem\]{
+  min-height:16rem;
+}
+
 .fj-min-h-screenSinNav{
   min-height:calc(100vh - 5rem);
 }
@@ -2006,6 +2019,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-w-screen{
   width:100vw;
+}
+
+.fj-max-w-3xl{
+  max-width:48rem;
 }
 
 .fj-max-w-80{
@@ -2289,6 +2306,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
   background-color:rgb(255 251 235 / var(--fj-bg-opacity));
 }
 
+.fj-bg-cursor{
+  --fj-bg-opacity:1;
+  background-color:rgb(255 255 255 / var(--fj-bg-opacity));
+}
+
 .fj-bg-gray-100{
   --fj-bg-opacity:1;
   background-color:rgb(243 244 246 / var(--fj-bg-opacity));
@@ -2463,6 +2485,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
   padding-bottom:0.75rem;
 }
 
+.fj-py-4{
+  padding-top:1rem;
+  padding-bottom:1rem;
+}
+
 .\!fj-pr-10{
   padding-right:2.5rem !important;
 }
@@ -2473,6 +2500,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-pb-14{
   padding-bottom:3.5rem;
+}
+
+.fj-pb-4{
+  padding-bottom:1rem;
 }
 
 .fj-pb-8{
@@ -2649,10 +2680,18 @@ lite-youtube.lyt-activated > .lty-playbtn{
   opacity:1;
 }
 
+.fj-shadow{
+  --fj-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --fj-shadow-colored:0 1px 3px 0 var(--fj-shadow-color), 0 1px 2px -1px var(--fj-shadow-color);
+}
+
+.fj-shadow,.fj-shadow-lg{
+  box-shadow:var(--fj-ring-offset-shadow, 0 0 #0000), var(--fj-ring-shadow, 0 0 #0000), var(--fj-shadow);
+}
+
 .fj-shadow-lg{
   --fj-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --fj-shadow-colored:0 10px 15px -3px var(--fj-shadow-color), 0 4px 6px -4px var(--fj-shadow-color);
-  box-shadow:var(--fj-ring-offset-shadow, 0 0 #0000), var(--fj-ring-shadow, 0 0 #0000), var(--fj-shadow);
 }
 
 .fj-ring-1{
