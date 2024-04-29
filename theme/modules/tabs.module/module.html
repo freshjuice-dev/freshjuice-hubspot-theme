@@ -38,7 +38,7 @@
     {% endfor %}
   </ul>
 
-  <div role="tabpanels" class="fj-rounded-md fj-border fj-border-gray-200 fj-fj-bg-cursor" :class="selectedId=='tab-1-1'?`fj-rounded-tl-none`:``">
+  <div role="tabpanels" class="fj-rounded-md fj-border fj-border-gray-200 fj-fj-bg-cursor" :class="selectedId.endsWith('1')?`fj-rounded-tl-none`:``">
     {% for item in module.tabs %}
       <section
         x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
