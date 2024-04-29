@@ -6,6 +6,7 @@ import flyingPages from "flying-pages-module";
 import Alpine from "alpinejs";
 import intersect from "@alpinejs/intersect";
 import collapse from "@alpinejs/collapse";
+import focus from "@alpinejs/focus";
 import dataDOM from "./modules/Alpine.data/DOM";
 
 // The window.Alpine = Alpine bit is optional, but is nice to have for
@@ -28,6 +29,7 @@ function domReady(callback) {
 // Add plugins to Alpine
 Alpine.plugin(intersect);
 Alpine.plugin(collapse);
+Alpine.plugin(focus);
 
 Alpine.data("xDOM", dataDOM);
 

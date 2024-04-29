@@ -1,9 +1,3 @@
-{#{% for item in module.items %}#}
-{#	{% inline_text field="question" value="{{ item.question }}" %}#}
-{#	{% inline_rich_text field="answer" value="{{ item.answer }}" %}#}
-{#{% endfor %}#}
-
-
 {% if module.enable_faq_schema %}
 <script type="application/ld+json">
 {
@@ -44,7 +38,7 @@
       </button>
     </h2>
     <div x-show="expanded" x-collapse>
-      <div class="fj-px-6 fj-pb-4">{{ item.answer }}</div>
+      <div class="fj-px-6 fj-pb-4 fj-prose sm:fj-prose-lg md:fj-prose-xl">{{ item.answer }}</div>
     </div>
   </div>
   {% endfor %}

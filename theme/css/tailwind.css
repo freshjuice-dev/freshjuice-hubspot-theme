@@ -1834,6 +1834,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   margin-top:0px !important;
 }
 
+.-fj-mb-px{
+  margin-bottom:-1px;
+}
+
 .fj-mb-2{
   margin-bottom:0.5rem;
 }
@@ -2126,6 +2130,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   align-items:center;
 }
 
+.fj-items-stretch{
+  align-items:stretch;
+}
+
 .fj-justify-end{
   justify-content:flex-end;
 }
@@ -2261,16 +2269,33 @@ lite-youtube.lyt-activated > .lty-playbtn{
   border-top-right-radius:0.25rem;
 }
 
+.fj-rounded-t-md{
+  border-top-left-radius:0.375rem;
+  border-top-right-radius:0.375rem;
+}
+
 .fj-rounded-bl-none{
   border-bottom-left-radius:0px;
+}
+
+.fj-rounded-tl-none{
+  border-top-left-radius:0px;
 }
 
 .fj-border{
   border-width:1px;
 }
 
+.fj-border-l{
+  border-left-width:1px;
+}
+
 .fj-border-l-4{
   border-left-width:4px;
+}
+
+.fj-border-r{
+  border-right-width:1px;
 }
 
 .fj-border-t{
@@ -2294,6 +2319,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-border-stone-900\/10{
   border-color:rgb(28 25 23 / 0.1);
+}
+
+.fj-border-transparent{
+  border-color:transparent;
 }
 
 .fj-bg-amber-100{
@@ -2418,6 +2447,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-p-4{
   padding:1rem;
+}
+
+.fj-p-8{
+  padding:2rem;
 }
 
 .\!fj-py-0{

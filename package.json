@@ -1,6 +1,6 @@
 {
   "name": "freshjuice-hubspot-theme",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Hubspot CMS theme boilerplate with TailwindCSS, AlpineJS, and more.",
   "main": "index.js",
   "scripts": {
@@ -54,6 +54,7 @@
   "homepage": "https://github.com/freshjuice-dev/freshjuice-hubspot-theme#readme",
   "devDependencies": {
     "@alpinejs/collapse": "^3.13.10",
+    "@alpinejs/focus": "^3.13.10",
     "@alpinejs/intersect": "^3.13.10",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
