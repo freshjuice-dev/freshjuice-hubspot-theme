@@ -38,6 +38,7 @@
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
+  "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
     "image" : {
@@ -91,10 +92,12 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group"
     } ],
     "tab" : "STYLE",
     "expanded" : false,
+    "group_occurrence_meta" : null,
     "type" : "group"
   }, {
     "id" : "styles.card",
@@ -188,6 +191,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group"
     }, {
       "id" : "styles.card.border",
@@ -209,6 +213,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group"
     }, {
       "id" : "styles.card.corner",
@@ -232,6 +237,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group"
     }, {
       "id" : "styles.card.spacing",
@@ -252,13 +258,16 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group"
     } ],
     "tab" : "STYLE",
     "expanded" : false,
+    "group_occurrence_meta" : null,
     "type" : "group"
   } ],
   "tab" : "STYLE",
   "expanded" : false,
+  "group_occurrence_meta" : null,
   "type" : "group"
 } ]

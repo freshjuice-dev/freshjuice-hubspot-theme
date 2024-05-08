@@ -35,6 +35,7 @@
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
+  "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
     "question" : "Question 1",
