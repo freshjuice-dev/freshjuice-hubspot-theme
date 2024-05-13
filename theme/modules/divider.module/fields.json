@@ -1,0 +1,37 @@
+[ {
+  "id" : "e991161e-0064-557f-6d21-8a355cbb67b6",
+  "name" : "show_divider",
+  "display_width" : null,
+  "label" : "Show Divider?",
+  "help_text" : "",
+  "inline_help_text" : "Option to remove horizontal divider",
+  "required" : true,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "c4417de9-40a1-508b-e008-3fc1dba64479",
+  "name" : "spacing",
+  "display_width" : null,
+  "label" : "Spacing",
+  "required" : true,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 0,
+  "max" : 300,
+  "step" : 1,
+  "type" : "number",
+  "default" : 50
+}, {
+  "id" : "77514360-8469-8186-4503-06c65aa5fb35",
+  "name" : "anchor_id",
+  "display_width" : null,
+  "label" : "Anchor ID",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]
