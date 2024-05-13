@@ -12,5 +12,6 @@
     "BLOG_LISTING",
     "BLOG_POST"
   ],
+  "label": "Codepen",
   "is_available_for_new_content": true
 }
