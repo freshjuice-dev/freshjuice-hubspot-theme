@@ -1,0 +1,13 @@
+[ {
+  "id" : "bcb68a0d-6c83-60db-afc1-4866d67e382e",
+  "name" : "supportive_text",
+  "display_width" : null,
+  "label" : "Supportive Text",
+  "required" : false,
+  "locked" : true,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Scroll to Top"
+} ]
