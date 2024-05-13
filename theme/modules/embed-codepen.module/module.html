@@ -1,0 +1,18 @@
+{% set username = module.codepen_url | split('/pen/') | first | split('/') | last %}
+{% set codepen_id = module.codepen_url | split('/pen/') | last | split('?') | first %}
+
+<div class="fj-rounded-md" style="height: {{ module.height or 500 }}px"
+     x-data="{ codepenLoaded: false }"
+     x-intersect.once="codepenLoaded = true">
+
+  <template x-if="codepenLoaded">
+
+    <iframe class="fj-w-full fj-rounded-md" height="{{ module.height }}" style="width: 100%;" scrolling="no" src="https://codepen.io/{{ username }}/pen/{{ codepen_id }}/" frameborder="no" loading="lazy" allowtransparency="true">
+      See the Pen <a href="https://codepen.io/{{ username }}/pen/{{ codepen_id }}">
+      </a> by {{ username }} (<a href="https://codepen.io/reatlat">@{{ username }}</a>)
+      on <a href="https://codepen.io">CodePen</a>.
+    </iframe>
+
+  </template>
+
+</div>
