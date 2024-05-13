@@ -1,6 +1,6 @@
 {% set username = module.codepen_url | split('/pen/') | first | split('/') | last %}
 {% set codepen_id = module.codepen_url | split('/pen/') | last | split('?') | first %}
-
+{#
 <div class="fj-rounded-md" style="height: {{ module.height or 500 }}px"
      x-data="{ codepenLoaded: false }"
      x-intersect.once="codepenLoaded = true">
@@ -16,3 +16,14 @@
   </template>
 
 </div>
+#}
+
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="gOyGyMo" data-user="reatlat" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/reatlat/pen/gOyGyMo">
+  Tabs Slider with AlpineJS and TailwindCSS</a> by Alex Zappa (<a href="https://codepen.io/reatlat">@reatlat</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+
+
