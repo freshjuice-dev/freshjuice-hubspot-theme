@@ -23,4 +23,18 @@
   "step" : 1,
   "type" : "number",
   "default" : 500
+}, {
+  "id" : "293dfff6-099f-38f5-e244-bb433f900028",
+  "name" : "default_tabs",
+  "display_width" : null,
+  "label" : "Default Tabs",
+  "required" : true,
+  "locked" : false,
+  "display" : "checkbox",
+  "choices" : [ [ "result", "Result" ], [ "html", "HTML" ], [ "js", "JS" ], [ "css", "CSS" ] ],
+  "multiple" : true,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : [ "result" ]
 } ]

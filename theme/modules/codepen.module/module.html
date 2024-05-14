@@ -1,29 +1,18 @@
-{% set username = module.codepen_url | split('/pen/') | first | split('/') | last %}
+{% set codepen_username = module.codepen_url | split('/pen/') | first | split('/') | last %}
 {% set codepen_id = module.codepen_url | split('/pen/') | last | split('?') | first %}
-{#
-<div class="fj-rounded-md" style="height: {{ module.height or 500 }}px"
-     x-data="{ codepenLoaded: false }"
-     x-intersect.once="codepenLoaded = true">
 
-  <template x-if="codepenLoaded">
+<div class="fj-rounded-md"
+     style="height: {{ module.height or 500 }}px"
+     x-intersect.once="loadScript('https://cpwebassets.codepen.io/assets/embed/ei.js', 'async')">
 
-    <iframe class="fj-w-full fj-rounded-md" height="{{ module.height }}" style="width: 100%;" scrolling="no" src="https://codepen.io/{{ username }}/pen/{{ codepen_id }}/" frameborder="no" loading="lazy" allowtransparency="true">
-      See the Pen <a href="https://codepen.io/{{ username }}/pen/{{ codepen_id }}">
-      </a> by {{ username }} (<a href="https://codepen.io/reatlat">@{{ username }}</a>)
-      on <a href="https://codepen.io">CodePen</a>.
-    </iframe>
-
-  </template>
+  <p class="codepen"
+     data-height="{{ module.height or 500 }}"
+     data-default-tab="{{ (module.default_tabs or 'result') | join(',') }}"
+     data-slug-hash="{{ codepen_id }}"
+     data-user="{{ codepen_username }}"
+     style="height: {{ module.height or 500 }}px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+    <span>See the <a href="{{ module.codepen_url }}">Pen</a> by <a href="https://codepen.io/{{ codepen_username }}">@{{ codepen_username }}</a>
+    on <a href="https://codepen.io/">CodePen</a>.</span>
+  </p>
 
 </div>
-#}
-
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="gOyGyMo" data-user="reatlat" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/reatlat/pen/gOyGyMo">
-  Tabs Slider with AlpineJS and TailwindCSS</a> by Alex Zappa (<a href="https://codepen.io/reatlat">@reatlat</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
-
-
