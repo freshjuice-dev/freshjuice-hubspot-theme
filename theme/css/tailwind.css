@@ -2146,6 +2146,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   flex-wrap:wrap;
 }
 
+.fj-place-items-center{
+  place-items:center;
+}
+
 .fj-items-center{
   align-items:center;
 }
@@ -2270,6 +2274,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-text-balance{
   text-wrap:balance;
+}
+
+.fj-break-words{
+  overflow-wrap:break-word;
 }
 
 .fj-rounded-full{
