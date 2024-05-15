@@ -1,0 +1,46 @@
+<div class="fj-not-prose fj-flex fj-flex-col fj-place-items-center">
+
+  {% if module.company_logo %}
+
+    {% if module.company_logo.src %}
+      <img width="200" height="40"
+           src="{{ resize_image_url(module.company_logo.src, 200, 40, 200) }}"
+           alt="{{ module.company_logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+
+  {% endif %}
+
+  <blockquote class="fj-text-xl sm:fj-text-2xl">
+    <p class="fj-font-semibold fj-text-center">{{ module.blockquote }}</p>
+  </blockquote>
+
+  <div class="fj-flex fj-flex-col fj-justify-center fj-items-center">
+
+    {% if module.author_photo %}
+
+      {% if module.author_photo.src %}
+        <img class="fj-rounded-full"
+             width="64" height="64"
+             src="{{ resize_image_url(module.author_photo.src, 64, 64, 64) }}"
+             alt="{{ module.author_photo.alt|escape_attr }}" loading="lazy">
+      {% endif %}
+
+    {% endif %}
+
+    {% if module.author_name or module.author_job_title %}
+
+      <div class="fj-flex fj-items-center fj-justify-center fj-text-base fj-break-words">
+        <p class="fj-font-bold">{{ module.author_name or "" }}</p>
+
+        {% if module.author_name and module.author_job_title %}
+          <p class="fj-font-bold"> · </p>
+        {% endif %}
+
+        <p> {{ module.author_job_title or "" }}</p>
+      </div>
+
+    {% endif %}
+
+  </div>
+
+</div>
