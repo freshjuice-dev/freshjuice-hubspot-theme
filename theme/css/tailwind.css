@@ -2054,6 +2054,14 @@ lite-youtube.lyt-activated > .lty-playbtn{
   max-width:20rem;
 }
 
+.fj-max-w-lg{
+  max-width:32rem;
+}
+
+.fj-max-w-2xl{
+  max-width:42rem;
+}
+
 .fj-flex-1{
   flex:1 1 0%;
 }
@@ -2667,6 +2675,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-font-thin{
   font-weight:100;
+}
+
+.fj-font-normal{
+  font-weight:400;
 }
 
 .fj-uppercase{

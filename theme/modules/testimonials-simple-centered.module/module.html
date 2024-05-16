@@ -1,4 +1,4 @@
-<div class="fj-not-prose fj-flex fj-flex-col fj-place-items-center">
+<div class="fj-not-prose fj-grid fj-gap-4 fj-place-items-center">
 
   {% if module.company_logo %}
 
@@ -10,8 +10,8 @@
 
   {% endif %}
 
-  <blockquote class="fj-text-xl sm:fj-text-2xl">
-    <p class="fj-font-semibold fj-text-center">{{ module.blockquote }}</p>
+  <blockquote class="fj-text-xl sm:fj-text-2xl fj-max-w-3xl fj-mx-auto">
+    <p class="fj-font-semibold fj-text-center fj-m-0 fj-text-balance">{{ module.blockquote }}</p>
   </blockquote>
 
   <div class="fj-flex fj-flex-col fj-justify-center fj-items-center">
@@ -19,7 +19,7 @@
     {% if module.author_photo %}
 
       {% if module.author_photo.src %}
-        <img class="fj-rounded-full"
+        <img style="height: 64px; width: 64px; border-radius: 64px"
              width="64" height="64"
              src="{{ resize_image_url(module.author_photo.src, 64, 64, 64) }}"
              alt="{{ module.author_photo.alt|escape_attr }}" loading="lazy">
@@ -29,14 +29,14 @@
 
     {% if module.author_name or module.author_job_title %}
 
-      <div class="fj-flex fj-items-center fj-justify-center fj-text-base fj-break-words">
+      <div class="fj-flex fj-items-center fj-justify-center fj-gap-2 fj-text-base fj-break-words fj-mt-2">
         <p class="fj-font-bold">{{ module.author_name or "" }}</p>
 
         {% if module.author_name and module.author_job_title %}
-          <p class="fj-font-bold"> · </p>
+          <p> · </p>
         {% endif %}
 
-        <p> {{ module.author_job_title or "" }}</p>
+        <p>{{ module.author_job_title or "" }}</p>
       </div>
 
     {% endif %}
