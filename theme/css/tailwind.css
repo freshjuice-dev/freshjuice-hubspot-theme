@@ -1986,6 +1986,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   height:3.5rem;
 }
 
+.fj-h-5{
+  height:1.25rem;
+}
+
 .fj-h-6{
   height:1.5rem;
 }
@@ -2022,6 +2026,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   min-height:calc(100vh - 5rem);
 }
 
+.fj-w-5{
+  width:1.25rem;
+}
+
 .fj-w-6{
   width:1.5rem;
 }
@@ -2052,14 +2060,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-max-w-xs{
   max-width:20rem;
-}
-
-.fj-max-w-lg{
-  max-width:32rem;
-}
-
-.fj-max-w-2xl{
-  max-width:42rem;
 }
 
 .fj-flex-1{
@@ -2675,10 +2675,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-font-thin{
   font-weight:100;
-}
-
-.fj-font-normal{
-  font-weight:400;
 }
 
 .fj-uppercase{
