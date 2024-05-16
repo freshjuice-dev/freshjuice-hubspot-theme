@@ -36,7 +36,7 @@
   "name" : "author_name",
   "display_width" : null,
   "label" : "Author Name",
-  "required" : false,
+  "required" : true,
   "locked" : false,
   "validation_regex" : "",
   "allow_new_line" : false,
