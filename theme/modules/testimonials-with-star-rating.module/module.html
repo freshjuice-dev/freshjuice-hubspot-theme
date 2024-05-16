@@ -1,0 +1,32 @@
+<div class="fj-not-prose fj-grid fj-gap-4 sm:fj-gap-8 fj-max-w-3xl fj-mx-auto">
+
+  <div class="fj-flex">
+    {% for i in range(module.rating) %}
+      <svg class="fj-h-5 fj-w-5" viewBox="0 0 20 20" fill="#4F46E6" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+      </svg>
+    {% endfor %}
+  </div>
+
+  <blockquote class="fj-text-xl sm:fj-text-2xl fj-max-w-3xl">
+    <p class="fj-font-semibold fj-m-0 fj-text-balance">{{ module.blockquote }}</p>
+  </blockquote>
+
+  <div class="fj-flex fj-items-center fj-gap-4">
+    {% if module.author_photo.src %}
+      <img style="height: 64px; width: 64px; border-radius: 64px"
+           width="64" height="64"
+           src="{{ resize_image_url(module.author_photo.src, 64, 64, 64) }}"
+           alt="{{ module.author_photo.alt|escape_attr }}" loading="lazy">
+    {% endif %}
+
+    <div class="fj-text-base fj-gap-2 fj-break-words fj-mt-2">
+      <p class="fj-font-bold">{{ module.author_name or "" }}</p>
+
+      {% if module.author_job_title %}
+        <p>{{ module.author_job_title or "" }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
