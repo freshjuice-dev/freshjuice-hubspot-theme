@@ -12,6 +12,6 @@
     "BLOG_LISTING",
     "BLOG_POST"
   ],
-  "label": "Testimonials - With star rating",
+  "label": "Star Rating Testimonial",
   "is_available_for_new_content": true
 }
