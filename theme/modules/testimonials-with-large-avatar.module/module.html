@@ -11,8 +11,8 @@
       </div>
 
       {% if module.author_photo.src %}
-        <img class="fj-col-end-1 fj-w-16 fj-max-w-full lg:fj-row-span-4 lg:fj-w-72" style="border-radius: 12px;"
-             width="auto" height="auto"
+        <img class="fj-col-end-1 fj-size-16 fj-max-w-full lg:fj-row-span-4 lg:fj-size-72" style="border-radius: 12px;"
+             width="288" height="288"
              src="{{ resize_image_url(module.author_photo.src, 288, 288, 288) }}"
              alt="{{ module.author_photo.alt|escape_attr }}" loading="lazy">
       {% endif %}
