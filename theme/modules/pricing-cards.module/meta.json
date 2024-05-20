@@ -1,0 +1,17 @@
+{
+  "global": false,
+  "content_types": [
+    "LANDING_PAGE",
+    "SITE_PAGE",
+    "BLOG_LISTING",
+    "BLOG_POST"
+  ],
+  "icon": "fontawesome-5.14.0:Dollar%20Sign:SOLID",
+  "host_template_types": [
+    "PAGE",
+    "BLOG_LISTING",
+    "BLOG_POST"
+  ],
+  "label": "Pricing Cards",
+  "is_available_for_new_content": true
+}

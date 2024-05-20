@@ -1,0 +1,149 @@
+[ {
+  "id" : "31d1e0c6-4e1e-4a1f-7c33-18729a4b2501",
+  "name" : "pricing_card_group",
+  "display_width" : null,
+  "label" : "Pricing Card Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 3,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "e3458556-aeb3-95a0-2a1d-1f1dc04ab7f5",
+    "name" : "tier_name",
+    "display_width" : null,
+    "label" : "Tier Name",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Basic"
+  }, {
+    "id" : "99516692-abe2-ba9c-0f27-cfb640082988",
+    "name" : "currency",
+    "display_width" : null,
+    "label" : "Currency",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "$"
+  }, {
+    "id" : "2629d9b9-46b4-a443-08d3-5313daafd29f",
+    "name" : "cost",
+    "display_width" : null,
+    "label" : "Cost",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "15"
+  }, {
+    "id" : "58caa5af-22e7-f152-be67-a6baa3cf119c",
+    "name" : "period",
+    "display_width" : null,
+    "label" : "Period",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "month"
+  }, {
+    "id" : "a0e41c7a-48ac-266c-0fd3-0d42ea1cc705",
+    "name" : "price_subtext",
+    "display_width" : null,
+    "label" : "Price Subtext",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Single-member plan for personal projects, prototypes, and getting started."
+  }, {
+    "id" : "ec4cd19d-7c47-c5c6-595f-8f3091935195",
+    "name" : "button_url",
+    "display_width" : null,
+    "label" : "Button URL",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "https://en.wikipedia.org/wiki/Cat"
+  }, {
+    "id" : "70bf210b-69a8-846c-b44a-180ec6ba4ee0",
+    "name" : "features_title",
+    "display_width" : null,
+    "label" : "Features Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Everything necessary to get started."
+  }, {
+    "id" : "6b615b91-b7a3-632c-4a2a-fea2f9134f5f",
+    "name" : "features_list_item",
+    "display_width" : null,
+    "label" : "Features List Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 0,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : [ "Awesome Feature", "Awesome Feature", "Awesome Feature" ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "tier_name" : "Basic",
+    "currency" : "$",
+    "cost" : "15",
+    "period" : "month",
+    "price_subtext" : "$12 per month if paid annually",
+    "button_url" : "https://en.wikipedia.org/wiki/Cat",
+    "features_title" : "Main features:",
+    "features_list_item" : [ "Single member seat", "Global edge network", "Live site previews with collaboration", "Instant rollbacks" ]
+  }, {
+    "tier_name" : "Pro",
+    "currency" : "$",
+    "cost" : "30",
+    "period" : "month",
+    "price_subtext" : "$24 per month if paid annually",
+    "button_url" : "https://en.wikipedia.org/wiki/Dog",
+    "features_title" : "Main features:",
+    "features_list_item" : [ "Background functions", "1TB bandwidth", "25,000 build minutes", "Audit logs with 7-day history", "Slack & email notifications" ]
+  }, {
+    "tier_name" : "Enterprise",
+    "currency" : "$",
+    "cost" : "60",
+    "period" : "month",
+    "price_subtext" : "$48 per month if paid annually",
+    "button_url" : "https://en.wikipedia.org/wiki/Frog",
+    "features_title" : "Main features:",
+    "features_list_item" : [ "Additional member seats", "Additional bandwidth", "Additional build minutes", "Additional teams" ]
+  } ]
+} ]
