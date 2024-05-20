@@ -1,9 +1,9 @@
-[{
+[ {
   "id" : "962e05af-a9cb-effe-498f-34ffce0df5e7",
   "name" : "rating",
   "display_width" : null,
   "label" : "Rating",
-  "inline_help_text": "This is the rating of the testimonial from 0 to 5. If rating is 0, the rating stars will disappear.",
+  "inline_help_text" : "This is the rating of the testimonial from 0 to 5. If rating is 0, the rating stars will disappear.",
   "required" : true,
   "locked" : false,
   "display" : "slider",

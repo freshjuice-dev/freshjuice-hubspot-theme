@@ -2070,6 +2070,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   max-width:20rem;
 }
 
+.fj-max-w-96{
+  max-width:24rem;
+}
+
 .fj-max-w-full{
   max-width:100%;
 }
@@ -2182,6 +2186,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   align-items:center;
 }
 
+.fj-items-baseline{
+  align-items:baseline;
+}
+
 .fj-items-stretch{
   align-items:stretch;
 }
@@ -2196,6 +2204,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-justify-between{
   justify-content:space-between;
+}
+
+.fj-gap-10{
+  gap:2.5rem;
 }
 
 .fj-gap-16{
@@ -2214,6 +2226,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
   gap:2rem;
 }
 
+.fj-gap-x-1{
+  -moz-column-gap:0.25rem;
+       column-gap:0.25rem;
+}
+
 .fj-gap-x-10{
   -moz-column-gap:2.5rem;
        column-gap:2.5rem;
@@ -2222,6 +2239,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
 .fj-gap-x-12{
   -moz-column-gap:3rem;
        column-gap:3rem;
+}
+
+.fj-gap-x-3{
+  -moz-column-gap:0.75rem;
+       column-gap:0.75rem;
 }
 
 .fj-gap-x-6{
@@ -2302,6 +2324,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-whitespace-nowrap{
   white-space:nowrap;
+}
+
+.fj-text-nowrap{
+  text-wrap:nowrap;
 }
 
 .fj-text-balance{
@@ -2506,6 +2532,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   padding:0.375rem;
 }
 
+.fj-p-12{
+  padding:3rem;
+}
+
 .fj-p-2{
   padding:0.5rem;
 }
@@ -2670,6 +2700,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
   line-height:2rem;
 }
 
+.fj-text-5xl{
+  font-size:3rem;
+  line-height:1;
+}
+
 .fj-text-base{
   font-size:1rem;
   line-height:1.5rem;
@@ -2779,6 +2814,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
 .fj-text-stone-900{
   --fj-text-opacity:1;
   color:rgb(28 25 23 / var(--fj-text-opacity));
+}
+
+.fj-text-white{
+  --fj-text-opacity:1;
+  color:rgb(255 255 255 / var(--fj-text-opacity));
 }
 
 .\!fj-no-underline{
@@ -3683,6 +3723,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
     height:18rem;
   }
 
+  .lg\:fj-w-full{
+    width:100%;
+  }
+
   .lg\:fj-max-w-3xl{
     max-width:48rem;
   }
@@ -3701,6 +3745,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
   .lg\:fj-grid-cols-3{
     grid-template-columns:repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:fj-place-items-baseline{
+    place-items:baseline;
   }
 
   .lg\:fj-gap-12{
