@@ -26,8 +26,10 @@
     "alt" : "logoipsum",
     "width" : 202,
     "height" : 40,
-    "max_width" : 202,
-    "max_height" : 40
+    "max_width" : 200,
+    "max_height" : 40,
+    "size_type" : "auto_custom_max",
+    "loading" : "lazy"
   }
 }, {
   "id" : "94df8fab-dd6a-40ac-a1cc-dee7c2b6a848",

@@ -14,7 +14,7 @@
         {% set sizeAttrs = 'width="{{ item.company_logo.width|escape_attr }}" height="{{ item.company_logo.height|escape_attr }}"' %}
         {% if item.company_logo.size_type == 'auto' %}
           {% set sizeAttrs = 'width="{{ item.company_logo.width|escape_attr }}" height="{{ item.company_logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-          {% elif item.company_logo.size_type == 'auto_custom_max' %}
+        {% elif item.company_logo.size_type == 'auto_custom_max' %}
           {% set sizeAttrs = 'width="{{ item.company_logo.max_width|escape_attr }}" height="{{ item.company_logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
         {% endif %}
         {% set loadingAttr = item.company_logo.loading != 'disabled' ? 'loading="{{ item.company_logo.loading|escape_attr }}"' : '' %}
@@ -47,3 +47,4 @@
     </div>
   {% endfor %}
 </div>
+

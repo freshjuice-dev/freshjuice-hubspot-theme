@@ -1,13 +1,14 @@
 <div class="fj-not-prose fj-grid fj-gap-4 fj-place-items-center">
 
-  {% if module.company_logo %}
-
-    {% if module.company_logo.src %}
-      <img width="200" height="40"
-           src="{{ resize_image_url(module.company_logo.src, 200, 40, 200) }}"
-           alt="{{ module.company_logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+  {% if module.company_logo.src %}
+    {% set sizeAttrs = 'width="{{ module.company_logo.width|escape_attr }}" height="{{ module.company_logo.height|escape_attr }}"' %}
+    {% if module.company_logo.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.company_logo.width|escape_attr }}" height="{{ module.company_logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+    {% elif module.company_logo.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.company_logo.max_width|escape_attr }}" height="{{ module.company_logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
     {% endif %}
-
+    {% set loadingAttr = module.company_logo.loading != 'disabled' ? 'loading="{{ module.company_logo.loading|escape_attr }}"' : '' %}
+    <img src="{{ module.company_logo.src|escape_url }}" alt="{{ module.company_logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
   {% endif %}
 
   <blockquote class="fj-text-xl sm:fj-text-2xl fj-max-w-3xl fj-mx-auto">
