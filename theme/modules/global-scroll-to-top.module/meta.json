@@ -1,0 +1,18 @@
+{
+  "global": true,
+  "content_types": [
+    "LANDING_PAGE",
+    "SITE_PAGE",
+    "BLOG_LISTING",
+    "BLOG_POST"
+  ],
+  "smart_type": "NOT_SMART",
+  "icon": "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/fresh-juice.svg",
+  "host_template_types": [
+    "PAGE",
+    "BLOG_LISTING",
+    "BLOG_POST"
+  ],
+  "label": "Scroll to Top",
+  "is_available_for_new_content": true
+}

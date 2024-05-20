@@ -1,0 +1,45 @@
+
+<div class="fj-fixed fj-z-50 fj-flex fj-flex-col fj-items-center fj-justify-center fj-right-4 md:fj-right-8 lg:fj-right-12 fj-bottom-2 md:fj-bottom-4 lg:fj-bottom-8 fj-cursor-pointer"
+     x-cloak
+     aria-hidden="true"
+     x-data="{
+       circumference: 40 * 2 * Math.PI,
+       percent: 0,
+       show: false,
+       scrollProgress() {
+         window.addEventListener('scroll', () => {
+           let winScroll = document.body.scrollTop || document.documentElement.scrollTop
+           let height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+           this.percent = Math.round((winScroll / height) * 100)
+         })
+       }
+     }"
+     x-show="show"
+     x-init="
+       scrollProgress();
+       window.addEventListener('scroll', () => { show = window.scrollY > window.innerHeight * 0.75 });
+     "
+     x-transition:enter="fj-transition-all fj-ease-out fj-duration-300"
+     x-transition:enter-start="fj-opacity-0 fj-translate-y-12"
+     x-transition:enter-end="fj-opacity-100 fj-translate-y-0"
+     x-transition:leave="fj-transition-all fj-ease-in fj-duration-300 fj-delay-200"
+     x-transition:leave-start="fj-opacity-100 fj-translate-y-0"
+     x-transition:leave-end="fj-opacity-0 fj-translate-y-12"
+     @click="window.scrollTo({ top: 0, behavior: 'smooth' })">
+
+  <span class="fj-size-16 fj-flex fj-items-center fj-justify-center fj-bg-cursor/75 fj-backdrop-saturate-150 fj-backdrop-blur-sm fj-rounded-full fj-overflow-hidden fj-shadow-2xl">
+
+    <span class="fj-absolute fj-size-8 fj-flex fj-items-center fj-justify-center">
+      <svg class="fj-size-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="48 160 128 80 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+    </span>
+
+    <svg class="fj-size-16 fj-absolute fj-z-10 fj-rounded-full" aria-hidden="true">
+      <circle class="fj-text-stone-200" stroke-width="8" stroke="currentColor" fill="transparent" r="30" cx="32" cy="32" />
+      <circle class="fj-text-rose-500" stroke-width="8" :stroke-dasharray="circumference" :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="square" stroke="currentColor" fill="transparent" r="30" cx="32" cy="32" />
+    </svg>
+
+  </span>
+
+  {{ '<span class="fj-text-xs fj-font-semibold">' ~ module.supportive_text ~ '</span>' if module.supportive_text }}
+
+</div>

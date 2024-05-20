@@ -1,0 +1,40 @@
+[ {
+  "id" : "7a9ff059-c6ec-eff5-241c-3430507c462d",
+  "name" : "address",
+  "display_width" : null,
+  "label" : "Address",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "One Apple Park Way, Cupertino, CA 95014, United States"
+}, {
+  "id" : "0e046bcb-807e-d951-f1df-4cbae7d1725a",
+  "name" : "zoom",
+  "display_width" : null,
+  "label" : "Zoom",
+  "required" : true,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 1,
+  "max" : 20,
+  "step" : 1,
+  "prefix" : "",
+  "type" : "number",
+  "default" : 16
+}, {
+  "id" : "9cd28d7b-169c-0f46-a228-7459f8bcd95a",
+  "name" : "height",
+  "display_width" : null,
+  "label" : "Height",
+  "required" : true,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 40,
+  "max" : 1440,
+  "step" : 1,
+  "type" : "number",
+  "default" : 500
+} ]

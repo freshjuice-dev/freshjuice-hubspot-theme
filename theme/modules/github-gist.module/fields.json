@@ -95,4 +95,18 @@
   "display" : "toggle",
   "type" : "boolean",
   "default" : true
+}, {
+  "id" : "40cd6cf9-3e2d-823d-fff3-2b3a4a3a1a71",
+  "name" : "theme",
+  "display_width" : null,
+  "label" : "Theme",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "system", "System" ], [ "light", "Light" ], [ "dark", "Dark" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "system"
 } ]

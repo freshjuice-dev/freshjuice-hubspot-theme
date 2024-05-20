@@ -1,0 +1,40 @@
+[ {
+  "id" : "2b93271d-49b5-b012-f615-fb8e62fd56ab",
+  "name" : "codepen_url",
+  "display_width" : null,
+  "label" : "Codepen URL",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "https://codepen.io/reatlat/pen/gOyGyMo"
+}, {
+  "id" : "2b2bef5b-2375-3fb9-36dc-58dddf4a4c9d",
+  "name" : "height",
+  "display_width" : null,
+  "label" : "Height",
+  "required" : true,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 40,
+  "max" : 1440,
+  "step" : 1,
+  "type" : "number",
+  "default" : 500
+}, {
+  "id" : "293dfff6-099f-38f5-e244-bb433f900028",
+  "name" : "default_tabs",
+  "display_width" : null,
+  "label" : "Default Tabs",
+  "required" : true,
+  "locked" : false,
+  "display" : "checkbox",
+  "choices" : [ [ "result", "Result" ], [ "html", "HTML" ], [ "js", "JS" ], [ "css", "CSS" ] ],
+  "multiple" : true,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : [ "result" ]
+} ]

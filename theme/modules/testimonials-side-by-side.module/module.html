@@ -1,0 +1,50 @@
+{% if module.quote_group | length == 2 %}
+  {% set grid_col_class = 'lg:fj-grid-cols-2' %}
+{% endif %}
+
+{% if module.quote_group | length == 3 %}
+  {% set grid_col_class = 'lg:fj-grid-cols-3' %}
+{% endif %}
+
+<div class="fj-not-prose fj-grid fj-grid-cols-1 fj-place-items-center fj-mx-auto {{ grid_col_class or 'fj-max-w-2xl' }}">
+  {% for item in module.quote_group %}
+    <div class="fj-border-gray-300 fj-grid fj-gap-4 fj-py-8 lg:fj-py-0 lg:fj-px-12 {{ 'fj-border-t lg:fj-border-t-0 lg:fj-border-l' if loop.index0 }}">
+
+      {% if item.company_logo.src %}
+        {% set sizeAttrs = 'width="{{ item.company_logo.width|escape_attr }}" height="{{ item.company_logo.height|escape_attr }}"' %}
+        {% if item.company_logo.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ item.company_logo.width|escape_attr }}" height="{{ item.company_logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif item.company_logo.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ item.company_logo.max_width|escape_attr }}" height="{{ item.company_logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = item.company_logo.loading != 'disabled' ? 'loading="{{ item.company_logo.loading|escape_attr }}"' : '' %}
+        <img src="{{ item.company_logo.src|escape_url }}" alt="{{ item.company_logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %}
+
+      <blockquote class="fj-text-lg">
+        <p class="fj-m-0">{{ item.blockquote }}</p>
+      </blockquote>
+
+      {% if item.author_photo or item.author_name %}
+        <div class="fj-flex fj-items-center fj-gap-4">
+          {% if item.author_photo %}
+
+            {% if item.author_photo.src %}
+              <img style="height: 48px; width: 48px; border-radius: 48px"
+                   width="48" height="48"
+                   src="{{ resize_image_url(item.author_photo.src, 48, 48, 48) }}"
+                   alt="{{ item.author_photo.alt|escape_attr }}" loading="lazy">
+            {% endif %}
+          {% endif %}
+
+          <div class="fj-gap-2 fj-text-base fj-break-words">
+            <p class="fj-font-bold">{{ item.author_name or "" }}</p>
+            <p>{{ item.author_job_title or "" }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+  {% endfor %}
+</div>
+

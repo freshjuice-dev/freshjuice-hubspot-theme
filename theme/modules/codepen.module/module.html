@@ -1,0 +1,18 @@
+{% set codepen_username = module.codepen_url | split('/pen/') | first | split('/') | last %}
+{% set codepen_id = module.codepen_url | split('/pen/') | last | split('?') | first %}
+
+<div class="fj-rounded-md"
+     style="height: {{ module.height or 500 }}px"
+     x-intersect.once="loadScript('https://cpwebassets.codepen.io/assets/embed/ei.js', 'async')">
+
+  <p class="codepen"
+     data-height="{{ module.height or 500 }}"
+     data-default-tab="{{ (module.default_tabs or 'result') | join(',') }}"
+     data-slug-hash="{{ codepen_id }}"
+     data-user="{{ codepen_username }}"
+     style="height: {{ module.height or 500 }}px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+    <span>See the <a href="{{ module.codepen_url }}">Pen</a> by <a href="https://codepen.io/{{ codepen_username }}">@{{ codepen_username }}</a>
+    on <a href="https://codepen.io/">CodePen</a>.</span>
+  </p>
+
+</div>

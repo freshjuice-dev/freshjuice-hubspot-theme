@@ -1,0 +1,16 @@
+{% set location = module.address or "One Apple Park Way, Cupertino, CA 95014, United States" %}
+
+<div style="height: {{ module.height or '500' }}px"
+     x-data="{ mapLoaded: false }"
+     x-intersect.once="mapLoaded = true" >
+  <template x-if="mapLoaded">
+    <iframe loading="lazy"
+            class="fj-w-full fj-rounded-md"
+            style="width: 100%"
+            height="{{ module.height or '500' }}"
+            src="https://maps.google.com/maps?q={{ location | urlencode }}&t=m&z={{ module.zoom or '16' }}&output=embed&iwloc=near"
+            title="{{ location }}"
+            aria-label="{{ location }}"></iframe>
+  </template>
+</div>
+
