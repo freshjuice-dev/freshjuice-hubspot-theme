@@ -2,7 +2,7 @@
   "id" : "31d1e0c6-4e1e-4a1f-7c33-18729a4b2501",
   "name" : "pricing_card_group",
   "display_width" : null,
-  "label" : "Pricing Card Group",
+  "label" : "Pricing Card",
   "required" : false,
   "locked" : false,
   "occurrence" : {
@@ -24,41 +24,29 @@
     "type" : "text",
     "default" : "Basic"
   }, {
-    "id" : "99516692-abe2-ba9c-0f27-cfb640082988",
-    "name" : "currency",
-    "display_width" : null,
-    "label" : "Currency",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "$"
-  }, {
     "id" : "2629d9b9-46b4-a443-08d3-5313daafd29f",
-    "name" : "cost",
+    "name" : "price",
     "display_width" : null,
-    "label" : "Cost",
+    "label" : "Price",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "15"
+    "default" : "123"
   }, {
     "id" : "58caa5af-22e7-f152-be67-a6baa3cf119c",
-    "name" : "period",
+    "name" : "price_details",
     "display_width" : null,
-    "label" : "Period",
+    "label" : "Price Details",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "month"
+    "default" : "/ month"
   }, {
     "id" : "a0e41c7a-48ac-266c-0fd3-0d42ea1cc705",
     "name" : "price_subtext",
@@ -73,16 +61,43 @@
     "default" : "Single-member plan for personal projects, prototypes, and getting started."
   }, {
     "id" : "ec4cd19d-7c47-c5c6-595f-8f3091935195",
-    "name" : "button_url",
+    "name" : "cta_label",
     "display_width" : null,
-    "label" : "Button URL",
+    "label" : "Call to Action Label",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "https://en.wikipedia.org/wiki/Cat"
+    "default" : "Get Started"
+  }, {
+    "id" : "1bb378bf-31d3-a398-485b-8d91a98bab01",
+    "name" : "cta_link",
+    "display_width" : null,
+    "label" : "Call to Action Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "pricing_card_group.cta_label",
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "#nada",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }, {
     "id" : "70bf210b-69a8-846c-b44a-180ec6ba4ee0",
     "name" : "features_title",
@@ -119,31 +134,55 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
-    "tier_name" : "Basic",
-    "currency" : "$",
-    "cost" : "15",
-    "period" : "month",
-    "price_subtext" : "$12 per month if paid annually",
-    "button_url" : "https://en.wikipedia.org/wiki/Cat",
-    "features_title" : "Main features:",
-    "features_list_item" : [ "Single member seat", "Global edge network", "Live site previews with collaboration", "Instant rollbacks" ]
+    "tier_name" : "Starter",
+    "price" : "$15",
+    "price_details" : "/ month",
+    "price_subtext" : "Perfect for Fresh Juice lovers",
+    "cta_label" : "Get Started",
+    "cta_link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://source.unsplash.com/random/1024x1024/?fruit+smoothie",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "features_title" : "Includes:",
+    "features_list_item" : [ "Complimentary Food Salad", "Monthly access to fruity dishes", "Apple Juice", "Mini Cherry Juice Shot" ]
   }, {
     "tier_name" : "Pro",
-    "currency" : "$",
-    "cost" : "30",
-    "period" : "month",
-    "price_subtext" : "$24 per month if paid annually",
-    "button_url" : "https://en.wikipedia.org/wiki/Dog",
-    "features_title" : "Main features:",
-    "features_list_item" : [ "Background functions", "1TB bandwidth", "25,000 build minutes", "Audit logs with 7-day history", "Slack & email notifications" ]
+    "price" : "$45",
+    "price_details" : "/ month",
+    "price_subtext" : "For experts in the juice world",
+    "cta_label" : "Get Juicing",
+    "cta_link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://source.unsplash.com/random/1024x1024/?fruit+smoothie",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "features_title" : "Starter features included along with:",
+    "features_list_item" : [ "Banana Smoothie", "Private Juice Bar", "Customisable Fruit Salad", "Weekly Updates on Juicy Features", "Being Extra Juicy" ]
   }, {
     "tier_name" : "Enterprise",
-    "currency" : "$",
-    "cost" : "60",
-    "period" : "month",
-    "price_subtext" : "$48 per month if paid annually",
-    "button_url" : "https://en.wikipedia.org/wiki/Frog",
-    "features_title" : "Main features:",
-    "features_list_item" : [ "Additional member seats", "Additional bandwidth", "Additional build minutes", "Additional teams" ]
+    "price" : "Custom",
+    "price_details" : "",
+    "price_subtext" : "For the ultimate juice experience",
+    "cta_label" : "Get Partying",
+    "cta_link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://source.unsplash.com/random/1024x1024/?fruit+smoothie",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "features_title" : "Customisable feature inclusion along with:",
+    "features_list_item" : [ "Private Juice Bar Room", "Unique Fruity Dishes", "Opportunities for Exciting Juicy Adventures", "Apple Festival" ]
   } ]
 } ]
