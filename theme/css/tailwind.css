@@ -1794,10 +1794,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
   grid-column:span 2 / span 2;
 }
 
-.fj-col-span-1{
-  grid-column:span 1 / span 1;
-}
-
 .fj-col-end-1{
   grid-column-end:1;
 }
@@ -2092,14 +2088,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-max-w-xs{
   max-width:20rem;
-}
-
-.fj-max-w-7xl{
-  max-width:80rem;
-}
-
-.fj-max-w-4xl{
-  max-width:56rem;
 }
 
 .fj-flex-1{
@@ -2759,6 +2747,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
   line-height:2.5rem;
 }
 
+.fj-text-5xl{
+  font-size:3rem;
+  line-height:1;
+}
+
 .fj-text-base{
   font-size:1rem;
   line-height:1.5rem;
@@ -2782,11 +2775,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
 .fj-text-xs{
   font-size:0.75rem;
   line-height:1rem;
-}
-
-.fj-text-5xl{
-  font-size:3rem;
-  line-height:1;
 }
 
 .\!fj-font-bold{
@@ -2837,12 +2825,12 @@ lite-youtube.lyt-activated > .lty-playbtn{
   line-height:1.25;
 }
 
-.fj-tracking-wider{
-  letter-spacing:0.05em;
-}
-
 .fj-tracking-tight{
   letter-spacing:-0.025em;
+}
+
+.fj-tracking-wider{
+  letter-spacing:0.05em;
 }
 
 .\!fj-text-current{
@@ -2939,13 +2927,13 @@ lite-youtube.lyt-activated > .lty-playbtn{
   --fj-ring-inset:inset;
 }
 
-.fj-ring-gray-900\/5{
-  --fj-ring-color:rgb(17 24 39 / 0.05);
-}
-
 .fj-ring-gray-200{
   --fj-ring-opacity:1;
   --fj-ring-color:rgb(229 231 235 / var(--fj-ring-opacity));
+}
+
+.fj-ring-gray-900\/5{
+  --fj-ring-color:rgb(17 24 39 / 0.05);
 }
 
 .fj-backdrop-blur{
@@ -3585,20 +3573,12 @@ lite-youtube.lyt-activated > .lty-playbtn{
     max-width:24rem;
   }
 
-  .sm\:fj-grid-cols-2{
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-  }
-
   .sm\:fj-flex-row{
     flex-direction:row;
   }
 
   .sm\:fj-items-center{
     align-items:center;
-  }
-
-  .sm\:fj-gap-6{
-    gap:1.5rem;
   }
 
   .sm\:fj-gap-8{
@@ -3715,12 +3695,12 @@ lite-youtube.lyt-activated > .lty-playbtn{
     gap:3rem;
   }
 
-  .md\:fj-gap-8{
-    gap:2rem;
-  }
-
   .md\:fj-gap-6{
     gap:1.5rem;
+  }
+
+  .md\:fj-gap-8{
+    gap:2rem;
   }
 
   .md\:fj-space-y-8 > :not([hidden]) ~ :not([hidden]){
@@ -3824,10 +3804,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
     display:flex;
   }
 
-  .lg\:fj-grid{
-    display:grid;
-  }
-
   .lg\:fj-hidden{
     display:none;
   }
@@ -3891,10 +3867,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
   .lg\:fj-gap-12{
     gap:3rem;
-  }
-
-  .lg\:fj-gap-8{
-    gap:2rem;
   }
 
   .lg\:fj-gap-x-10{

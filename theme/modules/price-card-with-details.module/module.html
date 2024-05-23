@@ -1,14 +1,16 @@
-<div class="fj-max-w-2xl fj-rounded-3xl fj-ring-1 fj-ring-gray-200 fj-mx-auto fj-mt-16 sm:fj-mt-20 lg:fj-mx-0 lg:fj-flex lg:fj-max-w-none">
+<div class="fj-max-w-2xl fj-rounded-3xl fj-ring-1 fj-ring-gray-200 fj-mx-auto lg:fj-mx-0 lg:fj-flex lg:fj-max-w-none">
   <div class="fj-flex fj-flex-col fj-justify-center fj-p-8 sm:fj-p-10 fj-space-y-4 lg:fj-flex-auto">
     <p class="fj-text-2xl fj-font-bold fj-tracking-tight">{{ module.two_column_group.title }}</p>
 
     <p class="fj-text-base fj-leading-none">{{ module.two_column_group.description }}</p>
 
-    <div class="fj-flex fj-items-center fj-gap-x-4">
-      <p class="fj-flex-none fj-text-sm fj-font-semibold fj-leading-6 fj-text-blue-600">{{ module.two_column_group.divider_text }}</p>
+    {% if module.two_column_group.features_item | length > 0 %}
+      <div class="fj-flex fj-items-center fj-gap-x-4">
+        <p class="fj-flex-none fj-text-sm fj-font-semibold fj-leading-6 fj-text-blue-600">{{ module.two_column_group.divider_text }}</p>
 
-      <div class="fj-h-px fj-flex-auto fj-bg-gray-300"></div>
-    </div>
+        <div class="fj-h-px fj-flex-auto fj-bg-gray-300"></div>
+      </div>
+    {% endif %}
 
     <ul role="list" class="fj-grid fj-grid-cols-1 fj-gap-4 fj-text-sm fj-leading-6 fj-text-gray-600 md:fj-grid-cols-2 md:fj-gap-6">
       {% for item in module.two_column_group.features_item %}
