@@ -1,0 +1,53 @@
+[ {
+  "id" : "db2218b7-685f-fdee-c275-0482e2cb3f47",
+  "name" : "stats_item",
+  "display_width" : null,
+  "label" : "Stats Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 4,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "e9417d48-719f-893d-f5e2-dd6e4cfd6880",
+    "name" : "stats_title",
+    "display_width" : null,
+    "label" : "Stats Title",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "44 million"
+  }, {
+    "id" : "6722ec8b-d602-14c9-bd83-981dabf02ef6",
+    "name" : "stats_subtext",
+    "display_width" : null,
+    "label" : "Stats Subtext",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Transactions every 24 hours"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "stats_title" : "44 million",
+    "stats_subtext" : "Transactions every 24 hours"
+  }, {
+    "stats_title" : "44 million",
+    "stats_subtext" : "Transactions every 24 hours"
+  }, {
+    "stats_title" : "44 million",
+    "stats_subtext" : "Transactions every 24 hours"
+  } ]
+} ]

@@ -2277,6 +2277,15 @@ lite-youtube.lyt-activated > .lty-playbtn{
   row-gap:2rem;
 }
 
+.fj-gap-x-8{
+  -moz-column-gap:2rem;
+       column-gap:2rem;
+}
+
+.fj-gap-y-16{
+  row-gap:4rem;
+}
+
 .fj-space-x-6 > :not([hidden]) ~ :not([hidden]){
   --fj-space-x-reverse:0;
   margin-right:calc(1.5rem * var(--fj-space-x-reverse));
@@ -2777,6 +2786,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
   line-height:1rem;
 }
 
+.fj-text-3xl{
+  font-size:1.875rem;
+  line-height:2.25rem;
+}
+
 .\!fj-font-bold{
   font-weight:700 !important;
 }
@@ -2823,6 +2837,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-leading-tight{
   line-height:1.25;
+}
+
+.fj-leading-7{
+  line-height:1.75rem;
 }
 
 .fj-tracking-tight{
@@ -3565,10 +3583,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
     margin-bottom:1rem;
   }
 
-  .sm\:fj-mt-20{
-    margin-top:5rem;
-  }
-
   .sm\:fj-max-w-sm{
     max-width:24rem;
   }
@@ -3596,6 +3610,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
   .sm\:fj-text-2xl{
     font-size:1.5rem;
     line-height:2rem;
+  }
+
+  .sm\:fj-text-5xl{
+    font-size:3rem;
+    line-height:1;
   }
 
   .sm\:fj-ring-1{
@@ -3851,6 +3870,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
   .lg\:fj-grid-cols-3{
     grid-template-columns:repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:fj-grid-cols-4{
+    grid-template-columns:repeat(4, minmax(0, 1fr));
   }
 
   .lg\:fj-flex-col{
