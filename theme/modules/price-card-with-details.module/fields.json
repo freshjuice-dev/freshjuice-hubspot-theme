@@ -1,0 +1,180 @@
+[ {
+  "id" : "d6f776b8-4c95-0265-0338-95b2b892258b",
+  "name" : "two_column_group",
+  "display_width" : null,
+  "label" : "Two Column Group",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "29f3b9dc-17c7-28f2-83e3-2c3ecbb966f5",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Juicy Permanent"
+  }, {
+    "id" : "a4ca36af-76ae-770a-f896-743348937a9d",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "The best, the mightiest, the bravest juices and smoothies are there to help you smooth up for the day."
+  }, {
+    "id" : "4d13341b-ebf6-9c32-120b-e35e6f07ef30",
+    "name" : "divider_text",
+    "display_width" : null,
+    "label" : "Divider Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "What's included"
+  }, {
+    "id" : "a0b675a1-c232-5c7a-d638-4789a941e235",
+    "name" : "features_item",
+    "display_width" : null,
+    "label" : "Features Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 2,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 4
+    },
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : [ "Permanent Juiciness", "VIP access to secret Juicy Events", "Private Juice and Smoothie Butlers", "Hotels Secret Juice Service" ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "title" : "Juicy Permanent",
+    "description" : "The best, the mightiest, the bravest juices and smoothies are there to help you smooth up for the day.",
+    "divider_text" : "What's included",
+    "features_item" : [ "Permanent Juiciness", "VIP access to secret Juicy Events", "Private Juice and Smoothie Butlers", "Hotels Secret Juice Service" ]
+  }
+}, {
+  "id" : "108c4f09-fc25-b23c-13b5-48538075edb8",
+  "name" : "one_column_price_card",
+  "display_width" : null,
+  "label" : "One Column Price Card",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "6dc1090e-378c-01fe-85dd-05dc515a86f3",
+    "name" : "slogan",
+    "display_width" : null,
+    "label" : "Slogan",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Pay once, be juicy forever"
+  }, {
+    "id" : "92df9402-f998-f648-c234-ac827a557f38",
+    "name" : "cost",
+    "display_width" : null,
+    "label" : "Cost",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "$349"
+  }, {
+    "id" : "77177926-9187-1c83-97d3-1f8fbfe752c8",
+    "name" : "cost_details",
+    "display_width" : null,
+    "label" : "Cost Details",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "USD"
+  }, {
+    "id" : "c574064a-3430-990d-1d95-6988c4bd360a",
+    "name" : "cta_link",
+    "display_width" : null,
+    "label" : "CTA Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://source.unsplash.com/random/1024x1024/?infinite+smoothie",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "890ae293-bf26-c503-e479-22fae50a76f1",
+    "name" : "cta_text",
+    "display_width" : null,
+    "label" : "CTA Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Get Juicy"
+  }, {
+    "id" : "35860b0d-061e-a20c-9a54-140dd6662713",
+    "name" : "sub_text",
+    "display_width" : null,
+    "label" : "Sub Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Invoices and receipts available for easy juicy reevaluations"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "slogan" : "Pay once, be juicy forever",
+    "cost" : "$349",
+    "cost_details" : "USD",
+    "cta_link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://source.unsplash.com/random/1024x1024/?infinite+smoothie",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "cta_text" : "Get Juicy",
+    "sub_text" : "Invoices and receipts available for easy juicy reevaluations"
+  }
+} ]
