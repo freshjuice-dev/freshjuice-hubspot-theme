@@ -2328,6 +2328,30 @@ lite-youtube.lyt-activated > .lty-playbtn{
   border-bottom-width:calc(1px * var(--fj-divide-y-reverse));
 }
 
+.fj-divide-x-2 > :not([hidden]) ~ :not([hidden]){
+  --fj-divide-x-reverse:0;
+  border-right-width:calc(2px * var(--fj-divide-x-reverse));
+  border-left-width:calc(2px * calc(1 - var(--fj-divide-x-reverse)));
+}
+
+.fj-divide-y-2 > :not([hidden]) ~ :not([hidden]){
+  --fj-divide-y-reverse:0;
+  border-top-width:calc(2px * calc(1 - var(--fj-divide-y-reverse)));
+  border-bottom-width:calc(2px * var(--fj-divide-y-reverse));
+}
+
+.fj-divide-x-4 > :not([hidden]) ~ :not([hidden]){
+  --fj-divide-x-reverse:0;
+  border-right-width:calc(4px * var(--fj-divide-x-reverse));
+  border-left-width:calc(4px * calc(1 - var(--fj-divide-x-reverse)));
+}
+
+.fj-divide-y-4 > :not([hidden]) ~ :not([hidden]){
+  --fj-divide-y-reverse:0;
+  border-top-width:calc(4px * calc(1 - var(--fj-divide-y-reverse)));
+  border-bottom-width:calc(4px * var(--fj-divide-y-reverse));
+}
+
 .fj-divide-gray-100 > :not([hidden]) ~ :not([hidden]){
   --fj-divide-opacity:1;
   border-color:rgb(243 244 246 / var(--fj-divide-opacity));
@@ -2335,6 +2359,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-divide-gray-900\/5 > :not([hidden]) ~ :not([hidden]){
   border-color:rgb(17 24 39 / 0.05);
+}
+
+.fj-divide-white > :not([hidden]) ~ :not([hidden]){
+  --fj-divide-opacity:1;
+  border-color:rgb(255 255 255 / var(--fj-divide-opacity));
 }
 
 .fj-overflow-hidden{
@@ -2497,6 +2526,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-bg-white\/40{
   background-color:rgb(255 255 255 / 0.4);
+}
+
+.fj-bg-gray-200{
+  --fj-bg-opacity:1;
+  background-color:rgb(229 231 235 / var(--fj-bg-opacity));
 }
 
 .fj-bg-gradient-to-r{
@@ -2897,6 +2931,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
 .fj-text-white{
   --fj-text-opacity:1;
   color:rgb(255 255 255 / var(--fj-text-opacity));
+}
+
+.fj-text-gray-200{
+  --fj-text-opacity:1;
+  color:rgb(229 231 235 / var(--fj-text-opacity));
 }
 
 .\!fj-no-underline{
@@ -3585,6 +3624,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
   .sm\:fj-max-w-sm{
     max-width:24rem;
+  }
+
+  .sm\:fj-grid-cols-2{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
   }
 
   .sm\:fj-flex-row{
