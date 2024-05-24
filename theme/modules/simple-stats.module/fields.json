@@ -42,12 +42,12 @@
   "type" : "group",
   "default" : [ {
     "stats_title" : "44 million",
-    "stats_subtext" : "Transactions every 24 hours"
+    "stats_subtext" : "Transactions of Fresh Juice every day"
   }, {
-    "stats_title" : "44 million",
-    "stats_subtext" : "Transactions every 24 hours"
+    "stats_title" : "134 trillion",
+    "stats_subtext" : "Customers all over the world"
   }, {
-    "stats_title" : "44 million",
-    "stats_subtext" : "Transactions every 24 hours"
+    "stats_title" : "Hundreds of options",
+    "stats_subtext" : "We at Fresh Juice value freshness of your juice and smoothies"
   } ]
 } ]

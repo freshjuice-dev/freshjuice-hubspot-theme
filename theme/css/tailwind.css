@@ -2269,14 +2269,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
        column-gap:1.5rem;
 }
 
-.fj-gap-y-6{
-  row-gap:1.5rem;
-}
-
-.fj-gap-y-8{
-  row-gap:2rem;
-}
-
 .fj-gap-x-8{
   -moz-column-gap:2rem;
        column-gap:2rem;
@@ -2284,6 +2276,14 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-gap-y-16{
   row-gap:4rem;
+}
+
+.fj-gap-y-6{
+  row-gap:1.5rem;
+}
+
+.fj-gap-y-8{
+  row-gap:2rem;
 }
 
 .fj-space-x-6 > :not([hidden]) ~ :not([hidden]){
@@ -2751,6 +2751,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
   line-height:2rem;
 }
 
+.fj-text-3xl{
+  font-size:1.875rem;
+  line-height:2.25rem;
+}
+
 .fj-text-4xl{
   font-size:2.25rem;
   line-height:2.5rem;
@@ -2784,11 +2789,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
 .fj-text-xs{
   font-size:0.75rem;
   line-height:1rem;
-}
-
-.fj-text-3xl{
-  font-size:1.875rem;
-  line-height:2.25rem;
 }
 
 .\!fj-font-bold{
@@ -2831,16 +2831,16 @@ lite-youtube.lyt-activated > .lty-playbtn{
   line-height:1.5rem;
 }
 
+.fj-leading-7{
+  line-height:1.75rem;
+}
+
 .fj-leading-none{
   line-height:1;
 }
 
 .fj-leading-tight{
   line-height:1.25;
-}
-
-.fj-leading-7{
-  line-height:1.75rem;
 }
 
 .fj-tracking-tight{
