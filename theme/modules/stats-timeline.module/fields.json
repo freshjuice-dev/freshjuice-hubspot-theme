@@ -1,0 +1,72 @@
+[ {
+  "id" : "840e3946-1233-014f-e9a5-67521daf07bc",
+  "name" : "timeframe",
+  "display_width" : null,
+  "label" : "Timeframe",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "db9558a5-8adf-8210-fbcb-7310b9ef2d65",
+    "name" : "date",
+    "display_width" : null,
+    "label" : "Date",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Sep 2019"
+  }, {
+    "id" : "9222b38b-b8bb-afee-2185-79553eab0067",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Creation of Juicy Drink"
+  }, {
+    "id" : "236bfdd1-465d-7168-6a55-b5d53bf79bf9",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "The brightest out of us, King Banana, gave us the mystical recipe to create the best banana smoothie in the kingdom"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "date" : "Sep 2019",
+    "title" : "Creation of Juicy Drink",
+    "description" : "The brightest out of us, King Banana, gave us the mystical recipe to create the best banana smoothie in the kingdom"
+  }, {
+    "date" : "Dec 2019",
+    "title" : "Creation of Juicy Cafe",
+    "description" : "Our first cafe for our juicy drinks had massive success and costumers kept buying the royal smoothies as well as our own personal creations"
+  }, {
+    "date" : "Oct 2020",
+    "title" : "Our first Million Dollars",
+    "description" : "After expanding our business into various towns and cities by opening new cafes, we finally reached our first million dollars in revenue!"
+  }, {
+    "date" : "Aug 2023",
+    "title" : "Manufacture of Drinks",
+    "description" : "After having massive success over the years with our cafes, we decided to manufacture them so more people can drink our creations"
+  } ]
+} ]
