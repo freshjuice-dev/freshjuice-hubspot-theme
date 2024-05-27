@@ -6,7 +6,7 @@
   {% set grid_col_class = 'lg:fj-grid-cols-3' %}
 {% endif %}
 
-{% if module.stats_item | length == 4 %}
+{% if module.stats_item | length >= 4 %}
   {% set grid_col_class = 'lg:fj-grid-cols-4' %}
 {% endif %}
 
