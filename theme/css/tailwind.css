@@ -2278,11 +2278,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
        column-gap:1.5rem;
 }
 
-.fj-gap-x-8{
-  -moz-column-gap:2rem;
-       column-gap:2rem;
-}
-
 .fj-gap-y-16{
   row-gap:4rem;
 }
@@ -3652,9 +3647,9 @@ lite-youtube.lyt-activated > .lty-playbtn{
     line-height:2rem;
   }
 
-  .sm\:fj-text-5xl{
-    font-size:3rem;
-    line-height:1;
+  .sm\:fj-text-4xl{
+    font-size:2.25rem;
+    line-height:2.5rem;
   }
 
   .sm\:fj-ring-1{
@@ -3925,10 +3920,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
     grid-template-columns:repeat(4, minmax(0, 1fr));
   }
 
-  .lg\:fj-flex-row{
-    flex-direction:row;
-  }
-
   .lg\:fj-flex-col{
     flex-direction:column;
   }
@@ -3947,10 +3938,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
   .lg\:fj-gap-8{
     gap:2rem;
-  }
-
-  .lg\:fj-gap-2{
-    gap:0.5rem;
   }
 
   .lg\:fj-gap-x-10{

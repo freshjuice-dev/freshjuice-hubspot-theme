@@ -10,10 +10,10 @@
   {% set grid_col_class = 'lg:fj-grid-cols-4' %}
 {% endif %}
 
-<div class="fj-not-prose fj-grid fj-grid-cols-1 fj-gap-x-8 fj-gap-y-16 {{ grid_col_class or '' }}">
+<div class="fj-not-prose fj-grid fj-grid-cols-1 fj-gap-x-4 fj-gap-y-16 fj-text-balance {{ grid_col_class or '' }}">
   {% for item in module.stats_item %}
     <div class="fj-grid fj-place-items-center fj-gap-2 fj-text-center">
-      <p class="fj-text-3xl fj-font-semibold fj-tracking-tight sm:fj-text-5xl">{{ item.stats_title }}</p>
+      <p class="fj-text-3xl fj-font-semibold fj-tracking-tight sm:fj-text-4xl">{{ item.stats_title }}</p>
 
       <p class="fj-text-base fj-leading-7">{{ item.subtext }}</p>
     </div>
