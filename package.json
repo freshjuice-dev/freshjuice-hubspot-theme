@@ -13,6 +13,7 @@
     "watch:js": "esbuild ./source/js/main.js --outfile=./theme/js/main.js --bundle --watch",
     "build:js": "esbuild ./source/js/main.js --outfile=./theme/js/main.js --bundle",
     "build:zip": "./scripts/build-zip.sh",
+    "bump-version": "./scripts/bump-version.sh",
     "start": "npm-run-all --parallel watch:*",
     "build": "npm-run-all --serial clean build:js build:tailwind build:zip",
     "prepare": "husky install"
