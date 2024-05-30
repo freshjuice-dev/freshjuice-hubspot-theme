@@ -1,0 +1,53 @@
+[ {
+  "id" : "5b33fbce-616d-9bd2-eafc-b9d6e680a642",
+  "name" : "stats_item",
+  "display_width" : null,
+  "label" : "Stats Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "6ce0d153-b1ee-ca44-0ee2-682c3a1f3d3c",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "44 million"
+  }, {
+    "id" : "38b54076-c739-67d5-fb1c-e31b31927557",
+    "name" : "subtext",
+    "display_width" : null,
+    "label" : "Subtext",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Transactions every 24 hours"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "title" : "44 million",
+    "subtext" : "Transactions of Fresh Juice every day"
+  }, {
+    "title" : "134 trillion",
+    "subtext" : "Customers all over the world"
+  }, {
+    "title" : "+1000 transactions",
+    "subtext" : "We at Fresh Juice value freshness of your juice and smoothies"
+  }, {
+    "title" : "100+ countries",
+    "subtext" : "Available worldwide"
+  } ]
+} ]

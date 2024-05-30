@@ -1,0 +1,57 @@
+<div class="fj-max-w-2xl fj-rounded-3xl fj-ring-1 fj-ring-gray-200 fj-mx-auto lg:fj-mx-0 lg:fj-flex lg:fj-max-w-none">
+  <div class="fj-flex fj-flex-col fj-justify-center fj-p-8 sm:fj-p-10 fj-space-y-4 lg:fj-flex-auto">
+    <p class="fj-text-2xl fj-font-bold fj-tracking-tight">{{ module.two_column_group.title }}</p>
+
+    <p class="fj-text-base fj-leading-none">{{ module.two_column_group.description }}</p>
+
+    {% if module.two_column_group.features_item | length > 0 %}
+      <div class="fj-flex fj-items-center fj-gap-x-4">
+        <p class="fj-flex-none fj-text-sm fj-font-semibold fj-leading-6 fj-text-blue-600">{{ module.two_column_group.divider_text }}</p>
+
+        <div class="fj-h-px fj-flex-auto fj-bg-gray-300"></div>
+      </div>
+    {% endif %}
+
+    <ul role="list" class="fj-grid fj-grid-cols-1 fj-gap-4 fj-text-sm fj-leading-6 fj-text-gray-600 md:fj-grid-cols-2 md:fj-gap-6">
+      {% for item in module.two_column_group.features_item %}
+        <li class="fj-flex fj-gap-x-3">
+          <svg class="fj-size-6 fj-flex-none fj-text-blue-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+          </svg>
+
+          {{ item }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="-fj-mt-2 fj-p-2 lg:fj-mt-0 lg:fj-w-full lg:fj-max-w-md lg:fj-flex-shrink-0">
+    <div class="fj-rounded-2xl fj-bg-gray-50 fj-py-10 fj-text-center fj-ring-1 fj-ring-inset fj-ring-gray-900/5 lg:fj-flex lg:fj-flex-col lg:fj-justify-center lg:fj-py-16">
+      <div class="fj-grid fj-gap-4 fj-mx-auto fj-max-w-xs fj-px-8">
+        <p class="fj-text-base fj-font-semibold">{{ module.one_column_price_card.slogan }}</p>
+
+        <div class="fj-flex fj-items-baseline fj-justify-center fj-gap-x-2">
+          <span class="fj-text-5xl fj-font-bold">{{ module.one_column_price_card.cost }}</span>
+
+          <span class="fj-text-sm fj-font-semibold fj-leading-6">{{ module.one_column_price_card.cost_details }}</span>
+        </div>
+
+        {% set href = module.one_column_price_card.cta_link.url.href %}
+        {% if module.one_column_price_card.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% endif %}
+
+        <a class="fj-button fj-button--small fj-normal-case	fj-text-sm fj-text-white fj-font-semibold fj-text-center"
+           href="{{ href|escape_url }}" {% if module.one_column_price_card.cta_link.open_in_new_tab %}
+           target="_blank"{% endif %} {% if module.one_column_price_card.cta_link.rel %}
+           rel="{{ module.one_column_price_card.cta_link.rel|escape_attr }}"{% endif %}>
+          {{ module.one_column_price_card.cta_text }}
+        </a>
+
+        <p class="fj-text-xs fj-leading-5">{{ module.one_column_price_card.sub_text }}</p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
