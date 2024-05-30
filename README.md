@@ -1,5 +1,14 @@
 # 🍹FreshJuice – HubSpot CMS Theme Boilerplate
 
+![GitHub Release](https://img.shields.io/github/v/release/freshjuice-dev/freshjuice-hubspot-theme)
+![GitHub last commit](https://img.shields.io/github/last-commit/freshjuice-dev/freshjuice-hubspot-theme)
+![GitHub License](https://img.shields.io/github/license/freshjuice-dev/freshjuice-hubspot-theme)
+
+![GitHub watchers](https://img.shields.io/github/watchers/freshjuice-dev/freshjuice-hubspot-theme)
+![GitHub forks](https://img.shields.io/github/forks/freshjuice-dev/freshjuice-hubspot-theme)
+![GitHub Repo stars](https://img.shields.io/github/stars/freshjuice-dev/freshjuice-hubspot-theme)
+
+
 A modern, clean, and minimalistic boilerplate for HubSpot CMS themes. This boilerplate is designed to help you get started with your HubSpot CMS theme development quickly. It includes a modern frameworks and tools like Tailwind CSS, Alpine.js.
 
 [Demo website](https://freshjuice.dev/hubspot-theme/)
