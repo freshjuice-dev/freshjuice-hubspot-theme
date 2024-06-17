@@ -149,7 +149,7 @@
       "no_follow" : false
     },
     "features_title" : "Includes:",
-    "features_list_item" : [ "Complimentary Food Salad", "Monthly access to fruity dishes", "Apple Juice", "Mini Cherry Juice Shot" ]
+    "features_list" : [ "Complimentary Food Salad", "Monthly access to fruity dishes", "Apple Juice", "Mini Cherry Juice Shot" ]
   }, {
     "tier_name" : "Pro",
     "price" : "$45",
@@ -166,7 +166,7 @@
       "no_follow" : false
     },
     "features_title" : "Starter features included along with:",
-    "features_list_item" : [ "Banana Smoothie", "Private Juice Bar", "Customisable Fruit Salad", "Weekly Updates on Juicy Features", "Being Extra Juicy" ]
+    "features_list" : [ "Banana Smoothie", "Private Juice Bar", "Customisable Fruit Salad", "Weekly Updates on Juicy Features", "Being Extra Juicy" ]
   }, {
     "tier_name" : "Enterprise",
     "price" : "Custom",
@@ -183,6 +183,6 @@
       "no_follow" : false
     },
     "features_title" : "Customisable feature inclusion along with:",
-    "features_list_item" : [ "Private Juice Bar Room", "Unique Fruity Dishes", "Opportunities for Exciting Juicy Adventures", "Apple Festival" ]
+    "features_list" : [ "Private Juice Bar Room", "Unique Fruity Dishes", "Opportunities for Exciting Juicy Adventures", "Apple Festival" ]
   } ]
 } ]
