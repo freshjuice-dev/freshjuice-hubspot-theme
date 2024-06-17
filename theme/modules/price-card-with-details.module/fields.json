@@ -43,9 +43,9 @@
     "default" : "What's included"
   }, {
     "id" : "a0b675a1-c232-5c7a-d638-4789a941e235",
-    "name" : "features_item",
+    "name" : "features_list",
     "display_width" : null,
-    "label" : "Features Item",
+    "label" : "Features List",
     "required" : false,
     "locked" : false,
     "occurrence" : {
@@ -68,7 +68,7 @@
     "title" : "Juicy Permanent",
     "description" : "The best, the mightiest, the bravest juices and smoothies are there to help you smooth up for the day.",
     "divider_text" : "What's included",
-    "features_item" : [ "Permanent Juiciness", "VIP access to secret Juicy Events", "Private Juice and Smoothie Butlers", "Hotels Secret Juice Service" ]
+    "features_list" : [ "Permanent Juiciness", "VIP access to secret Juicy Events", "Private Juice and Smoothie Butlers", "Hotels Secret Juice Service" ]
   }
 }, {
   "id" : "108c4f09-fc25-b23c-13b5-48538075edb8",
@@ -126,7 +126,7 @@
     "default" : {
       "url" : {
         "content_id" : null,
-        "href" : "https://source.unsplash.com/random/1024x1024/?infinite+smoothie",
+        "href" : "#nada",
         "type" : "EXTERNAL"
       },
       "open_in_new_tab" : false,
@@ -168,7 +168,7 @@
     "cta_link" : {
       "url" : {
         "content_id" : null,
-        "href" : "https://source.unsplash.com/random/1024x1024/?infinite+smoothie",
+        "href" : "#nada",
         "type" : "EXTERNAL"
       },
       "open_in_new_tab" : false,
