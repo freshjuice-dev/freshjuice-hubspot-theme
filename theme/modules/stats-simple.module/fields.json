@@ -1,8 +1,8 @@
 [ {
   "id" : "db2218b7-685f-fdee-c275-0482e2cb3f47",
-  "name" : "stats_item",
+  "name" : "stats_list",
   "display_width" : null,
-  "label" : "Stats Item",
+  "label" : "Stats List",
   "required" : false,
   "locked" : false,
   "occurrence" : {

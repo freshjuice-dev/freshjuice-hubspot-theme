@@ -1,8 +1,8 @@
 [ {
   "id" : "840e3946-1233-014f-e9a5-67521daf07bc",
-  "name" : "timeframe",
+  "name" : "timeline_list",
   "display_width" : null,
-  "label" : "Timeframe",
+  "label" : "Timeline List",
   "required" : false,
   "locked" : false,
   "occurrence" : {
