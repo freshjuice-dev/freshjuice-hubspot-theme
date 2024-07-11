@@ -1,11 +1,11 @@
 {
   "label": "FreshJuice",
-  "version": "1.16.0",
+  "version": "1.16.1",
   "author": {
     "name": "Alex Zappa",
     "email": "alex@zappa.dev",
     "url": "https://alex.zappa.dev"
-	},
+  },
   "documentation_url": "https://github.com/freshjuice-dev/freshjuice-hubspot-theme",
   "example_url": "https://143910617.hs-sites-eu1.com",
   "preview_path": "./templates/home.html",
