@@ -1,8 +1,8 @@
 [ {
   "id" : "31d1e0c6-4e1e-4a1f-7c33-18729a4b2501",
-  "name" : "quote_group",
+  "name" : "quotes_group",
   "display_width" : null,
-  "label" : "Quote Group",
+  "label" : "Quotes Group",
   "required" : false,
   "locked" : false,
   "occurrence" : {

@@ -99,7 +99,7 @@
               {% if featured_post.featured_image %}
                 {% set featured_image = resize_image_url( featured_post.featured_image, 600, 315, 600 ) %}
               {% endif %}
-              <img src="{{ featured_image or 'https://source.unsplash.com/600x315/?fresh+juice' }}"
+              <img src="{{ featured_image or 'https://resources.freshjuice.dev/images/600/composition-with-glass-of-watermelon-juice-and-sli.jpg' }}"
                    alt="{{ featured_post.name | striptags | safe }}"
                    width="600" height="315"
                    class="fj-m-0 fj-w-full md:fj-h-full fj-object-cover fj-aspect-video"/>
@@ -144,7 +144,7 @@
           {% if content.featured_image %}
             {% set featured_image = resize_image_url( content.featured_image, 360, 189, 360 ) %}
           {% endif %}
-          <img src="{{ featured_image or 'https://source.unsplash.com/600x315/?fresh+juice' }}"
+          <img src="{{ featured_image or 'https://resources.freshjuice.dev/images/400/a-rainbow-of-refreshments-a-table-filled-with-gla.jpg' }}"
                alt="{{ content.name | striptags | safe }}"
                width="360" height="189"
                class="fj-m-0 fj-w-full fj-object-cover fj-aspect-video"/>

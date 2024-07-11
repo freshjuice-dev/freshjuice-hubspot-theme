@@ -112,9 +112,9 @@
     "default" : "Everything necessary to get started."
   }, {
     "id" : "6b615b91-b7a3-632c-4a2a-fea2f9134f5f",
-    "name" : "features_list_item",
+    "name" : "features_list",
     "display_width" : null,
-    "label" : "Features List Item",
+    "label" : "Features List",
     "required" : false,
     "locked" : false,
     "occurrence" : {
@@ -142,14 +142,14 @@
     "cta_link" : {
       "url" : {
         "content_id" : null,
-        "href" : "https://source.unsplash.com/random/1024x1024/?fruit+smoothie",
+        "href" : "#nada",
         "type" : "EXTERNAL"
       },
       "open_in_new_tab" : false,
       "no_follow" : false
     },
     "features_title" : "Includes:",
-    "features_list_item" : [ "Complimentary Food Salad", "Monthly access to fruity dishes", "Apple Juice", "Mini Cherry Juice Shot" ]
+    "features_list" : [ "Complimentary Food Salad", "Monthly access to fruity dishes", "Apple Juice", "Mini Cherry Juice Shot" ]
   }, {
     "tier_name" : "Pro",
     "price" : "$45",
@@ -159,14 +159,14 @@
     "cta_link" : {
       "url" : {
         "content_id" : null,
-        "href" : "https://source.unsplash.com/random/1024x1024/?fruit+smoothie",
+        "href" : "#nada",
         "type" : "EXTERNAL"
       },
       "open_in_new_tab" : false,
       "no_follow" : false
     },
     "features_title" : "Starter features included along with:",
-    "features_list_item" : [ "Banana Smoothie", "Private Juice Bar", "Customisable Fruit Salad", "Weekly Updates on Juicy Features", "Being Extra Juicy" ]
+    "features_list" : [ "Banana Smoothie", "Private Juice Bar", "Customisable Fruit Salad", "Weekly Updates on Juicy Features", "Being Extra Juicy" ]
   }, {
     "tier_name" : "Enterprise",
     "price" : "Custom",
@@ -176,13 +176,13 @@
     "cta_link" : {
       "url" : {
         "content_id" : null,
-        "href" : "https://source.unsplash.com/random/1024x1024/?fruit+smoothie",
+        "href" : "#nada",
         "type" : "EXTERNAL"
       },
       "open_in_new_tab" : false,
       "no_follow" : false
     },
     "features_title" : "Customisable feature inclusion along with:",
-    "features_list_item" : [ "Private Juice Bar Room", "Unique Fruity Dishes", "Opportunities for Exciting Juicy Adventures", "Apple Festival" ]
+    "features_list" : [ "Private Juice Bar Room", "Unique Fruity Dishes", "Opportunities for Exciting Juicy Adventures", "Apple Festival" ]
   } ]
 } ]
