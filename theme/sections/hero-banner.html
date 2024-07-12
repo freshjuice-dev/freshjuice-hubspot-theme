@@ -12,12 +12,12 @@
   {% dnd_module
     path="@hubspot/linked_image",
     img={
-      "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+      "alt": context.image_alt or "Hero Image of two yellow cocktails made out of pineapple and kiwi.",
       "loading": context.image_loading or "disabled",
-      "max_height": context.image_height or 451,
-      "max_width": context.image_width or 605,
+      "max_height": context.image_height or 600,
+      "max_width": context.image_width or 600,
       "size_type": "auto_custom_max",
-      "src": context.image or get_asset_url("../images/grayscale-mountain.png")
+      "src": context.image or "https://resources.freshjuice.dev/images/600/600/smoothies-of-kiwi-and-pineapple-on-the-table.jpg"
     },
     offset=0,
     width=6
@@ -30,7 +30,7 @@
     {% dnd_row %}
       {% dnd_module
         path="@hubspot/rich_text"
-        html={{ context.content or "<h1>This is your main headline.</h1><p>Use this space to tell everyone about what you have to offer.</p>" }}
+        html={{ context.content or "<h1>Welcome to FreshJuice</h1><p>The best theme for all your juicy needs and smoothy ideas. Feel free to customise this theme to your needs.</p><br><p><strong>We welcome you into our juicy family!!</strong></p>" }}
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}

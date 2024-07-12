@@ -1,0 +1,34 @@
+<!--
+  templateType: section
+  label: Row Content Image Left
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/row-content-img-left.png
+  description: "Section separated in two columns. Left column has an image and right column has text."
+-->
+{% dnd_section
+  background_color="#f8fafc",
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_module
+    path="@hubspot/linked_image",
+    img={
+    "alt": "Bowl with vegetables and fruits.",
+    "loading": "lazy",
+    "max_height": 450,
+    "max_width": 600,
+    "size_type": "auto_custom_max",
+    "src": context.image or "https://resources.freshjuice.dev/images/600/vegan-bowl-with-vegetables-in-bowl.jpg"
+
+  },
+    offset=0,
+    width=6
+  %}
+  {% end_dnd_module %}
+  {% dnd_module
+    path="@hubspot/rich_text",
+    html="<h2>We are the Healthiest</h2><p>Our Theme and smoothies are the healthiest ones, we strive to make them as healthy as possible. The healthier the better.</p>"
+    offset=6,
+    width=6
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}
