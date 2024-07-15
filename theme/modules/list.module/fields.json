@@ -1,0 +1,155 @@
+[ {
+  "id" : "e0931dad-abb1-fc5a-b865-13db4cdc3be3",
+  "name" : "list_type",
+  "display_width" : null,
+  "label" : "List Type",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "ul", "Unordered" ], [ "ol", "Ordered" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "ul"
+}, {
+  "id" : "4acfd20f-833c-e6f6-583f-5a82ad697c07",
+  "name" : "enable_rich_text",
+  "display_width" : null,
+  "label" : "Enable Rich Text",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "5e392f36-799f-9f13-dc8f-2942dbb48557",
+  "name" : "enable_global_icons",
+  "display_width" : null,
+  "label" : "Enable Global Icons",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "cb1904de-452e-b424-6644-7a37c7693dd9",
+  "name" : "global_icon",
+  "display_width" : null,
+  "label" : "Global Icon",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "enable_global_icons",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "icon_set" : "fontawesome-5.14.0",
+  "type" : "icon",
+  "default" : { }
+}, {
+  "id" : "bf8cc571-515c-0716-9152-391dd7fdeb93",
+  "name" : "list_items",
+  "display_width" : null,
+  "label" : "List Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "18f8f320-6f30-765e-f84d-f490d7c44e74",
+    "name" : "item_rich_text",
+    "display_width" : null,
+    "label" : "Item Rich Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "enable_rich_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "default" : "Obtain Banana Superpowers by FreshJuice"
+  }, {
+    "id" : "7c1cd551-26e2-7418-8727-897a869b1b33",
+    "name" : "item_text",
+    "display_width" : null,
+    "label" : "Item Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "enable_rich_text",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Banana Superpowers by FreshJuice"
+  }, {
+    "id" : "807d3301-25aa-3adf-41c4-784722bb2970",
+    "name" : "individual_item_icon",
+    "display_width" : null,
+    "label" : "Individual Item Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "enable_global_icons",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "icon_set" : "fontawesome-5.14.0",
+    "type" : "icon",
+    "default" : {
+      "name" : "Check Circle",
+      "unicode" : "f058",
+      "type" : "SOLID"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "item_rich_text" : "Obtain Banana Superpowers by FreshJuice",
+    "item_text" : "Banana Superpowers by FreshJuice",
+    "individual_item_icon" : {
+      "name" : "Check Circle",
+      "unicode" : "f058",
+      "type" : "SOLID"
+    }
+  }, {
+    "item_rich_text" : "Obtain Banana Superpowers by FreshJuice",
+    "item_text" : "Banana Superpowers by FreshJuice",
+    "individual_item_icon" : {
+      "name" : "Check Circle",
+      "unicode" : "f058",
+      "type" : "SOLID"
+    }
+  }, {
+    "item_rich_text" : "Obtain Banana Superpowers by FreshJuice",
+    "item_text" : "Banana Superpowers by FreshJuice",
+    "individual_item_icon" : {
+      "name" : "Check Circle",
+      "unicode" : "f058",
+      "type" : "SOLID"
+    }
+  } ]
+} ]

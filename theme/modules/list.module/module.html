@@ -1,0 +1,33 @@
+<div class="fj-container fj-mx-auto">
+  <ul>
+    {% for item in module.list_items %}
+      <li class="fj-flex fj-items-center fj-justify-center fj-gap-x-4">
+        <div class="fj-flex-col fj-items-center fj-justify-center fj-shrink-0 fj-size-14">
+          {% if module.enable_global_icons %}
+            {% icon
+              name="{{ module.global_icon.name }}"
+              style="{{ module.global_icon.type }}"
+              unicode="{{ module.global_icon.unicode }}"
+              icon_set="{{ module.global_icon.icon_set }}"
+            %}
+          {% else %}
+            {% icon
+              name="{{ item.individual_item_icon.name }}"
+              style="{{ item.individual_item_icon.type }}"
+              unicode="{{ item.individual_item_icon.unicode }}"
+              icon_set="{{ item.individual_item_icon.icon_set }}"
+            %}
+          {% endif %}
+        </div>
+
+        <div class="fj-text-base">
+          {% if module.enable_rich_text %}
+            {% inline_rich_text field="item_rich_text" value="{{ item.item_rich_text }}" %}
+          {% else %}
+            {% inline_text field="item_text" value="{{ item.item_text }}" %}
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
