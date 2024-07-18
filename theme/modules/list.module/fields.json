@@ -1,22 +1,9 @@
 [ {
-  "id" : "e0931dad-abb1-fc5a-b865-13db4cdc3be3",
-  "name" : "list_type",
-  "display_width" : null,
-  "label" : "List Type",
-  "required" : true,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "ul", "Unordered" ], [ "ol", "Ordered" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "default" : "ul"
-}, {
   "id" : "4acfd20f-833c-e6f6-583f-5a82ad697c07",
   "name" : "enable_rich_text",
   "display_width" : null,
   "label" : "Enable Rich Text",
+  "inline_help_text" : "Replaces normal text with rich text.",
   "required" : false,
   "locked" : false,
   "display" : "checkbox",
@@ -27,6 +14,18 @@
   "name" : "enable_global_icons",
   "display_width" : null,
   "label" : "Enable Global Icons",
+  "inline_help_text" : "Enabling this will make all list items use the same icon.",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "fbfffa08-8a71-cfaf-f554-7034996e3f8c",
+  "name" : "enable_global_icon_color",
+  "display_width" : null,
+  "label" : "Enable Global Icon Color",
+  "inline_help_text" : "Enabling this will make all the icons have the same colour. Individual Icon colour may overwrite this behaviour.",
   "required" : false,
   "locked" : false,
   "display" : "checkbox",
@@ -49,7 +48,98 @@
   },
   "icon_set" : "fontawesome-5.14.0",
   "type" : "icon",
-  "default" : { }
+  "default" : {
+    "name" : "Check Circle",
+    "unicode" : "f058",
+    "type" : "SOLID"
+  }
+}, {
+  "id" : "e5d6d221-d22c-d944-822e-5d03a59e5039",
+  "name" : "global_icon_color",
+  "display_width" : null,
+  "label" : "Global Icon Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : "#0600FF",
+    "opacity" : 100
+  }
+}, {
+  "id" : "bfae2434-a8b2-a19f-f836-7fbd4f40f34b",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "f6c69a31-4d60-88f3-2d85-6bac27f24ce8",
+    "name" : "spacing",
+    "display_width" : null,
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "enable_rich_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "spacing",
+    "default" : { }
+  }, {
+    "id" : "c197bee3-381d-e1da-a3bc-4e1ce68baea3",
+    "name" : "gap",
+    "display_width" : null,
+    "label" : "Gap",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "c4d43fa3-93be-c67b-c122-eff8ae8836d9",
+      "name" : "vertical_gap",
+      "display_width" : null,
+      "label" : "Vertical Gap",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 0,
+      "step" : 1,
+      "type" : "number",
+      "default" : 4
+    }, {
+      "id" : "05c7f97f-3ae1-301e-324e-e8c8eaba0335",
+      "name" : "horizontal_gap",
+      "display_width" : null,
+      "label" : "Horizontal Gap",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "step" : 1,
+      "type" : "number",
+      "default" : 4
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "vertical_gap" : 4,
+      "horizontal_gap" : 4
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "spacing" : { },
+    "gap" : {
+      "vertical_gap" : 4,
+      "horizontal_gap" : 4
+    }
+  }
 }, {
   "id" : "bf8cc571-515c-0716-9152-391dd7fdeb93",
   "name" : "list_items",
@@ -79,7 +169,7 @@
       "access" : null
     },
     "type" : "richtext",
-    "default" : "Obtain Banana Superpowers by FreshJuice"
+    "default" : "Banana Superpowers by FreshJuice"
   }, {
     "id" : "7c1cd551-26e2-7418-8727-897a869b1b33",
     "name" : "item_text",
@@ -118,38 +208,88 @@
     "icon_set" : "fontawesome-5.14.0",
     "type" : "icon",
     "default" : {
-      "name" : "Check Circle",
-      "unicode" : "f058",
+      "name" : "Check Square",
+      "unicode" : "f14a",
       "type" : "SOLID"
     }
+  }, {
+    "id" : "9b7b8262-3f66-a581-4acc-293da6785b1b",
+    "name" : "individual_icon_color",
+    "display_width" : null,
+    "label" : "Individual Icon Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "enable_global_icon_color",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "default" : {
+      "color" : "#00FFFF",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "398a9045-197c-c020-a2df-fb2fae4774d3",
+    "name" : "icon_size",
+    "display_width" : null,
+    "label" : "Icon Size",
+    "help_text" : "This number applies to both height and width of the icon.",
+    "inline_help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 200,
+    "step" : 1,
+    "type" : "number",
+    "default" : 24
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
-    "item_rich_text" : "Obtain Banana Superpowers by FreshJuice",
-    "item_text" : "Banana Superpowers by FreshJuice",
+    "item_rich_text" : "Priority First for VIPs when it comes to exclusive cocktails and juices.",
+    "item_text" : "Priority First for VIPs when it comes to exclusive cocktails and juices.",
     "individual_item_icon" : {
-      "name" : "Check Circle",
-      "unicode" : "f058",
+      "name" : "Check Square",
+      "unicode" : "f14a",
       "type" : "SOLID"
-    }
+    },
+    "individual_icon_color" : {
+      "color" : "#00FFFF",
+      "opacity" : 100
+    },
+    "icon_size" : 24
   }, {
-    "item_rich_text" : "Obtain Banana Superpowers by FreshJuice",
-    "item_text" : "Banana Superpowers by FreshJuice",
+    "item_rich_text" : "Only the best service and the best taste and variety of smoothies and juices.",
+    "item_text" : "Only the best service and the best taste and variety of smoothies and juices.",
     "individual_item_icon" : {
-      "name" : "Check Circle",
-      "unicode" : "f058",
+      "name" : "Check Square",
+      "unicode" : "f14a",
       "type" : "SOLID"
-    }
+    },
+    "individual_icon_color" : {
+      "color" : "#00FFFF",
+      "opacity" : 100
+    },
+    "icon_size" : 24
   }, {
-    "item_rich_text" : "Obtain Banana Superpowers by FreshJuice",
-    "item_text" : "Banana Superpowers by FreshJuice",
+    "item_rich_text" : "Best relaxing environments for work or leisure breaks as you drink one of our amazing cocktails.",
+    "item_text" : "Best relaxing environments for work or leisure breaks as you drink one of our amazing cocktails.",
     "individual_item_icon" : {
-      "name" : "Check Circle",
-      "unicode" : "f058",
+      "name" : "Check Square",
+      "unicode" : "f14a",
       "type" : "SOLID"
-    }
+    },
+    "individual_icon_color" : {
+      "color" : "#00FFFF",
+      "opacity" : 100
+    },
+    "icon_size" : 24
   } ]
 } ]

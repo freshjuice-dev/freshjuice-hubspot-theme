@@ -2012,11 +2012,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
   height:0.25rem;
 }
 
-.fj-size-10{
-  width:2.5rem;
-  height:2.5rem;
-}
-
 .fj-size-12{
   width:3rem;
   height:3rem;
@@ -2042,11 +2037,7 @@ lite-youtube.lyt-activated > .lty-playbtn{
   height:2rem;
 }
 
-.fj-size-14{
-  width:3.5rem;
-}
-
-.fj-size-14,.fj-h-14{
+.fj-h-14{
   height:3.5rem;
 }
 

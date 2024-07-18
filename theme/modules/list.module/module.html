@@ -1,26 +1,46 @@
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .spacing {
+        margin-top: {{ module.styles.spacing.margin.top.value }}{{ module.styles.spacing.margin.top.units }};
+        margin-bottom: {{ module.styles.spacing.margin.bottom.value }}{{ module.styles.spacing.margin.bottom.units }};
+        padding: {{ module.styles.spacing.padding.value }}{{ module.styles.spacing.padding.units }};
+      }
+
+      .column-gap {
+        gap: {{ module.styles.gap.vertical_gap }}px;
+      }
+
+      .row-gap {
+        gap: {{ module.styles.gap.horizontal_gap }}px;
+      }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
 <div class="fj-container fj-mx-auto">
-  <ul>
+  <ul class="fj-grid column-gap">
     {% for item in module.list_items %}
-      <li class="fj-flex fj-items-center fj-justify-center fj-gap-x-4">
-        <div class="fj-flex-col fj-items-center fj-justify-center fj-shrink-0 fj-size-14">
-          {% if module.enable_global_icons %}
-            {% icon
-              name="{{ module.global_icon.name }}"
-              style="{{ module.global_icon.type }}"
-              unicode="{{ module.global_icon.unicode }}"
-              icon_set="{{ module.global_icon.icon_set }}"
-            %}
-          {% else %}
-            {% icon
-              name="{{ item.individual_item_icon.name }}"
-              style="{{ item.individual_item_icon.type }}"
-              unicode="{{ item.individual_item_icon.unicode }}"
-              icon_set="{{ item.individual_item_icon.icon_set }}"
-            %}
-          {% endif %}
+      <li class="fj-flex row-gap">
+        <div style="height: {{ item.icon_size }}px; width: {{ item.icon_size }}px"
+             class="fj-flex-col fj-items-center fj-justify-center fj-shrink-0 spacing">
+
+          {% set current_icon = not module.enable_global_icons ? item.individual_item_icon : module.global_icon %}
+          {% set current_icon_color = not module.enable_global_icon_color ? item.individual_icon_color : module.global_icon_color %}
+          {% set icon_color = 'rgba(' ~ current_icon_color.color|convert_rgb ~ ',' ~ current_icon_color.opacity / 100 ~ ')' %}
+
+            <span style="fill:{{ icon_color }}">
+              {% icon
+                name="{{ current_icon.name }}"
+                style="{{ current_icon.type }}"
+                unicode="{{ current_icon.unicode }}"
+                icon_set="{{ current_icon.icon_set }}"
+              %}
+            </span>
+
         </div>
 
-        <div class="fj-text-base">
+        <div class="fj-text-lg fj-leading-tight">
           {% if module.enable_rich_text %}
             {% inline_rich_text field="item_rich_text" value="{{ item.item_rich_text }}" %}
           {% else %}
