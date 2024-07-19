@@ -62,7 +62,7 @@
   "locked" : false,
   "type" : "color",
   "default" : {
-    "color" : "#0600FF",
+    "color" : "#D3E1FC",
     "opacity" : 100
   }
 }, {
@@ -229,7 +229,7 @@
     },
     "type" : "color",
     "default" : {
-      "color" : "#00FFFF",
+      "color" : "#D3E1FC",
       "opacity" : 100
     }
   }, {
@@ -261,7 +261,7 @@
       "type" : "SOLID"
     },
     "individual_icon_color" : {
-      "color" : "#00FFFF",
+      "color" : "#D3E1FC",
       "opacity" : 100
     },
     "icon_size" : 24
@@ -274,7 +274,7 @@
       "type" : "SOLID"
     },
     "individual_icon_color" : {
-      "color" : "#00FFFF",
+      "color" : "#D3E1FC",
       "opacity" : 100
     },
     "icon_size" : 24
@@ -287,7 +287,7 @@
       "type" : "SOLID"
     },
     "individual_icon_color" : {
-      "color" : "#00FFFF",
+      "color" : "#D3E1FC",
       "opacity" : 100
     },
     "icon_size" : 24
