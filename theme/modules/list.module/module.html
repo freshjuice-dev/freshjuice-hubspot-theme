@@ -1,29 +1,27 @@
 {% require_css %}
   <style>
     {% scope_css %}
-      .spacing {
-        margin-top: {{ module.styles.spacing.margin.top.value }}{{ module.styles.spacing.margin.top.units }};
-        margin-bottom: {{ module.styles.spacing.margin.bottom.value }}{{ module.styles.spacing.margin.bottom.units }};
-        padding: {{ module.styles.spacing.padding.value }}{{ module.styles.spacing.padding.units }};
+      .icon-alignment {
+        margin-top: {{ module.styles.icon_alignment }}px;
       }
 
-      .column-gap {
-        gap: {{ module.styles.gap.vertical_gap }}px;
+      .list-gaps {
+        gap: {{ module.styles.list_items_alignment }}px;
       }
 
-      .row-gap {
-        gap: {{ module.styles.gap.horizontal_gap }}px;
+      .icon-text-gaps {
+        gap: {{ module.styles.gap }}px;
       }
     {% end_scope_css %}
   </style>
 {% end_require_css %}
 
 <div class="fj-container fj-mx-auto">
-  <ul class="fj-grid column-gap">
+  <ul class="fj-grid list-gaps">
     {% for item in module.list_items %}
-      <li class="fj-flex row-gap">
-        <div style="height: {{ item.icon_size }}px; width: {{ item.icon_size }}px"
-             class="fj-flex-col fj-items-center fj-justify-center fj-shrink-0 spacing">
+      <li class="fj-flex icon-text-gaps">
+        <div style="height: {{ module.styles.icon_size }}px; width: {{ module.styles.icon_size }}px"
+             class="fj-flex-col fj-items-center fj-justify-center fj-shrink-0 icon-alignment">
 
           {% set current_icon = not module.enable_global_icons ? item.individual_item_icon : module.global_icon %}
           {% set current_icon_color = not module.enable_global_icon_color ? item.individual_icon_color : module.global_icon_color %}
