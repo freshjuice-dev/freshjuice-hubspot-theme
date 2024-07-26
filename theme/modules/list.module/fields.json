@@ -117,7 +117,7 @@
     "type" : "number",
     "default" : 0
   }, {
-    "id" : "d223100c-a4d9-e338-7009-c7b8e6cb0141",
+    "id" : "ebc166bf-587e-3b09-6d7b-55314a4850ca",
     "name" : "icon_size",
     "display_width" : null,
     "label" : "Icon Size",
@@ -170,7 +170,7 @@
       "access" : null
     },
     "type" : "richtext",
-    "default" : "<h4>Priority First for VIPs</h4>\n<p><br>when it comes to exclusive cocktails and juices.</p>"
+    "default" : "<h3><strong>Priority First for VIPs</strong></h3>\n<p><br>when it comes to exclusive cocktails and juices.</p>"
   }, {
     "id" : "7c1cd551-26e2-7418-8727-897a869b1b33",
     "name" : "item_text",
@@ -233,28 +233,13 @@
       "color" : "#2463EB",
       "opacity" : 100
     }
-  }, {
-    "id" : "398a9045-197c-c020-a2df-fb2fae4774d3",
-    "name" : "icon_size",
-    "display_width" : null,
-    "label" : "Icon Size",
-    "help_text" : "This number applies to both height and width of the icon.",
-    "inline_help_text" : "",
-    "required" : false,
-    "locked" : false,
-    "display" : "slider",
-    "min" : 0,
-    "max" : 200,
-    "step" : 1,
-    "type" : "number",
-    "default" : 24
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
-    "item_rich_text" : "<h4>Priority First for VIPs</h4>\n<p><br>when it comes to exclusive cocktails and juices.</p>",
+    "item_rich_text" : "<h3><strong>Priority First for VIPs</strong></h3>\n<p><br>when it comes to exclusive cocktails and juices.</p>",
     "item_text" : "Priority First for VIPs when it comes to exclusive cocktails and juices.",
     "individual_item_icon" : {
       "name" : "Check Square",
@@ -264,10 +249,9 @@
     "individual_icon_color" : {
       "color" : "#2463EB",
       "opacity" : 100
-    },
-    "icon_size" : 24
+    }
   }, {
-    "item_rich_text" : "<h4>Priority First for VIPs</h4>\n<p><br>when it comes to exclusive cocktails and juices.</p>",
+    "item_rich_text" : "<h3><strong>Priority First for VIPs</strong></h3>\n<p><br>when it comes to exclusive cocktails and juices.</p>",
     "item_text" : "Only the best service and the best taste and variety of smoothies and juices.",
     "individual_item_icon" : {
       "name" : "Check Square",
@@ -277,10 +261,9 @@
     "individual_icon_color" : {
       "color" : "#2463EB",
       "opacity" : 100
-    },
-    "icon_size" : 24
+    }
   }, {
-    "item_rich_text" : "<h4>Priority First for VIPs</h4>\n<p><br>when it comes to exclusive cocktails and juices.</p>",
+    "item_rich_text" : "<h3><strong>Priority First for VIPs</strong></h3>\n<p><br>when it comes to exclusive cocktails and juices.</p>",
     "item_text" : "Best relaxing environments for work or leisure breaks as you drink one of our amazing cocktails.",
     "individual_item_icon" : {
       "name" : "Check Square",
@@ -290,7 +273,6 @@
     "individual_icon_color" : {
       "color" : "#2463EB",
       "opacity" : 100
-    },
-    "icon_size" : 24
+    }
   } ]
 } ]
