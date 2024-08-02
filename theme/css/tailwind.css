@@ -3011,6 +3011,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
   --fj-ring-color:rgb(17 24 39 / 0.05);
 }
 
+.fj-drop-shadow{
+  --fj-drop-shadow:drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  filter:var(--fj-blur) var(--fj-brightness) var(--fj-contrast) var(--fj-grayscale) var(--fj-hue-rotate) var(--fj-invert) var(--fj-saturate) var(--fj-sepia) var(--fj-drop-shadow);
+}
+
 .fj-backdrop-blur{
   --fj-backdrop-blur:blur(8px);
 }

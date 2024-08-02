@@ -2,7 +2,7 @@
 {% set widget_id = 'github-gist-' ~ name %}
 
 <div id="{{ widget_id }}"
-     class="fj-not-prose"
+     class="fj-not-prose js-gist-simple fj-drop-shadow"
      data-id="{{ gist_id }}"
   {{ 'data-file="' ~ module.file_name ~ '"' if module.file_name }}
   {{ 'data-caption="' ~ module.caption ~ '"' if module.caption }}
@@ -14,10 +14,9 @@
      data-theme="{{ module.theme }}"
      x-intersect.once="
        loadStylesheet('https://cdn.jsdelivr.net/npm/gist-simple@2.1.0/dist/gist-simple.min.css');
-       loadScript('https://cdn.jsdelivr.net/npm/gist-simple@2.1.0/dist/gist-simple.min.js', 'defer', ()=>{ gistSimple(document.querySelector('#{{ widget_id }}')) }, true);
+       loadScript('https://cdn.jsdelivr.net/npm/gist-simple@2.1.0/dist/gist-simple.min.js', 'defer', ()=>{ gistSimple(document.querySelectorAll('.js-gist-simple')) });
      ">
   <noscript>
     <p>please enable javascript to view the gist</p>
   </noscript>
 </div>
-
