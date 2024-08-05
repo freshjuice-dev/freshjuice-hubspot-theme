@@ -1,0 +1,51 @@
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .icon-alignment {
+        margin-top: {{ module.styles.icon_alignment }}px;
+      }
+
+      .list-gaps {
+        gap: {{ module.styles.list_items_alignment }}px;
+      }
+
+      .icon-text-gaps {
+        gap: {{ module.styles.gap }}px;
+      }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+<div class="fj-container fj-mx-auto">
+  <ul class="fj-grid list-gaps">
+    {% for item in module.list_items %}
+      <li class="fj-flex icon-text-gaps">
+        <div style="height: {{ module.styles.icon_size }}px; width: {{ module.styles.icon_size }}px"
+             class="fj-flex-col fj-items-center fj-justify-center fj-shrink-0 icon-alignment">
+
+          {% set current_icon = not module.enable_global_icons ? item.individual_item_icon : module.global_icon %}
+          {% set current_icon_color = not module.enable_global_icon_color ? item.individual_icon_color : module.global_icon_color %}
+          {% set icon_color = 'rgba(' ~ current_icon_color.color|convert_rgb ~ ',' ~ current_icon_color.opacity / 100 ~ ')' %}
+
+            <span style="fill:{{ icon_color }}">
+              {% icon
+                name="{{ current_icon.name }}"
+                style="{{ current_icon.type }}"
+                unicode="{{ current_icon.unicode }}"
+                icon_set="{{ current_icon.icon_set }}"
+              %}
+            </span>
+
+        </div>
+
+        <div class="fj-text-lg fj-leading-tight">
+          {% if module.enable_rich_text %}
+            {% inline_rich_text field="item_rich_text" value="{{ item.item_rich_text }}" %}
+          {% else %}
+            {% inline_text field="item_text" value="{{ item.item_text }}" %}
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

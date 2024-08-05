@@ -17,12 +17,12 @@
       {% dnd_module
         path="@hubspot/linked_image",
         img={
-          "alt": context.column_one_image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+          "alt": context.column_one_image_alt or "Assortment of fruits with two orange cocktails in the back.",
           "loading": context.column_one_image_loading or "lazy",
-          "max_height": context.column_one_image_height or 451,
-          "max_width": context.column_one_image_width or 605,
+          "max_height": context.column_one_image_height or 600,
+          "max_width": context.column_one_image_width or 600,
           "size_type": "auto_custom_max",
-          "src": context.column_one_image or get_asset_url("../images/grayscale-mountain.png")
+          "src": context.column_one_image or "https://resources.freshjuice.dev/images/600/600/mango-juice-and-mango-on-wood-table.jpg"
         }
       %}
       {% end_dnd_module %}
@@ -30,7 +30,7 @@
     {% dnd_row %}
       {% dnd_module
         path="@hubspot/rich_text",
-        html={{ context.column_one_content or "<h3>Feature one</h3><p>Use text and images to tell your company’s story. Explain what makes your product or service extraordinary.</p>" }}
+        html={{ context.column_one_content or "<h3>Our Origin</h3><p>There are many themes that do not use standard practices. They are unethical and cost lots of money. Our goal is to be the better alternative.</p>" }}
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}
@@ -43,12 +43,12 @@
       {% dnd_module
         path="@hubspot/linked_image",
         img={
-          "alt": context.column_two_image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+          "alt": context.column_two_image_alt or "Natural Ice Cream made out of Mint tea leaves and kiwi.",
           "loading": context.column_two_image_loading or "lazy",
-          "max_height": context.column_two_image_height or 451,
-          "max_width": context.column_two_image_width or 605,
+          "max_height": context.column_two_image_height or 600,
+          "max_width": context.column_two_image_width or 600,
           "size_type": "auto_custom_max",
-          "src": context.column_two_image or get_asset_url("../images/grayscale-mountain.png")
+          "src": context.column_two_image or "https://resources.freshjuice.dev/images/600/600/matcha-green-tea-chia-seed-pudding.jpg"
         }
       %}
       {% end_dnd_module %}
@@ -56,7 +56,7 @@
     {% dnd_row %}
       {% dnd_module
         path="@hubspot/rich_text",
-        html={{ context.column_two_content or "<h3>Feature two</h3><p>Use text and images to tell your company’s story. Explain what makes your product or service extraordinary.</p>" }}
+        html={{ context.column_two_content or "<h3>Our Mission</h3><p>To make a simple theme that will fit everyone's needs while being free, easy to modify and free of repetitive code.</p>" }}
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}
@@ -69,12 +69,12 @@
       {% dnd_module
         path="@hubspot/linked_image",
         img={
-          "alt": context.column_three_image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+          "alt": context.column_three_image_alt or "Three Ice Smoothie Machines",
           "loading": context.column_three_image_loading or "lazy",
-          "max_height": context.column_three_image_height or 451,
-          "max_width": context.column_three_image_width or 605,
+          "max_height": context.column_three_image_height or 600,
+          "max_width": context.column_three_image_width or 600,
           "size_type": "auto_custom_max",
-          "src": context.column_three_image or get_asset_url("../images/grayscale-mountain.png")
+          "src": context.column_three_image or "https://resources.freshjuice.dev/images/600/600/three-flavors-of-fresh-grenadine-for-sale-in-summe.jpg"
         }
       %}
       {% end_dnd_module %}
@@ -82,7 +82,7 @@
     {% dnd_row %}
       {% dnd_module
         path="@hubspot/rich_text",
-        html={{ context.column_three_content or "<h3>Feature three</h3><p>Use text and images to tell your company’s story. Explain what makes your product or service extraordinary.</p>" }}
+        html={{ context.column_three_content or "<h3>Free for all</h3><p>The main point of the theme is to be simple and free as well as fit to use by anyone. We will not diverge from this goal.</p>" }}
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}

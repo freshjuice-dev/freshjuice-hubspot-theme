@@ -1,0 +1,32 @@
+<!--
+  templateType: section
+  label: Row Content Image Right
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/row-content-img-right.png
+  description: "Section separated in two columns. Left column has text and right column has an image."
+-->
+{% dnd_section
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_module
+    path="@hubspot/rich_text",
+    html={{ context.content or "<h2>All Natural</h2><p>We use all natural products from farms and producers locally near us and we do not process the foods.</p>" }}
+    offset=0,
+    width=6
+  %}
+
+  {% end_dnd_module %}
+  {% dnd_module path="@hubspot/linked_image",
+    img={
+      "alt": context.image_alt or "Image with fruits on a plate",
+      "loading": context.image_loading or "disabled",
+      "max_height": context.image_height or 450,
+      "max_width": context.image_width or 600,
+      "size_type": "auto_custom_max",
+      "src": context.image or "https://resources.freshjuice.dev/images/600/exotic-fruits.jpg"
+    },
+    offset=6,
+    width=6
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

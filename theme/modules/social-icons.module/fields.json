@@ -1,0 +1,237 @@
+[ {
+  "id" : "bdc7b1c4-d6f6-bb96-7902-761f8bb9efd0",
+  "name" : "gl_icon_color_enable",
+  "display_width" : null,
+  "label" : "Enable Global Icon Color",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "935f07c7-bad0-21da-bcdd-1da81702ad28",
+  "name" : "gl_icon_bg_color_enable",
+  "display_width" : null,
+  "label" : "Enable Global Icon Background Color",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "0bc5877a-957d-fec9-6858-60e65f9c3328",
+  "name" : "global_icon_color",
+  "display_width" : null,
+  "label" : "Global Icon Color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "gl_icon_color_enable",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "color",
+  "default" : {
+    "color" : "#FFFFFF",
+    "opacity" : 100
+  }
+}, {
+  "id" : "fb295abd-3b26-7805-be12-86697305fa70",
+  "name" : "global_background_color",
+  "display_width" : null,
+  "label" : "Global Background Color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "gl_icon_bg_color_enable",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "color",
+  "default" : {
+    "color" : "#2663EB",
+    "opacity" : 100
+  }
+}, {
+  "id" : "f8f9150e-6177-0c14-34c5-be163cdf0d3e",
+  "name" : "social_items",
+  "display_width" : null,
+  "label" : "Social Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "927c6735-aa8b-840a-1268-6fcd5298045b",
+    "name" : "icon_name",
+    "display_width" : null,
+    "label" : "Icon Name",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Facebook"
+  }, {
+    "id" : "74aba557-d450-c36e-ac67-7a800aeb3963",
+    "name" : "social_icon",
+    "display_width" : null,
+    "label" : "Social Icon",
+    "required" : true,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.14.0",
+    "type" : "icon",
+    "default" : {
+      "name" : "Facebook",
+      "unicode" : "f09a",
+      "type" : "REGULAR"
+    }
+  }, {
+    "id" : "0b75ed15-a680-33f9-d0ed-932959298318",
+    "name" : "link_field",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://www.facebook.com",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "8987f369-e127-8928-d73c-1e392e5f5c80",
+    "name" : "individual_icon_color",
+    "display_width" : null,
+    "label" : "Individual Icon Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "gl_icon_color_enable",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "3f136e75-1a49-f2dd-31c6-1be8aba26745",
+    "name" : "individual_icon_background_color",
+    "display_width" : null,
+    "label" : "Individual Icon Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "gl_icon_bg_color_enable",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "default" : {
+      "color" : "#2663EB",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "icon_name" : "Facebook",
+    "social_icon" : {
+      "name" : "Facebook",
+      "unicode" : "f09a",
+      "type" : "REGULAR"
+    },
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://www.facebook.com/",
+        "type" : "SOLID"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "individual_icon_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "individual_icon_background_color" : {
+      "color" : "#2663EB",
+      "opacity" : 100
+    }
+  }, {
+    "icon_name" : "LinkedIn",
+    "social_icon" : {
+      "name" : "LinkedIn",
+      "unicode" : "f0e1",
+      "type" : "REGULAR"
+    },
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://www.linkedin.com/",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "individual_icon_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "individual_icon_background_color" : {
+      "color" : "#2663EB",
+      "opacity" : 100
+    }
+  }, {
+    "icon_name" : "X-Twitter",
+    "social_icon" : {
+      "name" : "x-twitter",
+      "unicode" : "e61b",
+      "type" : "REGULAR"
+    },
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://x.com/",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "individual_icon_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "individual_icon_background_color" : {
+      "color" : "#2663EB",
+      "opacity" : 100
+    }
+  } ]
+} ]
