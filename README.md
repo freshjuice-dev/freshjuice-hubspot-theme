@@ -1,4 +1,4 @@
-# 🍹FreshJuice – HubSpot CMS Theme Boilerplate
+# 🍹FreshJuice – HubSpot CMS Theme
 
 [![GitHub Release](https://img.shields.io/github/v/release/freshjuice-dev/freshjuice-hubspot-theme)](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/releases)
 [![GitHub last commit](https://img.shields.io/github/last-commit/freshjuice-dev/freshjuice-hubspot-theme)](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/commits/main)
@@ -9,13 +9,13 @@
 [![GitHub Repo stars](https://img.shields.io/github/stars/freshjuice-dev/freshjuice-hubspot-theme)](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/stargazers)
 
 
-A modern, clean, and minimalistic boilerplate for HubSpot CMS themes. This boilerplate is designed to help you get started with your HubSpot CMS theme development quickly. It includes a modern frameworks and tools like Tailwind CSS, Alpine.js.
+A modern, clean, and minimalistic theme for HubSpot CMS themes. This theme is designed to help you get started with your HubSpot CMS theme development quickly. It includes a modern frameworks and tools like Tailwind CSS, Alpine.js.
 
 [Demo website](https://freshjuice.dev/hubspot-theme/)
 
 ## Purpose
 
-This boilerplate is designed to help developers a head start on their HubSpot CMS theme development. While most of HubSpot themes are chunky and bloated, this boilerplate is designed to be minimalistic and load only required components. Solution for pixel perfect design and fast loading website.
+This theme is designed to help developers a head start on their HubSpot CMS theme development. While most of HubSpot themes are chunky and bloated, this theme is designed to be minimalistic and load only required components. Solution for pixel perfect design and fast loading website.
 
 
 ## Getting Started
