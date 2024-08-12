@@ -1,7 +1,7 @@
 {
   "name": "freshjuice-hubspot-theme",
   "version": "1.17.0",
-  "description": "Hubspot CMS theme boilerplate with TailwindCSS, AlpineJS, and more.",
+  "description": "Hubspot CMS theme built with TailwindCSS, AlpineJS, and more.",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf './_temp' './_dist' && mkdir './_temp' './_dist'",
