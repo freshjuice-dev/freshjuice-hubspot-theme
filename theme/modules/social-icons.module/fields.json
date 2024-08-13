@@ -90,7 +90,7 @@
     "label" : "Social Icon",
     "required" : true,
     "locked" : false,
-    "icon_set" : "fontawesome-5.14.0",
+    "icon_set" : "fontawesome-6.4.2",
     "type" : "icon",
     "default" : {
       "name" : "Facebook",
