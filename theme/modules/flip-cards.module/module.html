@@ -1,0 +1,32 @@
+<section class="fj-container fj-grid sm:fj-grid-cols-2 lg:fj-grid-cols-3 fj-gap-8 fj-mx-auto">
+  {% for flipcard in module.flip_cards_list %}
+    <div class="fj-min-h-[375px] fj-perspective-1000">
+      <div class="hover:fj-rotate-y-180 hover:fj-transition fj-relative fj-backface-hidden fj-duration-500 fj-ease-in-out-expo fj-transform-style-3d fj-w-full fj-h-full fj-text-center fj-rounded-lg">
+        <div class="fj-absolute fj-rotate-y-0 fj-backface-hidden fj-w-full fj-h-full fj-flex fj-flex-col fj-justify-start fj-bg-stone-50 fj-rounded-lg fj-p-8">
+          <div class="fj-relative fj-flex fj-justify-center">
+            {% if flipcard.avatar.src %}
+              {% set loadingAttr = flipcard.avatar.loading != 'disabled' ? '' : '' %}
+              <img src="{{ flipcard.avatar.src }}"
+                   class="fj-size-40 fj-border-4 fj-rounded-full"
+                   style="border-color: #FFBD01"
+                   alt="{{ flipcard.avatar.alt|escape_attr or 'Headshot'}}"
+                   width="{{ flipcard.avatar.width }}"
+                   height="{{ flipcard.avatar.height }}"
+                   loading="{{ loadingAttr or "eager" }}">
+            {% endif %}
+          </div>
+
+          <div class="fj-grid fj-mt-6">
+            <span>{{ flipcard.title }}</span>
+            <span>{{ flipcard.card_details }}</span>
+          </div>
+        </div>
+
+        <div class="fj-absolute fj-rotate-y-180 fj-backface-hidden fj-h-full fj-w-full fj-flex fj-flex-col fj-justify-center fj-bg-stone-50 fj-rounded-lg fj-p-8">
+          <span class="fj-mb-0 fj-text-base fj-text-left">{{ flipcard.description }}</span>
+        </div>
+      </div>
+    </div>
+
+  {% endfor %}
+</section>

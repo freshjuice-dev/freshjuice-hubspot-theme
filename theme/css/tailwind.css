@@ -436,6 +436,14 @@ select{
   outline:1px auto -webkit-focus-ring-color;
 }
 
+:root{
+  --fj-rotate-x:0;
+  --fj-rotate-y:0;
+  --fj-translate-z:0;
+  --fj-scale-z:1;
+  --fj-rotate-3d:0,0,0,0deg;
+}
+
 html{
   font-size:16px;
 }
@@ -1896,6 +1904,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   margin-top:-0.5rem;
 }
 
+.fj-mb-0{
+  margin-bottom:0px;
+}
+
 .fj-mb-2{
   margin-bottom:0.5rem;
 }
@@ -2027,6 +2039,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
   height:4rem;
 }
 
+.fj-size-40{
+  width:10rem;
+  height:10rem;
+}
+
 .fj-size-5{
   width:1.25rem;
   height:1.25rem;
@@ -2084,6 +2101,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-min-h-\[16rem\]{
   min-height:16rem;
+}
+
+.fj-min-h-\[375px\]{
+  min-height:375px;
 }
 
 .fj-min-h-screenSinNav{
@@ -2248,6 +2269,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-items-stretch{
   align-items:stretch;
+}
+
+.fj-justify-start{
+  justify-content:flex-start;
 }
 
 .fj-justify-end{
@@ -2450,6 +2475,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   border-width:1px;
 }
 
+.fj-border-4{
+  border-width:4px;
+}
+
 .fj-border-l{
   border-left-width:1px;
 }
@@ -2536,6 +2565,11 @@ lite-youtube.lyt-activated > .lty-playbtn{
 .fj-bg-rose-50{
   --fj-bg-opacity:1;
   background-color:rgb(255 241 242 / var(--fj-bg-opacity));
+}
+
+.fj-bg-stone-50{
+  --fj-bg-opacity:1;
+  background-color:rgb(250 250 249 / var(--fj-bg-opacity));
 }
 
 .fj-bg-transparent{
@@ -3066,6 +3100,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   transition-duration:300ms;
 }
 
+.fj-duration-500{
+  transition-duration:500ms;
+}
+
 .fj-ease-in{
   transition-timing-function:cubic-bezier(0.4, 0, 1, 1);
 }
@@ -3076,6 +3114,26 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-ease-out{
   transition-timing-function:cubic-bezier(0, 0, 0.2, 1);
+}
+
+.fj-perspective-1000{
+  perspective:1000px;
+}
+
+.fj-rotate-y-0{
+  --fj-rotate-y:0deg;
+}
+
+.fj-rotate-y-180{
+  --fj-rotate-y:180deg;
+}
+
+.fj-backface-hidden{
+  backface-visibility:hidden;
+}
+
+.fj-transform-style-3d{
+  transform-style:preserve-3d;
 }
 
 .fj-bg-gradient-10{
@@ -3617,6 +3675,18 @@ lite-youtube.lyt-activated > .lty-playbtn{
   --fj-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --fj-shadow-colored:0 20px 25px -5px var(--fj-shadow-color), 0 8px 10px -6px var(--fj-shadow-color);
   box-shadow:var(--fj-ring-offset-shadow, 0 0 #0000), var(--fj-ring-shadow, 0 0 #0000), var(--fj-shadow);
+}
+
+.hover\:fj-transition:hover{
+  transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration:150ms;
+}
+
+.hover\:fj-rotate-y-180:hover{
+  --fj-rotate-y:180deg;
 }
 
 .fj-group:hover .group-hover\:-fj-translate-x-2{

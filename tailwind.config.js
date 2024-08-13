@@ -46,6 +46,9 @@ module.exports = {
         "copy-xl": "75ch",
         "copy-2xl": "85ch",
       },
+      transitionTimingFunction: {
+        'ease-in-out-expo': 'cubic-bezier(.87,0,.13,1)'
+      }
     },
   },
   plugins: [
@@ -53,6 +56,7 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("@tailwindcss/aspect-ratio"),
     require("tailwindcss-safe-area"),
+    require("@xpd/tailwind-3dtransforms"),
     ({ addComponents, theme }) => {
       addComponents({
         // some components?
