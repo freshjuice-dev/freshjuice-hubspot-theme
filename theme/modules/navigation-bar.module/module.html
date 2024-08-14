@@ -234,7 +234,7 @@
                       {% if child.children %}
                         {% set has_sub_child = child.children and ((child.children|first).children or (child.children|last).children) %}
                         <div class="fj-border-l-4 fj-border-gray-100 {{ 'fj-pl-2.5' if not has_sub_child }} fj-relative fj-overflow-hidden fj-max-h-0 fj-transition-all fj-duration-300"
-                             x-ref="{{ x_ref_id }}" :style="open?`max-height:${$refs.{{x_ref_id}}.scrollHeight}px`:``">
+                             x-ref="{{ x_ref_id }}" :style="open?`max-height:${$refs['{{x_ref_id}}'].scrollHeight}px`:``">
                           {% for sub_child in child.children %}
                             {% if has_sub_child and module.menu_layout == "modern" %}
                               <div class="">
