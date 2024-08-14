@@ -45,10 +45,7 @@ module.exports = {
         "copy-lg": "65ch",
         "copy-xl": "75ch",
         "copy-2xl": "85ch",
-      },
-      transitionTimingFunction: {
-        'in-out-expo': 'cubic-bezier(.87,0,.13,1)'
-      },
+      }
     },
   },
   plugins: [
