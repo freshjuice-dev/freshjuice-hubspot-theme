@@ -47,8 +47,8 @@ module.exports = {
         "copy-2xl": "85ch",
       },
       transitionTimingFunction: {
-        'ease-in-out-expo': 'cubic-bezier(.87,0,.13,1)'
-      }
+        'in-out-expo': 'cubic-bezier(.87,0,.13,1)'
+      },
     },
   },
   plugins: [
