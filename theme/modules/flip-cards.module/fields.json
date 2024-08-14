@@ -46,6 +46,18 @@
     "default" : "Superhero Banana"
   }, {
     "id" : "f2505692-af06-8813-58fb-e558b67187f1",
+    "name" : "second_title",
+    "display_width" : null,
+    "label" : "Second Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Lead of SuperBanana Corps"
+  }, {
+    "id" : "0516cef0-8a74-b3b9-01ac-51195b19b98c",
     "name" : "card_details",
     "display_width" : null,
     "label" : "Card Details",
@@ -55,7 +67,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "Lead of SuperBanana Corps"
+    "default" : "Expert in Juicing"
   }, {
     "id" : "2cdfa4d3-0e0c-1b66-47fe-3ac8f322801b",
     "name" : "description",
@@ -85,7 +97,8 @@
       "max_height" : 1024
     },
     "title" : "Superhero Banana",
-    "card_details" : "Lead of SuperBanana Corps",
+    "second_title" : "Lead of SuperBanana Corps",
+    "card_details" : "Expert in Juicing",
     "description" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
   }, {
     "avatar" : {
@@ -99,7 +112,8 @@
       "max_height" : 1024
     },
     "title" : "Superhero Banana",
-    "card_details" : "Lead of SuperBanana Corps",
+    "second_title" : "Lead of SuperBanana Corps",
+    "card_details" : "Expert in Juicing",
     "description" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
   }, {
     "avatar" : {
@@ -113,7 +127,8 @@
       "max_height" : 1024
     },
     "title" : "Superhero Banana",
-    "card_details" : "Lead of SuperBanana Corps",
+    "second_title" : "Lead of SuperBanana Corps",
+    "card_details" : "Expert in Juicing",
     "description" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
   } ]
 } ]
