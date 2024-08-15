@@ -1,0 +1,134 @@
+[ {
+  "id" : "733a2593-85c4-05da-74d5-bf8c285f2c89",
+  "name" : "flip_cards_list",
+  "display_width" : null,
+  "label" : "Flip Cards List",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 3,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "3a275251-adee-007d-59e9-07bdb77767dc",
+    "name" : "avatar",
+    "display_width" : null,
+    "label" : "Avatar",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/_8c3ff510-0637-43e4-b1c0-54a6e26f8c45.jpeg",
+      "alt" : "_8c3ff510-0637-43e4-b1c0-54a6e26f8c45",
+      "loading" : "lazy",
+      "width" : 1024,
+      "height" : 1024,
+      "max_width" : 1024,
+      "max_height" : 1024
+    }
+  }, {
+    "id" : "df26e05a-58fb-39ae-d659-4488c60059c4",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Superhero Banana"
+  }, {
+    "id" : "f2505692-af06-8813-58fb-e558b67187f1",
+    "name" : "second_title",
+    "display_width" : null,
+    "label" : "Second Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Lead of SuperBanana Corps"
+  }, {
+    "id" : "0516cef0-8a74-b3b9-01ac-51195b19b98c",
+    "name" : "card_details",
+    "display_width" : null,
+    "label" : "Card Details",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Expert in Juicing"
+  }, {
+    "id" : "2cdfa4d3-0e0c-1b66-47fe-3ac8f322801b",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "avatar" : {
+      "size_type" : "auto",
+      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/_8c3ff510-0637-43e4-b1c0-54a6e26f8c45.jpeg",
+      "alt" : "_8c3ff510-0637-43e4-b1c0-54a6e26f8c45",
+      "loading" : "lazy",
+      "width" : 1024,
+      "height" : 1024,
+      "max_width" : 1024,
+      "max_height" : 1024
+    },
+    "title" : "Superhero Banana",
+    "second_title" : "Lead of SuperBanana Corps",
+    "card_details" : "Expert in Juicing",
+    "description" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  }, {
+    "avatar" : {
+      "size_type" : "auto",
+      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/_8c3ff510-0637-43e4-b1c0-54a6e26f8c45.jpeg",
+      "alt" : "_8c3ff510-0637-43e4-b1c0-54a6e26f8c45",
+      "loading" : "lazy",
+      "width" : 1024,
+      "height" : 1024,
+      "max_width" : 1024,
+      "max_height" : 1024
+    },
+    "title" : "Superhero Banana",
+    "second_title" : "Lead of SuperBanana Corps",
+    "card_details" : "Expert in Juicing",
+    "description" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  }, {
+    "avatar" : {
+      "size_type" : "auto",
+      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/_8c3ff510-0637-43e4-b1c0-54a6e26f8c45.jpeg",
+      "alt" : "_8c3ff510-0637-43e4-b1c0-54a6e26f8c45",
+      "loading" : "lazy",
+      "width" : 1024,
+      "height" : 1024,
+      "max_width" : 1024,
+      "max_height" : 1024
+    },
+    "title" : "Superhero Banana",
+    "second_title" : "Lead of SuperBanana Corps",
+    "card_details" : "Expert in Juicing",
+    "description" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  } ]
+} ]

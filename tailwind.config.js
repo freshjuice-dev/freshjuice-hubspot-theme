@@ -45,7 +45,7 @@ module.exports = {
         "copy-lg": "65ch",
         "copy-xl": "75ch",
         "copy-2xl": "85ch",
-      },
+      }
     },
   },
   plugins: [
@@ -53,6 +53,7 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("@tailwindcss/aspect-ratio"),
     require("tailwindcss-safe-area"),
+    require("@xpd/tailwind-3dtransforms"),
     ({ addComponents, theme }) => {
       addComponents({
         // some components?
