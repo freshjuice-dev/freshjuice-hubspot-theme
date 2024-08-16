@@ -166,7 +166,7 @@
       "no_follow" : false
     },
     "features_title" : "Starter features included along with:",
-    "features_list" : [ "Banana Smoothie", "Private Juice Bar", "Customisable Fruit Salad", "Weekly Updates on Juicy Features", "Being Extra Juicy" ]
+    "features_list" : [ "Banana Smoothie", "Private Juice Bar", "Customisable Fruit Salad", "Weekly Updates on Juicy Features" ]
   }, {
     "tier_name" : "Enterprise",
     "price" : "Custom",
