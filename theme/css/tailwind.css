@@ -2147,6 +2147,10 @@ lite-youtube.lyt-activated > .lty-playbtn{
   max-width:24rem;
 }
 
+.fj-max-w-\[400px\]{
+  max-width:400px;
+}
+
 .fj-max-w-full{
   max-width:100%;
 }
