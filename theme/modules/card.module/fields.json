@@ -1,4 +1,63 @@
 [ {
+  "id" : "12a81f44-39b8-0582-f78c-4552ee23785b",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "02448d8e-a221-62b8-69e2-f8c0bb273e7e",
+    "name" : "image_alignment",
+    "display_width" : null,
+    "label" : "Align Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card.image",
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "alignment_direction" : "HORIZONTAL",
+    "type" : "alignment",
+    "default" : {
+      "horizontal_align" : "CENTER"
+    }
+  }, {
+    "id" : "4b8627a2-1a31-66e0-75b4-a2d2f7126052",
+    "name" : "align_text",
+    "display_width" : null,
+    "label" : "Align Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "card.text",
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "type" : "textalignment",
+    "default" : {
+      "text_align" : "CENTER"
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "image_alignment" : {
+      "horizontal_align" : "CENTER"
+    },
+    "align_text" : {
+      "text_align" : "CENTER"
+    }
+  }
+}, {
   "id" : "card",
   "name" : "card",
   "display_width" : null,
