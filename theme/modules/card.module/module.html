@@ -17,7 +17,7 @@
   </style>
 {% end_require_css %}
 
-{% if module.card | length == 3 %}
+{% if module.card | length >= 3 %}
   {% set grid_col_class = 'lg:fj-grid-cols-3' %}
 {% endif %}
 

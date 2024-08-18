@@ -82,7 +82,13 @@
     "show_loading" : true,
     "type" : "image",
     "default" : {
-      "loading" : "lazy"
+      "loading" : "lazy",
+      "alt" : "Pineapple Juice",
+      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/hero-image-1.jpg",
+      "width" : 300,
+      "height" : 300,
+      "max_width" : 800,
+      "max_height" : 800
     }
   }, {
     "id" : "card.text",
@@ -101,17 +107,35 @@
   "type" : "group",
   "default" : [ {
     "image" : {
-      "loading" : "lazy"
+      "loading" : "lazy",
+      "alt" : "Pineapple Juice",
+      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/hero-image-1.jpg",
+      "width" : 300,
+      "height" : 300,
+      "max_width" : 800,
+      "max_height" : 800
     },
     "text" : "<h3>This is a title</h3><p>Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more.</p>"
   }, {
     "image" : {
-      "loading" : "lazy"
+      "loading" : "lazy",
+      "alt" : "Watermelon Slice and Juice",
+      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/watermelon-juice-and-watermelon-slices-on-the-natu.jpg",
+      "width" : 300,
+      "height" : 300,
+      "max_width" : 800,
+      "max_height" : 800
     },
     "text" : "<h3>This is a title</h3><p>Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more.</p>"
   }, {
     "image" : {
-      "loading" : "lazy"
+      "loading" : "lazy",
+      "alt" : "Tropical Fruit",
+      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/tropical-fruit.jpg",
+      "width" : 300,
+      "height" : 300,
+      "max_width" : 800,
+      "max_height" : 800
     },
     "text" : "<h3>This is a title</h3><p>Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more.</p>"
   } ]
