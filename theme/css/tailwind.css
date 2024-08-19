@@ -2299,18 +2299,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
   justify-content:space-between;
 }
 
-.fj-justify-items-start{
-  justify-items:start;
-}
-
-.fj-justify-items-end{
-  justify-items:end;
-}
-
-.fj-justify-items-center{
-  justify-items:center;
-}
-
 .fj-gap-1{
   gap:0.25rem;
 }

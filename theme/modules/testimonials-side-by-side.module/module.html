@@ -30,7 +30,8 @@
           {% if item.author_photo %}
 
             {% if item.author_photo.src %}
-              <img style="height: 48px; width: 48px; border-radius: 48px"
+              <img class="fj-object-cover"
+                   style="height: 48px; width: 48px; border-radius: 48px"
                    width="48" height="48"
                    src="{{ resize_image_url(item.author_photo.src, 48, 48, 48) }}"
                    alt="{{ item.author_photo.alt|escape_attr }}" loading="lazy">

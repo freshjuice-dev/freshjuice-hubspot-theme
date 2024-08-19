@@ -17,7 +17,8 @@
   {% if module.author_name %}
     <div class="fj-flex fj-items-center fj-gap-4">
       {% if module.author_photo.src %}
-        <img style="height: 48px; width: 48px; border-radius: 48px"
+        <img class="fj-object-cover"
+             style="height: 48px; width: 48px; border-radius: 48px"
              width="48" height="48"
              src="{{ resize_image_url(module.author_photo.src, 48, 48, 48) }}"
              alt="{{ module.author_photo.alt|escape_attr }}" loading="lazy">
