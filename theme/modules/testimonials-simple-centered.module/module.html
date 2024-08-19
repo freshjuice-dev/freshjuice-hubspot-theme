@@ -20,7 +20,8 @@
     {% if module.author_photo %}
 
       {% if module.author_photo.src %}
-        <img style="height: 64px; width: 64px; border-radius: 64px"
+        <img class="fj-object-cover"
+             style="height: 64px; width: 64px; border-radius: 64px"
              width="64" height="64"
              src="{{ resize_image_url(module.author_photo.src, 64, 64, 64) }}"
              alt="{{ module.author_photo.alt|escape_attr }}" loading="lazy">
