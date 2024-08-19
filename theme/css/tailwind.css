@@ -2147,10 +2147,6 @@ lite-youtube.lyt-activated > .lty-playbtn{
   max-width:24rem;
 }
 
-.fj-max-w-\[400px\]{
-  max-width:400px;
-}
-
 .fj-max-w-full{
   max-width:100%;
 }
@@ -2301,6 +2297,18 @@ lite-youtube.lyt-activated > .lty-playbtn{
 
 .fj-justify-between{
   justify-content:space-between;
+}
+
+.fj-justify-items-start{
+  justify-items:start;
+}
+
+.fj-justify-items-end{
+  justify-items:end;
+}
+
+.fj-justify-items-center{
+  justify-items:center;
 }
 
 .fj-gap-1{
