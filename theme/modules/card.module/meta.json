@@ -7,7 +7,7 @@
   "categories": [
     "body_content"
   ],
-  "icon": "../../images/module-icons/info-circle-solid.svg",
+  "icon": "fontawesome-5.14.0:Tools:SOLID",
   "host_template_types": [
     "PAGE"
   ],
