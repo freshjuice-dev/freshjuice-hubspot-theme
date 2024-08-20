@@ -1,30 +1,23 @@
-<div class="fj-isolate fj-overflow-hidden">
+<div class="fj-container fj-not-prose fj-relative fj-mx-auto fj-max-w-lg lg:fj-max-w-3xl">
+  <div class="fj-grid fj-grid-cols-1 fj-items-center fj-gap-x-6 fj-gap-y-8 lg:fj-gap-x-10">
 
-  <div class="fj-relative fj-mx-auto fj-max-w-2xl lg:fj-max-w-3xl">
+    <div class="fj-relative fj-col-span-2 lg:fj-col-start-1 lg:fj-row-start-2">
+      <blockquote class="fj-text-xl md:fj-text-2xl">
+        <p class="fj-font-semibold">{{ module.blockquote }}</p>
+      </blockquote>
+    </div>
 
-    <div class="fj-grid fj-grid-cols-1 fj-items-center fj-gap-x-6 fj-gap-y-8 lg:fj-gap-x-10 fj-not-prose">
+    {% if module.author_photo.src %}
+      <img class="fj-rounded-xl fj-col-end-1 fj-size-16 fj-max-w-full lg:fj-row-span-4 lg:fj-size-72 fj-object-cover"
+           width="288" height="288"
+           src="{{ resize_image_url(module.author_photo.src, 288, 288, 288) }}"
+           alt="{{ module.author_photo.alt|escape_attr }}" loading="lazy">
+    {% endif %}
 
-      <div class="fj-relative fj-col-span-2 lg:fj-col-start-1 lg:fj-row-start-2">
-        <blockquote class="fj-text-xl sm:fj-text-2xl">
-          <p class="fj-font-semibold fj-m-0">{{ module.blockquote }}</p>
-        </blockquote>
-      </div>
-
-      {% if module.author_photo.src %}
-        <img class="fj-col-end-1 fj-size-16 fj-max-w-full lg:fj-row-span-4 lg:fj-size-72 fj-object-cover" style="border-radius: 12px;"
-             width="288" height="288"
-             src="{{ resize_image_url(module.author_photo.src, 288, 288, 288) }}"
-             alt="{{ module.author_photo.alt|escape_attr }}" loading="lazy">
-      {% endif %}
-
-      <div class="fj-text-base lg:fj-col-start-1 lg:fj-row-start-3">
-        <p class="fj-font-bold">{{ module.author_name or "" }}</p>
-
-        <p>{{ module.author_job_title or "" }}</p>
-      </div>
-
+    <div class="fj-text-base lg:fj-col-start-1 lg:fj-row-start-3">
+      <p class="fj-font-bold">{{ module.author_name or "" }}</p>
+      <p>{{ module.author_job_title or "" }}</p>
     </div>
 
   </div>
-
 </div>
