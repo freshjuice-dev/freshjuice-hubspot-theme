@@ -6,7 +6,7 @@
   {% set grid_col_class = 'lg:fj-grid-cols-3' %}
 {% endif %}
 
-<section class="fj-not-prose fj-grid fj-grid-cols-1 fj-max-w-lg lg:fj-max-w-full fj-place-items-center lg:fj-place-items-baseline fj-mx-auto {{ grid_col_class or 'fj-max-w-2xl' }}">
+<div class="fj-not-prose fj-grid fj-grid-cols-1 fj-max-w-lg lg:fj-max-w-full fj-place-items-center lg:fj-place-items-baseline fj-mx-auto {{ grid_col_class or 'fj-max-w-2xl' }}">
   {% for item in module.quotes_group %}
     <div class="fj-w-full fj-border-gray-300 fj-flex fj-flex-col fj-place-content-center fj-justify-center fj-gap-4 fj-p-12 {{ 'fj-border-t lg:fj-border-t-0 lg:fj-border-l' if loop.index0 }}">
       {% if item.company_logo.src %}
@@ -44,4 +44,4 @@
       {% endif %}
     </div>
   {% endfor %}
-</section>
+</div>
