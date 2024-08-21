@@ -2,7 +2,7 @@
   {% set grid_col_class = 'lg:fj-grid-cols-3' %}
 {% endif %}
 
-<section class="fj-container fj-grid fj-grid-cols-1 fj-place-items-center fj-gap-8 fj-mx-auto {{ grid_col_class or 'fj-max-w-2xl' }}">
+<div class="fj-container fj-grid fj-grid-cols-1 fj-place-items-center fj-gap-8 fj-mx-auto {{ grid_col_class or 'fj-max-w-2xl' }}">
   {% for flipcard in module.flip_cards_list %}
     <div class="fj-min-h-[375px] fj-max-w-sm fj-relative fj-w-full fj-h-full
                 fj-transform fj-transition-all fj-transform-style-3d fj-perspective-1000 fj-group">
@@ -31,4 +31,4 @@
       </div>
     </div>
   {% endfor %}
-</section>
+</div>

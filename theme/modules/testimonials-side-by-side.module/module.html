@@ -6,10 +6,9 @@
   {% set grid_col_class = 'lg:fj-grid-cols-3' %}
 {% endif %}
 
-<div class="fj-not-prose fj-grid fj-grid-cols-1 fj-place-items-center fj-mx-auto {{ grid_col_class or 'fj-max-w-2xl' }}">
+<div class="fj-not-prose fj-grid fj-grid-cols-1 fj-max-w-lg lg:fj-max-w-full fj-place-items-center lg:fj-place-items-baseline fj-mx-auto {{ grid_col_class or 'fj-max-w-2xl' }}">
   {% for item in module.quotes_group %}
-    <div class="fj-border-gray-300 fj-grid fj-gap-4 fj-py-8 lg:fj-py-0 lg:fj-px-12 {{ 'fj-border-t lg:fj-border-t-0 lg:fj-border-l' if loop.index0 }}">
-
+    <div class="fj-w-full fj-border-gray-300 fj-flex fj-flex-col fj-place-content-center fj-justify-center fj-gap-4 fj-p-12 {{ 'fj-border-t lg:fj-border-t-0 lg:fj-border-l' if loop.index0 }}">
       {% if item.company_logo.src %}
         {% set sizeAttrs = 'width="{{ item.company_logo.width|escape_attr }}" height="{{ item.company_logo.height|escape_attr }}"' %}
         {% if item.company_logo.size_type == 'auto' %}
@@ -30,8 +29,7 @@
           {% if item.author_photo %}
 
             {% if item.author_photo.src %}
-              <img class="fj-object-cover"
-                   style="height: 48px; width: 48px; border-radius: 48px"
+              <img class="fj-object-cover fj-size-12 fj-rounded-full"
                    width="48" height="48"
                    src="{{ resize_image_url(item.author_photo.src, 48, 48, 48) }}"
                    alt="{{ item.author_photo.alt|escape_attr }}" loading="lazy">
@@ -44,8 +42,6 @@
           </div>
         </div>
       {% endif %}
-
     </div>
   {% endfor %}
 </div>
-

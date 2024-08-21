@@ -1,48 +1,41 @@
-<div class="fj-not-prose fj-grid fj-gap-4 fj-place-items-center">
-
-  {% if module.company_logo.src %}
-    {% set sizeAttrs = 'width="{{ module.company_logo.width|escape_attr }}" height="{{ module.company_logo.height|escape_attr }}"' %}
-    {% if module.company_logo.size_type == 'auto' %}
-      {% set sizeAttrs = 'width="{{ module.company_logo.width|escape_attr }}" height="{{ module.company_logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-    {% elif module.company_logo.size_type == 'auto_custom_max' %}
-      {% set sizeAttrs = 'width="{{ module.company_logo.max_width|escape_attr }}" height="{{ module.company_logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+<div class="fj-not-prose fj-container fj-relative fj-mx-auto fj-max-w-lg lg:fj-max-w-3xl">
+  <div class="fj-grid fj-place-items-center fj-gap-4">
+    {% if module.company_logo.src %}
+      {% set sizeAttrs = 'width="{{ module.company_logo.width|escape_attr }}" height="{{ module.company_logo.height|escape_attr }}"' %}
+      {% if module.company_logo.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.company_logo.width|escape_attr }}" height="{{ module.company_logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.company_logo.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.company_logo.max_width|escape_attr }}" height="{{ module.company_logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.company_logo.loading != 'disabled' ? 'loading="{{ module.company_logo.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.company_logo.src|escape_url }}" alt="{{ module.company_logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
     {% endif %}
-    {% set loadingAttr = module.company_logo.loading != 'disabled' ? 'loading="{{ module.company_logo.loading|escape_attr }}"' : '' %}
-    <img src="{{ module.company_logo.src|escape_url }}" alt="{{ module.company_logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
-  {% endif %}
 
-  <blockquote class="fj-text-xl sm:fj-text-2xl fj-max-w-3xl fj-mx-auto">
-    <p class="fj-font-semibold fj-text-center fj-m-0 fj-text-balance">{{ module.blockquote }}</p>
-  </blockquote>
+    <blockquote class="fj-text-xl md:fj-text-2xl">
+      <p class="fj-font-semibold fj-text-center fj-text-balance">{{ module.blockquote }}</p>
+    </blockquote>
 
-  <div class="fj-flex fj-flex-col fj-justify-center fj-items-center">
-
-    {% if module.author_photo %}
-
-      {% if module.author_photo.src %}
-        <img class="fj-object-cover"
-             style="height: 64px; width: 64px; border-radius: 64px"
-             width="64" height="64"
-             src="{{ resize_image_url(module.author_photo.src, 64, 64, 64) }}"
-             alt="{{ module.author_photo.alt|escape_attr }}" loading="lazy">
+    <div class="fj-flex fj-flex-col fj-justify-center fj-items-center">
+      {% if module.author_photo %}
+        {% if module.author_photo.src %}
+          <img class="fj-object-cover fj-size-16 fj-rounded-full"
+               width="64" height="64"
+               src="{{ resize_image_url(module.author_photo.src, 64, 64, 64) }}"
+               alt="{{ module.author_photo.alt|escape_attr }}" loading="lazy">
+        {% endif %}
       {% endif %}
 
-    {% endif %}
+      {% if module.author_name or module.author_job_title %}
+        <div class="fj-flex fj-items-center fj-justify-center fj-gap-2 fj-text-base fj-break-words fj-mt-2">
+          <p class="fj-font-bold">{{ module.author_name or "" }}</p>
 
-    {% if module.author_name or module.author_job_title %}
+          {% if module.author_name and module.author_job_title %}
+            <p> · </p>
+          {% endif %}
 
-      <div class="fj-flex fj-items-center fj-justify-center fj-gap-2 fj-text-base fj-break-words fj-mt-2">
-        <p class="fj-font-bold">{{ module.author_name or "" }}</p>
-
-        {% if module.author_name and module.author_job_title %}
-          <p> · </p>
-        {% endif %}
-
-        <p>{{ module.author_job_title or "" }}</p>
-      </div>
-
-    {% endif %}
-
+          <p>{{ module.author_job_title or "" }}</p>
+        </div>
+      {% endif %}
+    </div>
   </div>
-
 </div>
