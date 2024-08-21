@@ -1,22 +1,4 @@
 [ {
-  "id" : "link",
-  "name" : "link",
-  "display_width" : null,
-  "label" : "Button link",
-  "required" : false,
-  "locked" : false,
-  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "CALL_TO_ACTION" ],
-  "show_advanced_rel_options" : false,
-  "type" : "link",
-  "default" : {
-    "url" : {
-      "href" : "",
-      "type" : "EXTERNAL"
-    },
-    "no_follow" : false,
-    "open_in_new_tab" : false
-  }
-}, {
   "id" : "button_text",
   "name" : "button_text",
   "display_width" : null,
@@ -27,165 +9,24 @@
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
-  "default" : "Add a button link here"
+  "default" : "Get Started"
 }, {
-  "id" : "styles",
-  "name" : "styles",
+  "id" : "cc1340cc-8e57-6aca-814d-2da928514e0e",
+  "name" : "cta_link",
   "display_width" : null,
-  "label" : "Styles",
+  "label" : "CTA Link",
   "required" : false,
   "locked" : false,
-  "children" : [ {
-    "id" : "styles.text",
-    "name" : "text",
-    "display_width" : null,
-    "label" : "Text",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "styles.text.font",
-      "name" : "font",
-      "display_width" : null,
-      "label" : "Font",
-      "required" : false,
-      "locked" : false,
-      "load_external_fonts" : true,
-      "type" : "font",
-      "default" : {
-        "font" : null,
-        "font_set" : "DEFAULT",
-        "styles" : null,
-        "size" : null,
-        "size_unit" : null,
-        "color" : null,
-        "variant" : null,
-        "fallback" : null,
-        "style" : null
-      }
-    } ],
-    "tab" : "STYLE",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group"
-  }, {
-    "id" : "styles.background",
-    "name" : "background",
-    "display_width" : null,
-    "label" : "Background",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "styles.background.color",
-      "name" : "color",
-      "display_width" : null,
-      "label" : "Color",
-      "required" : false,
-      "locked" : false,
-      "type" : "color",
-      "default" : {
-        "color" : null,
-        "opacity" : null,
-        "rgba" : null,
-        "rgb" : null,
-        "hex" : null
-      }
-    } ],
-    "tab" : "STYLE",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group"
-  }, {
-    "id" : "styles.border",
-    "name" : "border",
-    "display_width" : null,
-    "label" : "Border",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "styles.border.border",
-      "name" : "border",
-      "display_width" : null,
-      "label" : "Border",
-      "required" : false,
-      "locked" : false,
-      "allow_custom_border_sides" : false,
-      "type" : "border",
-      "default" : { }
-    } ],
-    "tab" : "STYLE",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group"
-  }, {
-    "id" : "styles.corner",
-    "name" : "corner",
-    "display_width" : null,
-    "label" : "Corner",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "styles.corner.radius",
-      "name" : "radius",
-      "display_width" : null,
-      "label" : "Radius",
-      "required" : false,
-      "locked" : false,
-      "display" : "text",
-      "max" : 100,
-      "step" : 1,
-      "suffix" : "px",
-      "type" : "number"
-    } ],
-    "tab" : "STYLE",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group"
-  }, {
-    "id" : "styles.spacing",
-    "name" : "spacing",
-    "display_width" : null,
-    "label" : "Spacing",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "styles.spacing.spacing",
-      "name" : "spacing",
-      "display_width" : null,
-      "label" : "Spacing",
-      "required" : false,
-      "locked" : false,
-      "type" : "spacing",
-      "default" : { }
-    } ],
-    "tab" : "STYLE",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group"
-  }, {
-    "id" : "styles.alignment",
-    "name" : "alignment",
-    "display_width" : null,
-    "label" : "Alignment",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "styles.alignment.alignment",
-      "name" : "alignment",
-      "display_width" : null,
-      "label" : "Alignment",
-      "required" : false,
-      "locked" : false,
-      "alignment_direction" : "HORIZONTAL",
-      "type" : "alignment",
-      "default" : { }
-    } ],
-    "tab" : "STYLE",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group"
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group"
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "#nada",
+      "type" : "EXTERNAL"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
 } ]
