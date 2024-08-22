@@ -2,7 +2,9 @@
   "global": false,
   "content_types": [
     "LANDING_PAGE",
-    "SITE_PAGE"
+    "SITE_PAGE",
+    "BLOG_LISTING",
+    "BLOG_POST"
   ],
   "categories": [
     "body_content"

@@ -14,10 +14,13 @@
     <div class="container fj-w-full fj-text-center fj-prose sm:fj-prose-lg md:fj-prose-xl fj-text-balance">
       <h1 x-balance-text>{{ content.name | striptags }}</h1>
       <div class="article__header__meta md:fj-text-lg">
-        Posted by
+        Posted
+        {% if content.blog_post_author %}
+        by
         <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}"
            class="fj-text-current"
            rel="author">{{ content.blog_post_author.display_name }}</a>
+        {% endif %}
         on
         <time datetime="{{ content.publish_date }}" class="">{{ content.publish_date_localized }}</time>
       </div>
