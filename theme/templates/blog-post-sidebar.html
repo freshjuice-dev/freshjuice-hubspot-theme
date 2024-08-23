@@ -20,7 +20,7 @@
   <div class="lg:fj-col-span-2">
     <article class="">
       <div class="article__body">
-        <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md">
+        <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md [&>span]:fj-block">
 
           <div class="article__header__meta md:fj-text-lg fj-mb-8">
             <div class="fj-mb-2">
@@ -37,11 +37,7 @@
             <hr class="!fj-m-0">
           </div>
 
-          {% if request.query_dict._preview == 'true' %}
-            {{ content.post_body }}
-          {% else %}
-            {{ content.post_body_rss }}
-          {% endif %}
+          {{ content.post_body }}
 
           {% if content.tag_list %}
             <ul class="article__tags fj-list-none fj-flex fj-flex-wrap fj-gap-2 !fj-p-0">

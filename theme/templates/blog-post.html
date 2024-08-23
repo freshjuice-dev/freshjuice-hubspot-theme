@@ -28,7 +28,7 @@
   </header>
 
   <div class="container article__body">
-    <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md">
+    <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md [&>span]:fj-block">
 
       <nav class="fj-min-h-9 fj-leading-none" x-html='`
         <a class="fj-inline-flex fj-items-center fj-gap-2 fj-group fj-no-underline" href="{{ group.absolute_url }}">
@@ -38,11 +38,7 @@
       `'>
       </nav>
 
-      {% if request.query_dict._preview == 'true' %}
-        {{ content.post_body }}
-      {% else %}
-        {{ content.post_body_rss }}
-      {% endif %}
+      {{ content.post_body }}
 
       {% if content.tag_list %}
         <ul class="article__tags fj-list-none fj-flex fj-flex-wrap fj-gap-2 !fj-p-0">
@@ -55,6 +51,7 @@
           {% endfor %}
         </ul>
       {% endif %}
+
     </div>
   </div>
 
