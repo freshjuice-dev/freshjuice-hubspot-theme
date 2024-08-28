@@ -1,10 +1,11 @@
-{% if module.pricing_card_group | length == 3 %}
-  {% set grid_col_class = 'lg:fj-grid-cols-3' %}
+{% set length = module.pricing_card_group | length %}
+{% if length == 3 %}
+  {% set grid_col_class = 'lg:fj-grid-cols-3 lg:fj-max-w-full' %}
 {% endif %}
 
-<div class="fj-not-prose fj-grid fj-grid-cols-1 fj-max-w-sm lg:fj-max-w-full fj-place-items-center lg:fj-place-items-baseline fj-mx-auto {{ grid_col_class or 'fj-max-w-2xl' }}">
+<div class="fj-not-prose fj-grid fj-grid-cols-1 fj-place-items-center fj-max-w-sm fj-mx-auto {{ grid_col_class or '' }}">
   {% for item in module.pricing_card_group %}
-    <div class="fj-w-full fj-border-gray-300 fj-flex fj-flex-col fj-place-content-center fj-justify-center fj-gap-4 fj-p-12 {{ 'fj-border-t lg:fj-border-t-0 lg:fj-border-l' if loop.index0 }}">
+    <div class="fj-w-full fj-border-gray-300 fj-flex fj-flex-col fj-place-content-center fj-justify-center fj-gap-4 fj-p-12 {{ 'fj-border-t lg:fj-border-t-0 lg:fj-border-l' if loop.index0 }} {{ 'lg:!fj-border-t lg:fj-border-l-0' if length <= 2 }}">
       <p class="fj-text-base fj-font-semibold fj-leading-none">{{ item.tier_name }}</p>
 
       <div class="fj-grid fj-gap-2">

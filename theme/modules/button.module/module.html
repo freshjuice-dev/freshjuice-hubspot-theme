@@ -1,4 +1,4 @@
-<div class="fj-container fj-flex fj-justify-center fj-items-center">
+<div class="fj-not-prose fj-container fj-flex fj-justify-center fj-items-center">
   {% set href = module.cta_link.url.type == "EMAIL_ADDRESS" ? "mailto:" ~ module.cta_link.url.href : module.cta_link.url.href %}
   <a class="fj-button fj-rounded-md"
      href="{{ module.cta_link.url.type == "CALL_TO_ACTION" ? href : href|escape_url }}"
