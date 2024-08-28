@@ -11,5 +11,6 @@
     "BLOG_LISTING",
     "BLOG_POST"
   ],
+  "label": "List",
   "is_available_for_new_content": true
 }

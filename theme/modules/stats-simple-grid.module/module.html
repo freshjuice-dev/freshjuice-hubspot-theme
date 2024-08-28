@@ -1,21 +1,14 @@
-{% if module.stats_list | length == 2 %}
-  {% set grid_col_class = 'lg:fj-grid-cols-2' %}
+{% if module.stats_list | length > 4 %}
+  {% set cols = 4 %}
 {% endif %}
 
-{% if module.stats_list | length == 3 %}
-  {% set grid_col_class = 'lg:fj-grid-cols-3' %}
-{% endif %}
-
-{% if module.stats_list | length >= 4 %}
-  {% set grid_col_class = 'lg:fj-grid-cols-4' %}
-{% endif %}
-
-<div class="fj-not-prose fj-grid fj-gap-1 fj-grid-cols-1 sm:fj-grid-cols-2 fj-text-balance {{ grid_col_class or '' }}">
+<div class="fj-not-prose fj-grid fj-grid-cols-1 fj-gap-1 fj-text-balance {{ 'sm:fj-grid-cols-2' if module.stats_list | length >= 2 }}"
+     style="grid-template-columns: repeat({{ cols or module.stats_list | length }}, minmax(0, 1fr));">
   {% for item in module.stats_list %}
     <div class="fj-grid fj-bg-gray-100 fj-place-items-center fj-text-center fj-p-2">
       <p class="fj-text-3xl fj-font-semibold fj-tracking-tight">{{ item.title }}</p>
 
-      <p class="fj-text-sm fj-leading-7">{{ item.subtext }}</p>
+      <p class="fj-text-sm">{{ item.subtext }}</p>
     </div>
   {% endfor %}
 </div>

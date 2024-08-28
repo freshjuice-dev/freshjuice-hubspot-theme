@@ -12,7 +12,7 @@
   {% set imageAlign = 'fj-justify-end' %}
 {% endif %}
 
-<div class="fj-grid fj-grid-cols-1 fj-place-items-center fj-mx-auto {{ grid_col_class }}">
+<div class="fj-not-prose fj-container fj-grid fj-grid-cols-1 fj-place-items-center fj-mx-auto {{ grid_col_class or '' }}">
   {% for card in module.card %}
     <div class="fj-max-w-96 fj-p-4">
       {% if card.image.src %}
