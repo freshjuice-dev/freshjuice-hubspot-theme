@@ -18,7 +18,7 @@
           <circle cx="2" cy="2" r="2" fill="currentColor" />
         </svg>
         {{ item.date }}
-        <div class="{{ 'fj-hidden' if module.timeline_list | length == 1 }} fj-absolute fj-h-px fj-bg-blue-600 lg:fj-static fj-w-auto fj-flex-auto lg:fj-translate-x-0"></div>
+        <div class="fj-absolute fj-h-px fj-bg-gradient-to-r fj-max-w-xs fj-from-blue-600 lg:fj-static fj-w-auto fj-flex-auto lg:fj-translate-x-0"></div>
       </div>
 
       <p class="fj-text-2xl fj-font-semibold">{{ item.title }}</p>
@@ -27,4 +27,3 @@
     </div>
   {% endfor %}
 </div>
-
