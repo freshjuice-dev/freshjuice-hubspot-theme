@@ -43,21 +43,17 @@
           src = src.startsWith("//") ? `https:${src}` : `https://${src}`;
         }
         if (document.querySelector(`script[src="${src}"]`)) {
-          if (callback && callbackForced)
-            callback();
+          if (callback && callbackForced) callback();
           return;
         }
         const script = document.createElement("script");
         script.src = src;
-        if (loading === "defer")
-          script.defer = true;
-        if (loading === "async")
-          script.async = true;
+        if (loading === "defer") script.defer = true;
+        if (loading === "async") script.async = true;
         script.crossOrigin = "anonymous";
         script.onload = script.onreadystatechange = () => {
           if (!exports.readyState || exports.readyState === "loaded" || exports.readyState === "complete") {
-            if (callback)
-              callback();
+            if (callback) callback();
             script.onload = script.onreadystatechange = null;
           }
         };
@@ -75,8 +71,7 @@
         const prefetcher = document.createElement("link");
         const isSupported = prefetcher.relList && prefetcher.relList.supports && prefetcher.relList.supports("prefetch") && window.IntersectionObserver && "isIntersecting" in IntersectionObserverEntry.prototype;
         const isSlowConnection = navigator.connection && (navigator.connection.saveData || (navigator.connection.effectiveType || "").includes("2g"));
-        if (isSlowConnection || !isSupported)
-          return;
+        if (isSlowConnection || !isSupported) return;
         const prefetch = (url) => new Promise((resolve, reject) => {
           const link = document.createElement(`link`);
           link.rel = `prefetch`;
@@ -90,22 +85,17 @@
           prefetch(url).catch(() => stopPrefetching()).finally(() => clearTimeout(timer));
         };
         const addUrlToQueue = (url, processImmediately = false) => {
-          if (alreadyPrefetched.has(url) || toPrefetch.has(url))
-            return;
+          if (alreadyPrefetched.has(url) || toPrefetch.has(url)) return;
           const origin = window.location.origin;
-          if (url.substring(0, origin.length) !== origin)
-            return;
-          if (window.location.href === url)
-            return;
+          if (url.substring(0, origin.length) !== origin) return;
+          if (window.location.href === url) return;
           for (let i = 0; i < window.FPConfig.ignoreKeywords.length; i++) {
-            if (url.includes(window.FPConfig.ignoreKeywords[i]))
-              return;
+            if (url.includes(window.FPConfig.ignoreKeywords[i])) return;
           }
           if (processImmediately) {
             prefetchWithTimeout(url);
             alreadyPrefetched.add(url);
-          } else
-            toPrefetch.add(url);
+          } else toPrefetch.add(url);
         };
         const linksObserver = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
@@ -550,7 +540,7 @@
       ) || objects[objects.length - 1];
       const descriptor = Object.getOwnPropertyDescriptor(target, name);
       if (descriptor?.set && descriptor?.get)
-        return Reflect.set(target, name, value, thisProxy);
+        return descriptor.set.call(thisProxy, value) || true;
       return Reflect.set(target, name, value);
     }
   };
@@ -1313,7 +1303,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
             let carry = Promise.all([
               el2._x_hidePromise,
               ...(el2._x_hideChildren || []).map(hideAfterChildren)
-            ]).then(([i]) => i());
+            ]).then(([i]) => i?.());
             delete el2._x_hidePromise;
             delete el2._x_hideChildren;
             return carry;
@@ -1826,7 +1816,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     get raw() {
       return raw;
     },
-    version: "3.13.10",
+    version: "3.14.1",
     flushAndStopDeferringMutations,
     dontAutoEvaluateFunctions,
     disableEffectScheduling,
@@ -2832,14 +2822,14 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       handler4 = wrapHandler(handler4, (next, e) => {
         e.target === el && next(e);
       });
-    handler4 = wrapHandler(handler4, (next, e) => {
-      if (isKeyEvent(event)) {
+    if (isKeyEvent(event) || isClickEvent(event)) {
+      handler4 = wrapHandler(handler4, (next, e) => {
         if (isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers)) {
           return;
         }
-      }
-      next(e);
-    });
+        next(e);
+      });
+    }
     listenerTarget.addEventListener(event, handler4, options);
     return () => {
       listenerTarget.removeEventListener(event, handler4, options);
@@ -2864,9 +2854,12 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function isKeyEvent(event) {
     return ["keydown", "keyup"].includes(event);
   }
+  function isClickEvent(event) {
+    return ["contextmenu", "click", "mouse"].some((i) => event.includes(i));
+  }
   function isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers) {
     let keyModifiers = modifiers.filter((i) => {
-      return !["window", "document", "prevent", "stop", "once", "capture"].includes(i);
+      return !["window", "document", "prevent", "stop", "once", "capture", "self", "away", "outside", "passive"].includes(i);
     });
     if (keyModifiers.includes("debounce")) {
       let debounceIndex = keyModifiers.indexOf("debounce");
@@ -2890,6 +2883,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         return e[`${modifier}Key`];
       });
       if (activelyPressedKeyModifiers.length === selectedSystemKeyModifiers.length) {
+        if (isClickEvent(e.type))
+          return false;
         if (keyToModifiers(e.key).includes(keyModifiers[0]))
           return false;
       }
@@ -3597,7 +3592,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
             start: { height: current + "px" },
             end: { height: full + "px" }
           }, () => el._x_isShown = true, () => {
-            if (el.getBoundingClientRect().height == full) {
+            if (Math.abs(el.getBoundingClientRect().height - full) < 1) {
               el.style.overflow = null;
             }
           });
