@@ -8,7 +8,6 @@
 [![GitHub forks](https://img.shields.io/github/forks/freshjuice-dev/freshjuice-hubspot-theme)](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/network/members)
 [![GitHub Repo stars](https://img.shields.io/github/stars/freshjuice-dev/freshjuice-hubspot-theme)](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/stargazers)
 
-
 A modern, clean, and minimalistic theme for HubSpot CMS themes. This theme is designed to help you get started with your HubSpot CMS theme development quickly. It includes a modern frameworks and tools like Tailwind CSS, Alpine.js.
 
 [Demo website](https://freshjuice.dev/hubspot-theme/)
@@ -56,10 +55,28 @@ This theme is designed to help developers a head start on their HubSpot CMS them
     - **theme/templates/partials**: contains the partial templates for the theme.
     - **theme/templates/system**: contains the system templates for the theme.
 
+
+## Contributing
+
+If you notice an issue, feel free to [open an issue](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/issues).
+
+Any contributions you make are **greatly appreciated**. If you have any improvements, feel free to fork the repo and submit a pull request.
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [releases on this repository](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/releases).
 
 ## License
 
-Distributed under the GPL-3.0 License. See [LICENSE](./LICENSE) for more information.
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more information.
+
+Here are the key points of the MIT license:
+
+- You can use, copy and modify the software.
+- You can distribute modified and unmodified versions of the software.
+- You can include the software in commercial products or services.
+- You have to include the same license in copies of the software.
+- You don't have to share your own code (unless you want to).
+- You don't have to notify the original authors, but it's a nice gesture.
+
+Do bear in mind that while the license does not require you to disclose your source code, it also does not grant you any explicit patent rights.

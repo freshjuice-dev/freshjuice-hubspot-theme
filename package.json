@@ -1,6 +1,6 @@
 {
   "name": "freshjuice-hubspot-theme",
-  "version": "1.17.0",
+  "version": "2.0.0",
   "description": "Hubspot CMS theme built with TailwindCSS, AlpineJS, and more.",
   "main": "index.js",
   "scripts": {
@@ -50,7 +50,7 @@
       "url": "https://zapparov.dev/"
     }
   ],
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/freshjuice-dev/freshjuice-hubspot-theme/issues"
   },

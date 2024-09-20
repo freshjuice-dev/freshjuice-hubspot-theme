@@ -1,6 +1,6 @@
 {
   "label": "FreshJuice",
-  "version": "1.17.0",
+  "version": "2.0.0",
   "author": {
     "name": "Alex Zappa",
     "email": "alex@zappa.dev",
@@ -11,7 +11,7 @@
   "preview_path": "./templates/home.html",
   "screenshot_path": "./images/template-previews/blog-index.png",
   "enable_domain_stylesheets": false,
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "responsive_breakpoints": [
     {
       "name": "mobile",
