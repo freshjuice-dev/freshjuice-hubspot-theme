@@ -1,13 +1,13 @@
 {
   "name": "freshjuice-hubspot-theme",
-  "version": "2.0.0",
-  "description": "Hubspot CMS theme built with TailwindCSS, AlpineJS, and more.",
+  "version": "3.0.0",
+  "description": "FreshJuice DEV is the open-source Community Edition of the FreshJuice theme — built for developers using HubSpot CMS, Tailwind CSS, Alpine.js, and more. Clean, fast, and flexible. The PRO version with additional modules and templates is available separately.",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf './_temp' './_dist' && mkdir './_temp' './_dist'",
     "fetch:hubspot": "hs fetch --overwrite /FreshJuice ./theme && ./scripts/post-fetch.sh",
-    "upload:hubspot": "hs upload ./theme /FreshJuice",
-    "watch:hubspot": "hs watch ./theme /FreshJuice",
+    "upload:hubspot": "hs upload ./theme /FreshJuiceDEV",
+    "watch:hubspot": "hs watch ./theme /FreshJuiceDEV",
     "watch:tailwind": "npx tailwindcss --postcss -i ./source/css/tailwind.css -o ./theme/css/tailwind.css --watch",
     "build:tailwind": "npx tailwindcss --postcss -i ./source/css/tailwind.css -o ./theme/css/tailwind.css",
     "watch:js": "esbuild ./source/js/main.js --outfile=./theme/js/main.js --bundle --watch",
@@ -18,7 +18,7 @@
     "version:major": "./scripts/bump-theme-version.sh major",
     "start": "npm-run-all --parallel watch:*",
     "build": "npm-run-all --serial clean build:js build:tailwind build:zip",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
