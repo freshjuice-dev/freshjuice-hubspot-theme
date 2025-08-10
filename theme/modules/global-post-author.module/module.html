@@ -1,28 +1,28 @@
-<div class="article__author fj-bg-transparent fj-flex fj-flex-col sm:fj-flex-row fj-gap-4 md:fj-gap-8">
+<div class="article__author bg-transparent flex flex-col sm:flex-row gap-4 md:gap-8">
 
-  <div class="fj-shrink-0 fj-size-16 md:fj-size-24 fj-overflow-hidden fj-object-cover fj-object-center fj-rounded-full">
+  <div class="shrink-0 size-16 md:size-24 overflow-hidden object-cover object-center rounded-full">
     {% if content.blog_post_author.avatar %}
     <img loading="lazy"
-         class="fj-size-16 md:fj-size-24 !fj-m-0 fj-leading-none"
+         class="size-16 md:size-24 m-0! leading-none"
          src="{{ content.blog_post_author.avatar }}"
          alt="{{ content.blog_post_author.display_name | striptags }}"
          width="96" height="96"/>
     {% else %}
-      <div class="fj-size-16 md:fj-size-24 !fj-m-0 fj-leading-none fj-bg-amber-100 fj-flex fj-justify-center fj-items-center fj-select-none fj-font-cursive"
+      <div class="size-16 md:size-24 m-0! leading-none bg-amber-100 flex justify-center items-center select-none font-cursive"
            x-data="{
              name: `{{ content.blog_post_author.display_name | striptags }}`,
              nameAbbr: `NA`
            }"
            x-init="nameAbbr = name.split(' ').map(word => word[0]).join('')">
-        <span class="fj-text-xl md:fj-text-3xl fj-font-thin" x-text="nameAbbr"></span>
+        <span class="text-xl md:text-3xl font-thin" x-text="nameAbbr"></span>
       </div>
     {% endif %}
   </div>
 
   <div class="author__info">
-    <div class="author__name fj-mb-2 sm:fj-mb-4">
+    <div class="author__name mb-2 sm:mb-4">
       {# <span>About </span> #}
-      <a class="fj-text-xl sm:fj-text-2xl fj-font-bold fj-no-underline"
+      <a class="text-xl sm:text-2xl font-bold no-underline"
          href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}"
          rel="author">
         {{ content.blog_post_author.display_name | striptags }}

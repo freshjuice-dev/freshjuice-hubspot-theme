@@ -133,10 +133,10 @@
 }
 
 .container {
-  @apply fj-mx-auto;
+  @apply mx-auto;
   max-width: 1240px;
 }
 
 .dnd-section>.row-fluid {
-  @apply fj-mx-auto fj-gap-8;
+  @apply mx-auto gap-8;
 }

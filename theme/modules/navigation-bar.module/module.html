@@ -2,12 +2,12 @@
 {% from '../../macros/random-int.html' import random_int %}
 
 {%- macro get_navbar_logo(classes) -%}
-  <a href="{{ request.full_url | replace(request.path, '') }}" class="{{ classes or '-fj-m-1.5 fj-p-1.5' }}">
-    <span class="fj-sr-only">{{ module.logo_image.alt or 'Company name' }}</span>
+  <a href="{{ request.full_url | replace(request.path, '') }}" class="{{ classes or '-m-1.5 p-1.5' }}">
+    <span class="sr-only">{{ module.logo_image.alt or 'Company name' }}</span>
     {% if module.logo_image.src %}
       {% set loadingAttr = module.logo_image.loading != 'disabled' ? '' : '' %}
       <img src="{{ module.logo_image.src }}"
-           class="fj-h-14 fj-w-auto"
+           class="h-14 w-auto"
            alt="{{ module.logo_image.alt or 'Company' }} logo"
            width="{{ module.logo_image.width }}"
            height="{{ module.logo_image.height }}"
@@ -19,25 +19,25 @@
 {% set main_menu = menu(module.menu_id) %}
 
 
-<header class="fj-bg-white fj-py-3"
+<header class="bg-white py-3"
         x-data="{
           mobileMenuOpen: false
         }">
 
-  <nav class="container {{ 'fj-relative' if not module.full_width_dropdown_menus }} !fj-py-0 fj-flex fj-items-center fj-justify-between" aria-label="Global">
+  <nav class="container {{ 'relative' if not module.full_width_dropdown_menus }} !py-0 flex items-center justify-between" aria-label="Global">
 
     {# Logo #}
-    <div class="fj-flex lg:fj-flex-1">
+    <div class="flex lg:flex-1">
       {{ get_navbar_logo() }}
     </div>
 
 
     {# Mobile Menu Toggle #}
-    <div class="fj-flex lg:fj-hidden">
-      <button type="button" class="-fj-m-2.5 fj-inline-flex fj-items-center fj-justify-center fj-rounded-md fj-p-2.5"
+    <div class="flex lg:hidden">
+      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
               @click="mobileMenuOpen=!mobileMenuOpen">
-        <span class="fj-sr-only">Open main menu</span>
-        <svg class="fj-h-6 fj-w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <span class="sr-only">Open main menu</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       </button>
@@ -45,67 +45,67 @@
 
 
     {# Desktop Menu #}
-    <div class="fj-hidden lg:fj-flex lg:fj-gap-x-12" data-menu-style="{{ module.menu_layout }}">
+    <div class="hidden lg:flex lg:gap-x-12" data-menu-style="{{ module.menu_layout }}">
       {% if module.menu_layout == "superb" %} {# classic, modern, superb #}
         <div class="">TODO SuperB Menu</div>
       {% else %}
         {% if main_menu.children %}
           {% for child in main_menu.children %}
             {% set has_sub_child = child.children and ((child.children|first).children or (child.children|last).children) %}
-            <div class="{{ 'fj-relative' if not has_sub_child or module.menu_layout == 'classic' }}" x-data="{open:false}">
+            <div class="{{ 'relative' if not has_sub_child or module.menu_layout == 'classic' }}" x-data="{open:false}">
               <a href="{{ child.url or "#" }}"
                  {%- if not child.url or child.children -%}
                  @click="$event.preventDefault(); open=!open;"
                  {%- endif -%}
-                 class="fj-text-sm fj-font-semibold fj-leading-6 fj-text-current fj-flex fj-items-center fj-justify-center">
+                 class="text-sm font-semibold leading-6 text-current flex items-center justify-center">
                 <span>{{ child.label }}</span>
                 {%- if child.children -%}
-                  <svg class="fj-size-5 fj-flex-none origin-top" :class="open?'fj-rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                  <svg class="size-5 flex-none origin-top" :class="open?'rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
                 {%- endif -%}
               </a>
               {% if child.children %}
                 {% if module.menu_layout == "modern" %}
-                  {% set dropdown_styles = "fj-absolute fj-inset-x-0 fj-top-full fj-z-20 fj-px-16" %}
+                  {% set dropdown_styles = "absolute inset-x-0 top-full z-20 px-16" %}
                   {% if not has_sub_child %}
-                    {% set dropdown_styles = "fj-absolute -fj-left-8 fj-top-full fj-z-20 fj-mt-4 fj-w-screen fj-max-w-xs fj-overflow-hidden fj-rounded-md fj-bg-white fj-shadow-lg fj-ring-1 fj-ring-gray-900/5" %}
+                    {% set dropdown_styles = "absolute -left-8 top-full z-20 mt-4 w-screen max-w-xs overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-gray-900/5" %}
                   {% elif module.full_width_dropdown_menus %}
-                    {% set dropdown_styles = "fj-absolute fj-inset-x-0 fj-mt-6 fj-z-20 fj-w-screen" %}
+                    {% set dropdown_styles = "absolute inset-x-0 mt-6 z-20 w-screen" %}
                   {% endif %}
                   <div class="{{ dropdown_styles }}"
                        x-show="open"
                        @click.away="open=false"
-                       x-transition:enter="fj-transition fj-ease-out fj-duration-200"
-                       x-transition:enter-start="fj-opacity-0 fj-translate-y-1"
-                       x-transition:enter-end="fj-opacity-100 fj-translate-y-0"
-                       x-transition:leave="fj-transition fj-ease-in fj-duration-150"
-                       x-transition:leave-start="fj-opacity-100 fj-translate-y-0"
-                       x-transition:leave-end="fj-opacity-0 fj-translate-y-1"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0 translate-y-1"
+                       x-transition:enter-end="opacity-100 translate-y-0"
+                       x-transition:leave="transition ease-in duration-150"
+                       x-transition:leave-start="opacity-100 translate-y-0"
+                       x-transition:leave-end="opacity-0 translate-y-1"
                        x-cloak>
-                      <div class="fj-w-full fj-overflow-hidden fj-rounded-md fj-bg-white fj-shadow-lg fj-ring-1 fj-ring-gray-900/5">
+                      <div class="w-full overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-gray-900/5">
                       {% if has_sub_child and module.full_width_dropdown_menus %}
-                        <div class="container !fj-py-6">
+                        <div class="container !py-6">
                       {% endif %}
-                      <div class="fj-p-4{% if has_sub_child %} fj-grid fj-gap-x-12 fj-gap-y-6 {{ child.children|length|float > 3 ? 'fj-grid-cols-4' : 'fj-grid-cols-3' }}{% endif %}">
+                      <div class="p-4{% if has_sub_child %} grid gap-x-12 gap-y-6 {{ child.children|length|float > 3 ? 'grid-cols-4' : 'grid-cols-3' }}{% endif %}">
                         {% for sub_child in child.children %}
                           <div class="">
                             {% if has_sub_child %}
-                              <fieldset class="fj-rounded-md fj-border fj-border-gray-200 fj-p-2 fj-h-full">
-                                <legend class="fj-font-bold fj-px-2">{{ sub_child.label }}</legend>
+                              <fieldset class="rounded-md border border-gray-200 p-2 h-full">
+                                <legend class="font-bold px-2">{{ sub_child.label }}</legend>
                             {% else %}
-                              <div class="fj-group fj-relative fj-flex fj-gap-x-6 fj-rounded-lg fj-p-4 fj-text-sm fj-leading-6 hover:fj-bg-gray-50">
+                              <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
                                 <a href="{{ sub_child.url or "#" }}"
-                                   class="fj-font-semibold fj-text-current">
+                                   class="font-semibold text-current">
                                   {{ sub_child.label }}
-                                  <span class="fj-absolute fj-inset-0"></span>
+                                  <span class="absolute inset-0"></span>
                                 </a>
                               </div>
                             {% endif %}
                             {% for deep_sub_child in sub_child.children %}
-                              <div class="fj-group fj-relative fj-flex fj-gap-x-6 fj-rounded-lg fj-p-4 fj-text-sm fj-leading-6 hover:fj-bg-gray-50">
+                              <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
                                 <a href="{{ deep_sub_child.url or "#" }}"
-                                   class="fj-font-semibold fj-text-current">
+                                   class="font-semibold text-current">
                                   {{ deep_sub_child.label }}
-                                  <span class="fj-absolute fj-inset-0"></span>
+                                  <span class="absolute inset-0"></span>
                                 </a>
                               </div>
                             {% endfor %}
@@ -121,23 +121,23 @@
                     </div>
                   </div>
                 {% else %}
-                  <div class="fj-absolute -fj-left-8 fj-top-full fj-z-20 fj-mt-3 fj-w-screen fj-max-w-xs fj-overflow-hidden fj-rounded-md fj-bg-white fj-shadow-lg fj-ring-1 fj-ring-gray-900/5"
+                  <div class="absolute -left-8 top-full z-20 mt-3 w-screen max-w-xs overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-gray-900/5"
                        x-show="open"
                        @click.away="open=false"
-                       x-transition:enter="fj-transition fj-ease-out fj-duration-200"
-                       x-transition:enter-start="fj-opacity-0 fj-translate-y-1"
-                       x-transition:enter-end="fj-opacity-100 fj-translate-y-0"
-                       x-transition:leave="fj-transition fj-ease-in fj-duration-150"
-                       x-transition:leave-start="fj-opacity-100 fj-translate-y-0"
-                       x-transition:leave-end="fj-opacity-0 fj-translate-y-1"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0 translate-y-1"
+                       x-transition:enter-end="opacity-100 translate-y-0"
+                       x-transition:leave="transition ease-in duration-150"
+                       x-transition:leave-start="opacity-100 translate-y-0"
+                       x-transition:leave-end="opacity-0 translate-y-1"
                        x-cloak>
-                    <div class="fj-p-4">
+                    <div class="p-4">
                       {% for sub_child in child.children %}
-                        <div class="fj-group fj-relative fj-flex fj-gap-x-6 fj-rounded-lg fj-p-4 fj-text-sm fj-leading-6 hover:fj-bg-gray-50">
+                        <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
                           <a href="{{ sub_child.url or "#" }}"
-                             class="fj-block fj-font-semibold fj-text-current">
+                             class="block font-semibold text-current">
                             {{ sub_child.label }}
-                            <span class="fj-absolute fj-inset-0"></span>
+                            <span class="absolute inset-0"></span>
                           </a>
                         </div>
                       {% endfor %}
@@ -154,21 +154,21 @@
 
 
     {# CTA #}
-    <div class="fj-hidden lg:fj-flex fj-flex-1 fj-justify-end fj-items-center fj-gap-8">
+    <div class="hidden lg:flex flex-1 justify-end items-center gap-8">
       {% for cta in module.call_to_actions %}
         {% if cta.style == "ghost" %}
-          {% set cta_style = "fj-button fj-button--ghost fj-button--small" %}
+          {% set cta_style = "button button--ghost button--small" %}
         {% elif cta.style == "primary" %}
-          {% set cta_style = "fj-button fj-button--small" %}
+          {% set cta_style = "button button--small" %}
         {% else %}
-          {% set cta_style = "fj-text-sm fj-font-semibold fj-leading-6 fj-text-current" %}
+          {% set cta_style = "text-sm font-semibold leading-6 text-current" %}
         {% endif %}
         {% set href = cta.link.url.href %}
         {% if cta.link.url.type is equalto "EMAIL_ADDRESS" %}
           {% set href = "mailto:" + href %}
         {% endif %}
         <a href="{{ href }}"
-           class="{{ cta_style }} fj-whitespace-nowrap"
+           class="{{ cta_style }} whitespace-nowrap"
            {% if cta.link.open_in_new_tab %}target="_blank"{% endif %}
           {% if cta.link.rel %}rel="{{ cta.link.rel }}"{% endif %}
         >{{ cta.title | striptags | safe }}</a>
@@ -180,71 +180,71 @@
 
 
   {# Mobile Menu #}
-  <div class="lg:fj-hidden" role="dialog" aria-modal="true" x-cloak>
-    <div class="fj-fixed fj-inset-0 fj-z-20 fj-backdrop-blur fj-bg-white/40"
+  <div class="lg:hidden" role="dialog" aria-modal="true" x-cloak>
+    <div class="fixed inset-0 z-20 backdrop-blur bg-white/40"
          x-show="mobileMenuOpen" @click="mobileMenuOpen=false"
-         x-transition:enter="fj-transition fj-ease-out fj-duration-200"
-         x-transition:enter-start="fj-opacity-0"
-         x-transition:enter-end="fj-opacity-100"
-         x-transition:leave="fj-transition fj-ease-in fj-duration-150"
-         x-transition:leave-start="fj-opacity-100"
-         x-transition:leave-end="fj-opacity-0">
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0">
       {# Background backdrop, show/hide based on slide-over state. #}
     </div>
-    <div class="fj-fixed fj-inset-y-0 fj-right-0 fj-z-20 fj-flex fj-w-full fj-flex-col fj-justify-between fj-overflow-y-auto fj-bg-white sm:fj-max-w-sm sm:fj-ring-1 sm:fj-ring-gray-900/10"
+    <div class="fixed inset-y-0 right-0 z-20 flex w-full flex-col justify-between overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
          x-show="mobileMenuOpen"
-         x-transition:enter="fj-transition fj-ease-out fj-duration-200"
-         x-transition:enter-start="fj-opacity-0 !fj-translate-x-96"
-         x-transition:enter-end="fj-opacity-100 fj-translate-x-0"
-         x-transition:leave="fj-transition fj-ease-in fj-duration-150"
-         x-transition:leave-start="fj-opacity-100 fj-translate-x-0"
-         x-transition:leave-end="fj-opacity-0 !fj-translate-x-96">
-      <div class="fj-px-6 fj-py-2.5">
-        <div class="fj-flex fj-items-center fj-justify-between">
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 !translate-x-96"
+         x-transition:enter-end="opacity-100 translate-x-0"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100 translate-x-0"
+         x-transition:leave-end="opacity-0 !translate-x-96">
+      <div class="px-6 py-2.5">
+        <div class="flex items-center justify-between">
           {{ get_navbar_logo() }}
-          <button type="button" class="-fj-m-2.5 fj-rounded-md fj-p-2.5"
+          <button type="button" class="-m-2.5 rounded-md p-2.5"
                   @click="mobileMenuOpen=!mobileMenuOpen">
-            <span class="fj-sr-only">Close menu</span>
-            <svg class="fj-h-6 fj-w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <span class="sr-only">Close menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
-        <div class="fj-mt-6 fj-flow-root">
+        <div class="mt-6 flow-root">
           <div class="">
             {% if module.menu_layout == "superb" %} {# classic, modern, superb #}
               <div class="">TODO SuperB Menu</div>
             {% else %}
               {% if main_menu.children %}
-                <div class="fj-space-y-2.5 fj-divide-y fj-divide-gray-100">
+                <div class="space-y-2.5 divide-y divide-gray-100">
                   {% for child in main_menu.children %}
                     {% set x_ref_id = slugify(child.label) ~ '_' ~ random_int() ~ loop.index %}
-                    <div class="fj-pt-2.5" x-data="{open:false}" @click.away="open=false" :aria-expanded="open">
-                      <div class="fj-group fj-relative fj-flex fj-gap-x-6 fj-rounded-lg fj-p-4 fj-text-sm fj-leading-6"
-                           :class="open?'fj-bg-gray-100 fj-rounded-bl-none':'hover:fj-bg-gray-50'">
+                    <div class="pt-2.5" x-data="{open:false}" @click.away="open=false" :aria-expanded="open">
+                      <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6"
+                           :class="open?'bg-gray-100 rounded-bl-none':'hover:bg-gray-50'">
                         <a href="{{ child.url or "#" }}" {% if not child.url or child.children %}@click="$event.preventDefault(); open=!open;"{% endif %}
-                           class="fj-flex fj-justify-between fj-w-full fj-font-semibold !fj-text-current">
-                          <span class="fj-absolute fj-inset-0"></span>
+                           class="flex justify-between w-full font-semibold !text-current">
+                          <span class="absolute inset-0"></span>
                           <span>{{ child.label }}</span>
                           {%- if child.children -%}
-                            <svg class="fj-size-5 fj-flex-none origin-top" :class="open?'fj-rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                            <svg class="size-5 flex-none origin-top" :class="open?'rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
                           {%- endif -%}
                         </a>
                       </div>
                       {% if child.children %}
                         {% set has_sub_child = child.children and ((child.children|first).children or (child.children|last).children) %}
-                        <div class="fj-border-l-4 fj-border-gray-100 {{ 'fj-pl-2.5' if not has_sub_child }} fj-relative fj-overflow-hidden fj-max-h-0 fj-transition-all fj-duration-300"
+                        <div class="border-l-4 border-gray-100 {{ 'pl-2.5' if not has_sub_child }} relative overflow-hidden max-h-0 transition-all duration-300"
                              x-ref="{{ x_ref_id }}" :style="open?`max-height:${$refs['{{x_ref_id}}'].scrollHeight}px`:``">
                           {% for sub_child in child.children %}
                             {% if has_sub_child and module.menu_layout == "modern" %}
                               <div class="">
-                                <div class="fj-px-5 fj-py-1.5 fj-mt-2.5 fj-text-sm fj-font-semibold fj-bg-gradient-to-r fj-from-gray-100 fj-to-white">{{ sub_child.label }}</div>
-                                <div class="fj-pl-2.5">
+                                <div class="px-5 py-1.5 mt-2.5 text-sm font-semibold bg-gradient-to-r from-gray-100 to-white">{{ sub_child.label }}</div>
+                                <div class="pl-2.5">
                                   {% for deep_sub_child in sub_child.children %}
-                                    <div class="fj-group fj-relative fj-flex fj-gap-x-6 fj-rounded-lg fj-p-2 fj-my-2.5 fj-text-sm fj-leading-6 hover:fj-bg-gray-50">
+                                    <div class="group relative flex gap-x-6 rounded-lg p-2 my-2.5 text-sm leading-6 hover:bg-gray-50">
                                       <a href="{{ deep_sub_child.url or "#" }}"
-                                         class="fj-font-semibold fj-text-current">
-                                        <span class="fj-absolute fj-inset-0"></span>
+                                         class="font-semibold text-current">
+                                        <span class="absolute inset-0"></span>
                                         {{ deep_sub_child.label }}
                                       </a>
                                     </div>
@@ -252,10 +252,10 @@
                                 </div>
                               </div>
                             {% else %}
-                              <div class="fj-group fj-relative fj-flex fj-gap-x-6 fj-rounded-lg fj-p-2 fj-my-2.5 fj-text-sm fj-leading-6 hover:fj-bg-gray-50">
+                              <div class="group relative flex gap-x-6 rounded-lg p-2 my-2.5 text-sm leading-6 hover:bg-gray-50">
                                 <a href="{{ sub_child.url or "#" }}"
-                                   class="fj-font-semibold fj-text-current">
-                                  <span class="fj-absolute fj-inset-0"></span>
+                                   class="font-semibold text-current">
+                                  <span class="absolute inset-0"></span>
                                   {{ sub_child.label }}
                                 </a>
                               </div>
@@ -272,21 +272,21 @@
         </div>
       </div>
 
-      <div class="fj-sticky fj-bottom-0 fj-grid fj-grid-cols-2 fj-divide-x fj-divide-gray-900/5 fj-bg-gray-100 fj-items-center fj-text-center">
+      <div class="sticky bottom-0 grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-100 items-center text-center">
         {% for cta in module.call_to_actions %}
           {% if cta.style == "ghost" %}
-            {% set cta_style = "fj-button fj-button--ghost" %}
+            {% set cta_style = "button button--ghost" %}
           {% elif cta.style == "primary" %}
-            {% set cta_style = "fj-button" %}
+            {% set cta_style = "button" %}
           {% else %}
-            {% set cta_style = "fj-text-sm fj-font-semibold fj-leading-6 fj-text-current" %}
+            {% set cta_style = "text-sm font-semibold leading-6 text-current" %}
           {% endif %}
           {% set href = cta.link.url.href %}
           {% if cta.link.url.type is equalto "EMAIL_ADDRESS" %}
             {% set href = "mailto:" + href %}
           {% endif %}
           <a href="{{ href }}"
-             class="{{ cta_style }} fj-button--square fj-whitespace-nowrap"
+             class="{{ cta_style }} button--square whitespace-nowrap"
              {% if cta.link.open_in_new_tab %}target="_blank"{% endif %}
             {% if cta.link.rel %}rel="{{ cta.link.rel }}"{% endif %}
           >{{ cta.title | striptags | safe }}</a>

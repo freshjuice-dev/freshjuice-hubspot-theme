@@ -19,26 +19,26 @@
 </script>
 {% endif %}
 
-<div x-data="{ active: 1 }" class="fj-mx-auto fj-max-w-3xl fj-w-full fj-min-h-[16rem] fj-space-y-4">
+<div x-data="{ active: 1 }" class="mx-auto max-w-3xl w-full min-h-[16rem] space-y-4">
   {% for item in module.items %}
   <div x-data="{
         id: {{ loop.index }},
         get expanded() { return this.active === this.id },
         set expanded(value) { this.active = value ? this.id : null },
-    }" role="region" class="fj-rounded-md fj-bg-cursor fj-shadow">
-    <h2 class="fj-my-0 fj-leading-tight">
+    }" role="region" class="rounded-md bg-cursor shadow">
+    <h2 class="my-0 leading-tight">
       <button
         @click="expanded = !expanded"
         :aria-expanded="expanded"
-        class="fj-flex fj-w-full fj-items-center fj-justify-between fj-px-6 fj-py-4 fj-text-xl fj-font-bold"
+        class="flex w-full items-center justify-between px-6 py-4 text-xl font-bold"
       >
         <span>{{ item.question }}</span>
-        <span x-show="expanded" aria-hidden="true" class="fj-ml-4">&minus;</span>
-        <span x-show="!expanded" aria-hidden="true" class="fj-ml-4">&plus;</span>
+        <span x-show="expanded" aria-hidden="true" class="ml-4">&minus;</span>
+        <span x-show="!expanded" aria-hidden="true" class="ml-4">&plus;</span>
       </button>
     </h2>
     <div x-show="expanded" x-collapse>
-      <div class="fj-px-6 fj-pb-4 fj-prose sm:fj-prose-lg md:fj-prose-xl">{{ item.answer }}</div>
+      <div class="px-6 pb-4 prose sm:prose-lg md:prose-xl">{{ item.answer }}</div>
     </div>
   </div>
   {% endfor %}

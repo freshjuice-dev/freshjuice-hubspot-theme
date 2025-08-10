@@ -1,37 +1,37 @@
 {% set length = module.pricing_card_group | length %}
 {% if length == 3 %}
-  {% set grid_col_class = 'lg:fj-grid-cols-3 lg:fj-max-w-full' %}
+  {% set grid_col_class = 'lg:grid-cols-3 lg:max-w-full' %}
 {% endif %}
 
-<div class="fj-not-prose fj-grid fj-grid-cols-1 fj-place-items-center fj-max-w-sm fj-mx-auto {{ grid_col_class or '' }}">
+<div class="not-prose grid grid-cols-1 place-items-center max-w-sm mx-auto {{ grid_col_class or '' }}">
   {% for item in module.pricing_card_group %}
-    <div class="fj-w-full fj-border-gray-300 fj-flex fj-flex-col fj-place-content-center fj-justify-center fj-gap-4 fj-p-12 {{ 'fj-border-t lg:fj-border-t-0 lg:fj-border-l' if loop.index0 }} {{ 'lg:!fj-border-t lg:fj-border-l-0' if length <= 2 }}">
-      <p class="fj-text-base fj-font-semibold fj-leading-none">{{ item.tier_name }}</p>
+    <div class="w-full border-gray-300 flex flex-col place-content-center justify-center gap-4 p-12 {{ 'border-t lg:border-t-0 lg:border-l' if loop.index0 }} {{ 'lg:!border-t lg:border-l-0' if length <= 2 }}">
+      <p class="text-base font-semibold leading-none">{{ item.tier_name }}</p>
 
-      <div class="fj-grid fj-gap-2">
-        <div class="fj-flex fj-items-baseline fj-gap-x-1 fj-leading-none">
-          {% if item.price %}<span class="fj-text-4xl fj-font-bold">{{ item.price }}</span>{% endif %}
-          {% if item.price_details %}<span class="fj-text-sm fj-font-semibold">{{ item.price_details }}</span>{% endif %}
+      <div class="grid gap-2">
+        <div class="flex items-baseline gap-x-1 leading-none">
+          {% if item.price %}<span class="text-4xl font-bold">{{ item.price }}</span>{% endif %}
+          {% if item.price_details %}<span class="text-sm font-semibold">{{ item.price_details }}</span>{% endif %}
         </div>
-        <p class="fj-leading-tight fj-m-0 fj-text-base">{{ item.price_subtext }}</p>
+        <p class="leading-tight m-0 text-base">{{ item.price_subtext }}</p>
       </div>
 
       {% set href = item.cta_link.url.type == "EMAIL_ADDRESS" ? "mailto:" ~ item.cta_link.url.href : item.cta_link.url.href %}
-      <a class="fj-button fj-button--small fj-normal-case fj-text-sm fj-text-white fj-font-semibold fj-text-center"
+      <a class="button button--small normal-case text-sm text-white font-semibold text-center"
          href="{{ href|escape_url }}" {% if item.cta_link.open_in_new_tab %} target="_blank"{% endif %} {% if item.cta_link.rel %} rel="{{ item.cta_link.rel|escape_attr }}"{% endif %}>
         {{ item.cta_label }}
       </a>
 
-      <p class="fj-text-sm fj-font-semibold fj-leading-tight">{{ item.features_title }}</p>
+      <p class="text-sm font-semibold leading-tight">{{ item.features_title }}</p>
 
-      <ul class="fj-space-y-2 fj-text-sm">
+      <ul class="space-y-2 text-sm">
         {% for feature in item.features_list %}
-          <li class="fj-flex fj-gap-x-3">
-            <svg class="fj-shrink-0 fj-size-6 fj-text-blue-600" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true">
+          <li class="flex gap-x-3">
+            <svg class="shrink-0 size-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true">
               <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path>
               <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path>
             </svg>
-            <p class="fj-leading-normal">{{ feature }}</p>
+            <p class="leading-normal">{{ feature }}</p>
           </li>
         {% endfor %}
       </ul>

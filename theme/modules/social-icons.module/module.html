@@ -1,4 +1,4 @@
-<div class="fj-flex fj-items-center fj-gap-3">
+<div class="flex items-center gap-3">
   {% for item in module.social_items %}
     {% set current_icon_color = not module.gl_icon_color_enable ? item.individual_icon_color : module.global_icon_color %}
     {% set current_bg_icon_color = not module.gl_icon_bg_color_enable ? item.individual_icon_background_color : module.global_background_color %}
@@ -6,10 +6,10 @@
     {% set icon_color = 'rgba(' ~ current_icon_color.color|convert_rgb ~ ',' ~ current_icon_color.opacity / 100 ~ ')' %}
     {% set icon_bg_color = 'rgba(' ~ current_bg_icon_color.color|convert_rgb ~ ',' ~ current_icon_color.opacity / 100 ~ ')' %}
 
-    <div class="fj-flex fj-items-center fj-justify-center fj-size-11 fj-rounded-full" style="background: {{ icon_bg_color }}; fill: {{ icon_color }}">
+    <div class="flex items-center justify-center size-11 rounded-full" style="background: {{ icon_bg_color }}; fill: {{ icon_color }}">
 
-      <div class="fj-size-5">
-        <label class="fj-sr-only">{{ item.icon_name }}</label>
+      <div class="size-5">
+        <label class="sr-only">{{ item.icon_name }}</label>
         {% icon
         name="{{ item.social_icon.name }}"
         style="{{ item.social_icon.type }}"
@@ -22,7 +22,7 @@
       {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
         {% set href = "mailto:" + href %}
       {% endif %}
-      <a class="fj-absolute"
+      <a class="absolute"
         {% if item.link_field.url.type is equalto "CALL_TO_ACTION"  %}
           href="{{ href }}"
         {% else %}

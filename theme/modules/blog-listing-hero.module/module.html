@@ -1,53 +1,53 @@
-<header class="article__header fj-bg-gradient-60 fj-from-orange-100 fj-via-red-100 fj-to-amber-100 fj-min-h-56 md:fj-min-h-96 fj-flex fj-justify-center fj-items-center">
-  <div class="container fj-w-full fj-text-center fj-prose sm:fj-prose-lg md:fj-prose-xl fj-text-balance">
+<header class="article__header bg-gradient-60 from-orange-100 via-red-100 to-amber-100 min-h-56 md:min-h-96 flex justify-center items-center">
+  <div class="container w-full text-center prose sm:prose-lg md:prose-xl text-balance">
     {% if blog_author or tag %}
       <div class="blog-index__subheader">
         {% if blog_author %}
           {% if module.blog_author_listing.show_headshot %}
-            <div class="fj-mx-auto fj-size-16 md:fj-size-24 fj-overflow-hidden fj-object-cover fj-object-center fj-rounded-full fj-mb-2">
+            <div class="mx-auto size-16 md:size-24 overflow-hidden object-cover object-center rounded-full mb-2">
               {% if blog_author.avatar %}
                 <img loading="lazy"
-                     class="fj-size-16 md:fj-size-24 !fj-m-0 fj-leading-none"
+                     class="size-16 md:size-24 m-0! leading-none"
                      src="{{ blog_author.avatar }}"
                      alt="{{ blog_author.display_name | striptags }}"
                      width="96" height="96"/>
               {% else %}
-                <div class="fj-size-16 md:fj-size-24 !fj-m-0 fj-leading-none fj-bg-amber-100 fj-flex fj-justify-center fj-items-center fj-select-none fj-font-cursive"
+                <div class="size-16 md:size-24 m-0! leading-none bg-amber-100 flex justify-center items-center select-none font-cursive"
                      x-data="{
                        name: `{{ blog_author.display_name | striptags }}`,
                        nameAbbr: `NA`
                      }"
                      x-init="nameAbbr = name.split(' ').map(word => word[0]).join('')">
-                  <span class="fj-text-xl md:fj-text-3xl fj-font-thin" x-text="nameAbbr"></span>
+                  <span class="text-xl md:text-3xl font-thin" x-text="nameAbbr"></span>
                 </div>
               {% endif %}
             </div>
           {% endif %}
-          <p class="!fj-mb-2 !fj-mt-0" x-balance-text>{{ module.blog_author_listing.subheading }}</p>
+          <p class="!mb-2 !mt-0" x-balance-text>{{ module.blog_author_listing.subheading }}</p>
           <h1 x-balance-text>{{ blog_author.display_name }}</h1>
           <p x-balance-text>{{ blog_author.bio }}</p>
           {% if module.blog_author_listing.show_social_profiles and blog_author.has_social_profiles %}
-            <div class="fj-flex fj-justify-center fj-items-center fj-gap-4 !fj-mb-0">
+            <div class="flex justify-center items-center gap-4 !mb-0">
               {% if blog_author.website %}
-                <a href="{{ blog_author.website }}" class="fj-transition-all fj-cursor-pointer hover:fj-scale-125 [&>svg]:fj-size-8"
+                <a href="{{ blog_author.website }}" class="transition-all cursor-pointer hover:scale-125 [&>svg]:size-8"
                 target="_blank" rel="noopener" aria-label="Follow my website">
                   {% include '../../images/icons/social/links.svg.html' %}
                 </a>
               {% endif %}
               {% if blog_author.facebook %}
-                <a href="{{ blog_author.facebook }}" class="fj-transition-all fj-cursor-pointer hover:fj-scale-125 [&>svg]:fj-size-8"
+                <a href="{{ blog_author.facebook }}" class="transition-all cursor-pointer hover:scale-125 [&>svg]:size-8"
                 target="_blank" rel="noopener" aria-label="Follow me on Facebook">
                   {% include '../../images/icons/social/fb.svg.html' %}
                 </a>
               {% endif %}
               {% if blog_author.linkedin %}
-                <a href="{{ blog_author.linkedin }}" class="fj-transition-all fj-cursor-pointer hover:fj-scale-125 [&>svg]:fj-size-8"
+                <a href="{{ blog_author.linkedin }}" class="transition-all cursor-pointer hover:scale-125 [&>svg]:size-8"
                 target="_blank" rel="noopener" aria-label="Follow me on LinkedIn">
                   {% include '../../images/icons/social/in.svg.html' %}
                 </a>
               {% endif %}
               {% if blog_author.twitter %}
-                <a href="{{ blog_author.twitter }}" class="fj-transition-all fj-cursor-pointer hover:fj-scale-125 [&>svg]:fj-size-8"
+                <a href="{{ blog_author.twitter }}" class="transition-all cursor-pointer hover:scale-125 [&>svg]:size-8"
                 target="_blank" rel="noopener" aria-label="Follow me on exTwitter">
                   {% include '../../images/icons/social/tw.svg.html' %}
                 </a>
@@ -55,13 +55,13 @@
             </div>
           {% endif %}
           {% elif tag %}
-          <p class="!fj-mb-2 !fj-mt-0">{{ module.blog_tag_listing.subheading }}</p>
-          <h1 class="!fj-mb-0" x-balance-text>{{ page_meta.html_title | split(' | ') | last | split(' (') | first }}</h1> {# TODO make regex? #}
+          <p class="!mb-2 !mt-0">{{ module.blog_tag_listing.subheading }}</p>
+          <h1 class="!mb-0" x-balance-text>{{ page_meta.html_title | split(' | ') | last | split(' (') | first }}</h1> {# TODO make regex? #}
         {% endif %}
       </div>
     {% else %}
-      <h1 class="!fj-mt-0" x-balance-text>{{ module.blog_name }}</h1>
-      <p class="!fj-mb-0" x-balance-text>{{ module.blog_description }}</p>
+      <h1 class="!mt-0" x-balance-text>{{ module.blog_name }}</h1>
+      <p class="!mb-0" x-balance-text>{{ module.blog_description }}</p>
     {% endif %}
   </div>
 </header>

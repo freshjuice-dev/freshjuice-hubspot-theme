@@ -9,7 +9,7 @@
      whichChild(el, parent) { return Array.from(parent.children).indexOf(el) + 1 }
   }"
   x-id="['tab']"
-  class="fj-mx-auto fj-w-full">
+  class="mx-auto w-full">
   <ul
     x-ref="tablist_{{ widget_id }}"
     @keydown.right.prevent.stop="$focus.wrap().next()"
@@ -19,7 +19,7 @@
     @keydown.end.prevent.stop="$focus.last()"
     @keydown.page-down.prevent.stop="$focus.last()"
     role="tablist"
-    class="-fj-mb-px fj-flex fj-items-stretch">
+    class="-mb-px flex items-stretch">
     {% for item in module.tabs %}
       <li>
         <button
@@ -30,22 +30,22 @@
           type="button"
           :tabindex="isSelected($el.id) ? 0 : -1"
           :aria-selected="isSelected($el.id)"
-          :class="isSelected($el.id) ? 'fj-border-gray-200 fj-bg-cursor' : 'fj-border-transparent'"
-          class="fj-inline-flex fj-rounded-t-md fj-border-t fj-border-l fj-border-r fj-px-5 fj-py-2.5"
+          :class="isSelected($el.id) ? 'border-gray-200 bg-cursor' : 'border-transparent'"
+          class="inline-flex rounded-t-md border-t border-l border-r px-5 py-2.5"
           role="tab"
         >{{ item.tab_name }}</button>
       </li>
     {% endfor %}
   </ul>
 
-  <div role="tabpanels" class="fj-rounded-md fj-border fj-border-gray-200 fj-fj-bg-cursor" :class="(selectedId||'').endsWith('1')?`fj-rounded-tl-none`:``">
+  <div role="tabpanels" class="rounded-md border border-gray-200 bg-cursor" :class="(selectedId||'').endsWith('1')?`rounded-tl-none`:``">
     {% for item in module.tabs %}
       <section
         x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
         :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
         role="tabpanel"
-        class="fj-p-8">
-        <div class="fj-prose sm:fj-prose-lg md:fj-prose-xl fj-max-w-full">
+        class="p-8">
+        <div class="prose sm:prose-lg md:prose-xl max-w-full">
           {{ item.tab_content }}
         </div>
       </section>

@@ -1,33 +1,33 @@
 {% if module.flip_cards_list | length == 3 %}
-  {% set grid_col_class = 'lg:fj-grid-cols-3' %}
+  {% set grid_col_class = 'lg:grid-cols-3' %}
 {% endif %}
 
-<div class="fj-not-prose fj-container fj-grid fj-grid-cols-1 fj-place-items-center fj-gap-8 fj-mx-auto {{ grid_col_class or '' }}">
+<div class="not-prose container grid grid-cols-1 place-items-center gap-8 mx-auto {{ grid_col_class or '' }}">
   {% for flipcard in module.flip_cards_list %}
-    <div class="fj-min-h-[375px] fj-max-w-sm fj-relative fj-w-full fj-h-full
-                fj-transform fj-transition-all fj-transform-style-3d fj-perspective-1000 fj-group">
+    <div class="min-h-[375px] max-w-sm relative w-full h-full
+                transform transition-all transform-style-3d perspective-1000 group">
       <!-- front of the card -->
-      <div class="fj-absolute fj-inset-0 fj-flex fj-flex-col fj-justify-start fj-items-center fj-bg-stone-100 fj-rounded-lg fj-p-8
-                  fj-transform fj-transition-all fj-duration-500 fj-backface-hidden group-hover:fj-rotate-y-180">
-        <div class="fj-flex fj-justify-center">
+      <div class="absolute inset-0 flex flex-col justify-start items-center bg-stone-100 rounded-lg p-8
+                  transform transition-all duration-500 backface-hidden group-hover:rotate-y-180">
+        <div class="flex justify-center">
           <img src="{{ flipcard.avatar.src }}"
-               class="fj-size-40 fj-border-4 fj-rounded-full fj-object-cover"
+               class="size-40 border-4 rounded-full object-cover"
                style="border-color: #FFBD01"
                alt="{{ flipcard.avatar.alt|escape_attr or 'Headshot'}}"
                width="{{ flipcard.avatar.width }}"
                height="{{ flipcard.avatar.height }}"
                loading="{{ flipcard.avatar.loading != 'disabled' ? '' : 'eager' }}">
         </div>
-        <div class="fj-grid fj-mt-6 fj-text-center">
-          <span class="fj-text-terminal fj-font-semibold">{{ flipcard.title }}</span>
-          <span class="fj-text-slate fj-text-sm lg:fj-text-base">{{ flipcard.second_title }}</span>
-          <span class="fj-text-slate fj-text-sm lg:fj-text-base">{{ flipcard.card_details}}</span>
+        <div class="grid mt-6 text-center">
+          <span class="text-terminal font-semibold">{{ flipcard.title }}</span>
+          <span class="text-slate text-sm lg:text-base">{{ flipcard.second_title }}</span>
+          <span class="text-slate text-sm lg:text-base">{{ flipcard.card_details}}</span>
         </div>
       </div>
       <!-- back of the card -->
-      <div class="fj-absolute fj-inset-0 fj-flex fj-justify-center fj-items-center fj-bg-stone-100 fj-rounded-lg fj-p-8
-                  fj-transition-all fj-transform fj-duration-500 fj-rotate-y-180 fj-backface-hidden group-hover:fj-rotate-y-0">
-        <span class="fj-mb-0 fj-text-base fj-text-left">{{ flipcard.description }}</span>
+      <div class="absolute inset-0 flex justify-center items-center bg-stone-100 rounded-lg p-8
+                  transition-all transform duration-500 rotate-y-180 backface-hidden group-hover:rotate-y-0">
+        <span class="mb-0 text-base text-left">{{ flipcard.description }}</span>
       </div>
     </div>
   {% endfor %}

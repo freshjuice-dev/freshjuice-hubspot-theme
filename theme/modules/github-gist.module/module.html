@@ -2,7 +2,7 @@
 {% set widget_id = 'github-gist-' ~ name %}
 
 <div id="{{ widget_id }}"
-     class="fj-not-prose js-gist-simple fj-drop-shadow"
+     class="not-prose js-gist-simple drop-shadow"
      data-id="{{ gist_id }}"
   {{ 'data-file="' ~ module.file_name ~ '"' if module.file_name }}
   {{ 'data-caption="' ~ module.caption ~ '"' if module.caption }}

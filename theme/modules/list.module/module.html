@@ -1,8 +1,8 @@
-<div class="fj-not-prose fj-container fj-max-w-lg lg:fj-max-w-3xl fj-mx-auto">
-  <ul class="fj-grid" style="gap: {{ module.styles.list_items_alignment }}px;">
+<div class="not-prose container max-w-lg lg:max-w-3xl mx-auto">
+  <ul class="grid" style="gap: {{ module.styles.list_items_alignment }}px;">
     {% for item in module.list_items %}
-      <li class="fj-flex" style="gap: {{ module.styles.gap }}px;">
-        <div class="fj-shrink-0"
+      <li class="flex" style="gap: {{ module.styles.gap }}px;">
+        <div class="shrink-0"
              style="height: {{ module.styles.icon_size }}px; width: {{ module.styles.icon_size }}px; margin-top: {{ module.styles.icon_alignment }}px;">
 
           {% set current_icon = not module.enable_global_icons ? item.individual_item_icon : module.global_icon %}
@@ -20,7 +20,7 @@
 
         </div>
 
-        <div class="fj-text-lg fj-leading-tight">{{ module.enable_rich_text ? item.item_rich_text : item.item_text }}</div>
+        <div class="text-lg leading-tight">{{ module.enable_rich_text ? item.item_rich_text : item.item_text }}</div>
       </li>
     {% endfor %}
   </ul>

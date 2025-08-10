@@ -1,7 +1,7 @@
 {% set codepen_username = module.codepen_url | split('/pen/') | first | split('/') | last %}
 {% set codepen_id = module.codepen_url | split('/pen/') | last | split('?') | first %}
 
-<div class="fj-rounded-md"
+<div class="rounded-md"
      style="height: {{ module.height or 500 }}px"
      x-intersect.once="loadScript('https://cpwebassets.codepen.io/assets/embed/ei.js', 'async')">
 

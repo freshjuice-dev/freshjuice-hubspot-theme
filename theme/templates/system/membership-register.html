@@ -15,14 +15,14 @@
 
 
 {% block body %}
-<section class="fj-min-h-screenSinNav systems-page">
+<section class="min-h-screenSinNav systems-page">
   <div class="container">
-    <div class="fj-mx-auto fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md">
+    <div class="mx-auto prose sm:prose-lg md:prose-xl [&_img]:rounded-md">
       {% module "content"
         path="@hubspot/rich_text",
         html="<h1>Welcome!</h1><p>Set up your password to sign in and see the content you now have access to.</p>"
       %}
-      <div class="form-container fj-not-prose"
+      <div class="form-container not-prose"
            x-init="
              document.querySelectorAll('.hs-register-widget-show-password').forEach(el => {
                el.addEventListener('click', (event) => {

@@ -28,10 +28,10 @@
 {% endmacro %}
 
 <footer aria-labelledby="footer-heading">
-  <h2 id="footer-heading" class="fj-sr-only">Footer</h2>
-  <div class="fj-mx-auto"> {# fj-px-6 fj-pb-8 fj-pt-16 sm:fj-pt-24 lg:fj-px-8 lg:fj-pt-32 #}
-    <div class="xl:fj-grid xl:fj-grid-cols-3 xl:fj-gap-8">
-      <div class="fj-space-y-8">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="mx-auto"> {# px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32 #}
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+      <div class="space-y-8">
         {% if module.logo.src %}
           {% set sizeAttrs = 'width="{{ module.logo.width / 2 }}" height="{{ module.logo.height / 2 }}"' %}
           {% if module.logo.size_type == 'auto' %}
@@ -40,31 +40,31 @@
             {% set sizeAttrs = 'width="{{ module.logo.max_width / 2 }}" height="{{ module.logo.max_height / 2 }}"' %}
           {% endif %}
            {% set loadingAttr = module.logo.loading != 'disabled' ? 'loading="{{ module.logo.loading }}"' : '' %}
-          <img class="fj-h-14 fj-w-auto" src="{{ module.logo.src }}" alt="{{ module.logo.alt or 'Company' }} logo" {{ loadingAttr }} {{ sizeAttrs }}>
+          <img class="h-14 w-auto" src="{{ module.logo.src }}" alt="{{ module.logo.alt or 'Company' }} logo" {{ loadingAttr }} {{ sizeAttrs }}>
         {% endif %}
-        <div class="fj-text-base fj-leading-6 fj-text-stone-600 fj-max-w-80 [&>*]:fj-p-0 [&>*]:fj-m-0">{{ module.about_company }}</div>
+        <div class="text-base leading-6 text-stone-600 max-w-80 [&>*]:p-0 [&>*]:m-0">{{ module.about_company }}</div>
         {% if module.social_links %}
-        <div class="fj-flex fj-space-x-6">
+        <div class="flex space-x-6">
           {% for item in module.social_links %}
-            <a href="{{ item.link }}" class="fj-text-stone-600 hover:fj-text-stone-900 [&:hover>svg]:fj-scale-110 fj-no-underline [&>svg]:fj-h-6 [&>svg]:fj-w-6" rel="nofollow" target="_blank">
-              <span class="fj-sr-only">{{ item.title }}</span>
+            <a href="{{ item.link }}" class="text-stone-600 hover:text-stone-900 [&:hover>svg]:scale-110 no-underline [&>svg]:h-6 [&>svg]:w-6" rel="nofollow" target="_blank">
+              <span class="sr-only">{{ item.title }}</span>
               {{ get_social_icon(item.link) }}
             </a>
           {% endfor %}
         </div>
         {% endif %}
       </div>
-      <div class="fj-mt-16 fj-grid fj-grid-cols-2 fj-gap-8 xl:fj-col-span-2 xl:fj-mt-0">
+      <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
         {% if module.footer_menu %}
         {% set footer_menu = menu(module.footer_menu) %}
         {% for child in footer_menu.children %}
-          {% if loop.index % 2 == 1 %}<div class="md:fj-grid md:fj-grid-cols-2 md:fj-gap-8">{% endif %}
-            <div class="{{ "fj-mt-10 md:fj-mt-0" if loop.index % 2 == 0 }}">
-              <h3 class="fj-text-lg fj-font-semibold fj-leading-6 fj-text-stone-900">{{ child.label }}</h3>
-              <ul role="list" class="fj-mt-6 fj-space-y-4">
+          {% if loop.index % 2 == 1 %}<div class="md:grid md:grid-cols-2 md:gap-8">{% endif %}
+            <div class="{{ "mt-10 md:mt-0" if loop.index % 2 == 0 }}">
+              <h3 class="text-lg font-semibold leading-6 text-stone-900">{{ child.label }}</h3>
+              <ul role="list" class="mt-6 space-y-4">
                 {% for children in child.children %}
                 <li>
-                  <a href="{{ children.url }}" class="fj-text-base fj-leading-6 fj-text-stone-600 hover:fj-text-stone-900 fj-no-underline hover:fj-underline">{{ children.label }}</a>
+                  <a href="{{ children.url }}" class="text-base leading-6 text-stone-600 hover:text-stone-900 no-underline hover:underline">{{ children.label }}</a>
                 </li>
                 {% endfor %}
               </ul>
@@ -76,21 +76,21 @@
         {% endif %}
       </div>
     </div>
-    <div class="fj-border-t fj-border-stone-900/10 fj-pt-8 fj-mt-10 md:fj-mt-20 lg:fj-mt-24">
-      <div class="fj-flex fj-flex-col md:fj-items-center md:fj-flex-row-reverse md:fj-justify-between fj-gap-4 fj-w-full">
+    <div class="border-t border-stone-900/10 pt-8 mt-10 md:mt-20 lg:mt-24">
+      <div class="flex flex-col md:items-center md:flex-row-reverse md:justify-between gap-4 w-full">
         {% if module.footer_legal_menu %}
-        <ul role="list" class="fj-flex fj-flex-wrap fj-gap-4">
+        <ul role="list" class="flex flex-wrap gap-4">
           {% set legal_menu = menu(module.footer_legal_menu) %}
           {% for child in legal_menu.children %}
             <li>
-              <a href="{{ child.url }}" class="fj-text-sm fj-leading-5 fj-text-stone-600 hover:fj-text-stone-900 fj-no-underline hover:fj-underline">{{ child.label }}</a>
+              <a href="{{ child.url }}" class="text-sm leading-5 text-stone-600 hover:text-stone-900 no-underline hover:underline">{{ child.label }}</a>
             </li>
           {% endfor %}
         </ul>
         {% else %}
         <span><!-- 🍍 --></span>
         {% endif %}
-        <div class="fj-text-sm fj-leading-5 fj-text-stone-600 [&>*]:fj-p-0 [&>*]:fj-m-0">{{ module.copyrights }}</div>
+        <div class="text-sm leading-5 text-stone-600 [&>*]:p-0 [&>*]:m-0">{{ module.copyrights }}</div>
       </div>
     </div>
   </div>

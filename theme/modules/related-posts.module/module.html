@@ -2,15 +2,15 @@
 {% macro related_posts(post, count, total) %}
 
   {% if count == 1 %}
-    <div class="fj-grid fj-gap-8 {{ 'md:fj-grid-cols-3' if module.layout == 'row' }}{{ 'fj-not-prose md:fj-grid-cols-2 lg:fj-grid-cols-1' if module.layout == 'col' }}">
+    <div class="grid gap-8 {{ 'md:grid-cols-3' if module.layout == 'row' }}{{ 'not-prose md:grid-cols-2 lg:grid-cols-1' if module.layout == 'col' }}">
   {% endif %}
 
-  <article class="fj-rounded-md fj-border fj-bg-white fj-border-stone-200 fj-relative fj-group fj-transition-all fj-ease-in-out fj-duration-200 hover:fj-shadow-xl"
+  <article class="rounded-md border bg-white border-stone-200 relative group transition-all ease-in-out duration-200 hover:shadow-xl"
            aria-label="Blog post summary: {{ post.name }}">
 
-    <div class="article__thumbnail fj-rounded-t fj-overflow-clip fj-aspect-video">
+    <div class="article__thumbnail rounded-t overflow-clip aspect-video">
       {% if post.featured_image %}
-          <img class="fj-w-full fj-h-auto fj-object-cover fj-aspect-video"
+          <img class="w-full h-auto object-cover aspect-video"
                src="{{ resize_image_url( post.featured_image, 0, 0, 400 ) }}"
                loading="lazy"
                width="400"
@@ -18,17 +18,17 @@
       {% endif %}
     </div>
 
-    <div class="article__content fj-px-4 fj-pt-5 fj-pb-14">
-      <h3 class="fj-text-xl md:fj-text-2xl fj-text-balance">
+    <div class="article__content px-4 pt-5 pb-14">
+      <h3 class="text-xl md:text-2xl text-balance">
         <a href="{{ post.absolute_url }}"
-           class="!fj-no-underline !fj-text-current !fj-font-bold"
+           class="!no-underline !text-current !font-bold"
            aria-label="Read full post: {{ post.name | striptags }}">
-          <span class="fj-absolute fj-z-10 fj-inset-0"></span>
+          <span class="absolute z-10 inset-0"></span>
           {{ post.name }}
         </a>
       </h3>
       {# {{ post.post_summary | striptags | truncatehtml(100) }} #}
-      <span class="fj-absolute fj-right-4 fj-bottom-5 group-hover:fj-underline fj-text-base">Read more</span>
+      <span class="absolute right-4 bottom-5 group-hover:underline text-base">Read more</span>
     </div>
   </article>
 

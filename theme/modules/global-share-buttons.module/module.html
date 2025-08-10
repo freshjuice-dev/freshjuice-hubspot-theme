@@ -21,12 +21,12 @@
 } %}
 
 
-<div class="fj-flex fj-flex-col sm:fj-flex-row sm:fj-items-center fj-gap-4 sm:fj-gap-8"
+<div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8"
      x-intersect.once="loadScript(`//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js`)">
 
-  <div class="fj-text-lg md:fj-text-xl fj-font-semibold fj-whitespace-nowrap">Share Post</div>
+  <div class="text-lg md:text-xl font-semibold whitespace-nowrap">Share Post</div>
 
-  <div class="share-btn fj-flex fj-flex-wrap fj-gap-4"
+  <div class="share-btn flex flex-wrap gap-4"
        data-title="{{ content.name|safe|striptags }}"
        data-desc="{{ content.meta_description|safe|striptags }}"
        data-url="{{ content.absolute_url }}">
@@ -34,10 +34,10 @@
     {% for item in module.share_button %}
       <a data-id="{{ item }}"
          href="#" @click="$event.preventDefault()"
-         class="fj-transition-all fj-cursor-pointer hover:fj-scale-125 [&>svg]:fj-size-8">
+         class="transition-all cursor-pointer hover:scale-125 [&>svg]:size-8">
         {% set icon_path = '../../images/icons/social/' + item + '.svg.html' %}
         {% include icon_path %}
-        <span class="fj-sr-only">{{ buttonName[item] }}</span>
+        <span class="sr-only">{{ buttonName[item] }}</span>
       </a>
     {% endfor %}
 
