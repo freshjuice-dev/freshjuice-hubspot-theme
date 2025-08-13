@@ -10,7 +10,7 @@
 FreshJuice DEV is a modern, clean, and minimalistic HubSpot CMS theme designed specifically for developers.
 Built with **Tailwind CSS** and **Alpine.js**, it offers full flexibility and a clean architecture, making it easy to customize and extend for real-world production use.
 
-[**Demo website →**](https://freshjuice.dev/hubspot-theme/)
+[**Demo website →**](https://freshjuice.dev/developer-edition/demo/)
 
 ---
 
