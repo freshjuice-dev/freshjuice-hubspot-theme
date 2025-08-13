@@ -11,9 +11,9 @@
 {# How to use this macro #}
 {# {{ minutes_to_read(content, '<span>', ' min read</span>') }} #}
 
-{%- macro minutes_to_read(content, before = '<span>', after = '</span>') -%}
+{%- macro minutes_to_read(my_content, before = '<span>', after = '</span>') -%}
 
-{%- set initialPostWords = content.post_body | striptags | wordcount -%}
+{%- set initialPostWords = my_content.post_body | striptags | wordcount -%}
 {%- set calculatedPostWords = (initialPostWords/100) * 100 -%}
 {%- set finishedPostWords = calculatedPostWords | divide(300) | round(2) -%}
 {%- set number = finishedPostWords | round -%}

@@ -3,7 +3,7 @@
 
 {% set blog_id = module.selected_blog.id or group.id %}
 
-{% if module.show_featured_article %}
+{% if module.show_featured_article and blog_id %}
   {% if module.featured_article %}
     {% set featured_post = content_by_id(module.featured_article) %}
   {% else %}

@@ -355,6 +355,9 @@
   .my-2\.5 {
     margin-block: calc(var(--spacing) * 2.5);
   }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
+  }
   .\!mt-0 {
     margin-top: calc(var(--spacing) * 0) !important;
   }
@@ -584,9 +587,6 @@
   }
   .flex-grow {
     flex-grow: 1;
-  }
-  .origin-top {
-    transform-origin: top;
   }
   .\!translate-x-96 {
     --tw-translate-x: calc(var(--spacing) * 96) !important;
@@ -1196,11 +1196,17 @@
   .text-stone-600 {
     color: var(--color-stone-600);
   }
+  .text-stone-600\! {
+    color: var(--color-stone-600) !important;
+  }
   .text-stone-900 {
     color: var(--color-stone-900);
   }
   .text-terminal {
     color: var(--color-terminal);
+  }
+  .text-terminal\! {
+    color: var(--color-terminal) !important;
   }
   .text-white {
     color: var(--color-white);
@@ -1373,6 +1379,13 @@
       }
     }
   }
+  .group-hover\:text-current {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: currentcolor;
+      }
+    }
+  }
   .group-hover\:underline {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -1408,6 +1421,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-stone-900);
+      }
+    }
+  }
+  .hover\:text-stone-900\! {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-stone-900) !important;
       }
     }
   }

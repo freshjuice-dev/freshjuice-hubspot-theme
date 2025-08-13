@@ -64,7 +64,7 @@
               <ul role="list" class="mt-6 space-y-4">
                 {% for children in child.children %}
                 <li>
-                  <a href="{{ children.url }}" class="text-base leading-6 text-stone-600 hover:text-stone-900 no-underline hover:underline">{{ children.label }}</a>
+                  <a href="{{ children.url }}" class="text-base leading-6 text-stone-600! hover:text-stone-900! no-underline hover:underline">{{ children.label }}</a>
                 </li>
                 {% endfor %}
               </ul>
@@ -83,7 +83,7 @@
           {% set legal_menu = menu(module.footer_legal_menu) %}
           {% for child in legal_menu.children %}
             <li>
-              <a href="{{ child.url }}" class="text-sm leading-5 text-stone-600 hover:text-stone-900 no-underline hover:underline">{{ child.label }}</a>
+              <a href="{{ child.url }}" class="text-sm leading-5 text-stone-600! hover:text-stone-900! no-underline hover:underline">{{ child.label }}</a>
             </li>
           {% endfor %}
         </ul>

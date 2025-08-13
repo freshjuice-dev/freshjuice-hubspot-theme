@@ -62,7 +62,7 @@
     "@tailwindcss/cli": "^4.1.11",
     "alpinejs": "^3.14.9",
     "autoprefixer": "^10.4.21",
-    "esbuild": "^0.25.8",
+    "esbuild": "^0.25.9",
     "flying-pages-module": "^2.1.4",
     "husky": "^9.1.7",
     "lite-youtube-embed": "^0.3.3",

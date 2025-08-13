@@ -25,29 +25,29 @@
           {% endif %}
           <p class="!mb-2 !mt-0" x-balance-text>{{ module.blog_author_listing.subheading }}</p>
           <h1 x-balance-text>{{ blog_author.display_name }}</h1>
-          <p x-balance-text>{{ blog_author.bio }}</p>
+          <p x-balance-text class="my-4">{{ blog_author.bio }}</p>
           {% if module.blog_author_listing.show_social_profiles and blog_author.has_social_profiles %}
             <div class="flex justify-center items-center gap-4 !mb-0">
               {% if blog_author.website %}
-                <a href="{{ blog_author.website }}" class="transition-all cursor-pointer hover:scale-125 [&>svg]:size-8"
+                <a href="{{ blog_author.website }}" class="transition-all cursor-pointer hover:scale-125 text-terminal! [&>svg]:size-8"
                 target="_blank" rel="noopener" aria-label="Follow my website">
                   {% include '../../images/icons/social/links.svg.html' %}
                 </a>
               {% endif %}
               {% if blog_author.facebook %}
-                <a href="{{ blog_author.facebook }}" class="transition-all cursor-pointer hover:scale-125 [&>svg]:size-8"
+                <a href="{{ blog_author.facebook }}" class="transition-all cursor-pointer hover:scale-125 text-terminal! [&>svg]:size-8"
                 target="_blank" rel="noopener" aria-label="Follow me on Facebook">
                   {% include '../../images/icons/social/fb.svg.html' %}
                 </a>
               {% endif %}
               {% if blog_author.linkedin %}
-                <a href="{{ blog_author.linkedin }}" class="transition-all cursor-pointer hover:scale-125 [&>svg]:size-8"
+                <a href="{{ blog_author.linkedin }}" class="transition-all cursor-pointer hover:scale-125 text-terminal! [&>svg]:size-8"
                 target="_blank" rel="noopener" aria-label="Follow me on LinkedIn">
                   {% include '../../images/icons/social/in.svg.html' %}
                 </a>
               {% endif %}
               {% if blog_author.twitter %}
-                <a href="{{ blog_author.twitter }}" class="transition-all cursor-pointer hover:scale-125 [&>svg]:size-8"
+                <a href="{{ blog_author.twitter }}" class="transition-all cursor-pointer hover:scale-125 text-terminal! [&>svg]:size-8"
                 target="_blank" rel="noopener" aria-label="Follow me on exTwitter">
                   {% include '../../images/icons/social/tw.svg.html' %}
                 </a>
