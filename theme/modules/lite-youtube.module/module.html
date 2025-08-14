@@ -13,13 +13,13 @@
 {% endif %}
 
 {# {{ get_asset_url('../../js/vendor/lite-yt-embed.js') }} #}
-<div class="fj-aspect-video fj-rounded-md fj-overflow-hidden"
+<div class="aspect-video rounded-md overflow-hidden"
      x-intersect.once="loadScript(`//cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.js`)">
   <lite-youtube videoid="{{ video_id }}"
-                class="fj-aspect-video fj-w-full"
+                class="aspect-video w-full"
                 style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=)">
     <img src="{{ video_thumbnail }}" alt="Preview image for {{ module.title or 'Video' }}"
-         class="fj-aspect-video fj-w-full fj-h-full fj-object-cover fj-object-center !fj-m-0 fj-leading-none fj-absolute"
+         class="aspect-video w-full h-full object-cover object-center m-0! leading-none absolute"
          width="1280" height="720" loading="eager">
   </lite-youtube>
 </div>

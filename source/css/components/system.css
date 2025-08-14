@@ -103,7 +103,7 @@
     right: 0;
     height: 100%;
     width: 50px;
-    @apply fj-flex fj-justify-center fj-items-center fj-leading-none;
+    @apply flex justify-center items-center leading-none;
   }
 }
 
@@ -119,19 +119,19 @@
 
 .email-preferences-form {
   h2, p {
-    @apply !fj-m-0;
+    @apply m-0!;
   }
 
   .email-prefs {
-    @apply fj-grid fj-gap-4;
+    @apply grid gap-4;
   }
 
   .hs-button {
-    @apply fj-w-fit;
+    @apply w-fit;
   }
 
   [for="globalunsub"],
   .fakelabel {
-    @apply fj-flex fj-items-center fj-gap-2;
+    @apply flex items-center gap-2;
   }
 }

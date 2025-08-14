@@ -9,10 +9,10 @@
 {% set pageTitle = "500 Internal Server Error" %}
 
 {% block body %}
-<section class="fj-min-h-screenSinNav fj-grid fj-items-center error-page" data-error="500"
+<section class="min-h-screenSinNav grid items-center error-page" data-error="500"
          xmlns="http://www.w3.org/1999/html">
-  <div class="container fj-grid fj-gap-8 md:fj-grid-cols-2 fj-items-center">
-    <div class="fj-prose sm:fj-prose-lg md:fj-prose-xl [&_img]:fj-rounded-md">
+  <div class="container grid gap-8 md:grid-cols-2 items-center">
+    <div class="prose sm:prose-lg md:prose-xl [&_img]:rounded-md">
       {% module_block module "content" path="@hubspot/rich_text", no_wrapper=True %}
         {% module_attribute "html" %}
           <p><small><b>{{ pageTitle }}</b></small></p>

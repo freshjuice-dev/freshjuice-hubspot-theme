@@ -4,32 +4,32 @@
 {% set total_pages = contents.total_page_count %}
 
 {% if total_pages > 1 %}
-<div class="fj-flex fj-gap-4 fj-text-xl md:fj-text-2xl fj-font-bold fj-justify-center fj-select-none">
+<div class="flex gap-4 text-xl md:text-2xl font-bold justify-center select-none">
 
   {% for x in range(0,total_pages) %}
 
   {% if current_page == loop.index %}
-  {% set item_classes = 'fj-pointer-events-none fj-inline-flex fj-justify-center fj-items-center fj-shrink-0 fj-size-12 fj-aspect-box fj-scale-125 fj-text-current' %}
+  {% set item_classes = 'pointer-events-none inline-flex justify-center items-center shrink-0 size-12 aspect-box scale-125 text-current' %}
   {% else %}
-  {% set item_classes = 'fj-inline-flex fj-justify-center fj-items-center fj-shrink-0 fj-size-12 fj-aspect-box' %}
+  {% set item_classes = 'inline-flex justify-center items-center shrink-0 size-12 aspect-box' %}
   {% endif %}
 
   {% if total_pages > 5 and loop.index != 1 and loop.index != total_pages and loop.index != current_page %}
 
     {% if ( loop.index - 1 == current_page or loop.index + 1 == current_page ) or ( loop.index == 2 and current_page == 4 ) or ( loop.index == total_pages - 1 and current_page == total_pages - 3 ) %}
-      <a class="{{ item_classes }}{% if loop.index != 2 and loop.index != total_pages - 1 %} fj-hidden md:fj-inline-flex{% endif %}"
+      <a class="{{ item_classes }}{% if loop.index != 2 and loop.index != total_pages - 1 %} hidden md:inline-flex{% endif %}"
          href="{{ blog_page_link(loop.index) }}">{{loop.index}}</a>
     {% elif loop.index - 2 == current_page or loop.index + 2 == current_page %}
-      <span class="fj-hidden md:fj-flex fj-justify-center fj-items-center fj-size-12">...</span>
+      <span class="hidden md:flex justify-center items-center size-12">...</span>
       {% if current_page > loop.index %}
-        <a class="{{ item_classes }} md:fj-hidden"
+        <a class="{{ item_classes }} md:hidden"
            href="{{ blog_page_link(current_page - 1) }}">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="fj-size-6 fj-inline-block"><rect width="256" height="256" fill="none"/><polyline points="160 208 80 128 160 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="size-6 inline-block"><rect width="256" height="256" fill="none"/><polyline points="160 208 80 128 160 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
         </a>
       {% else %}
-        <a class="{{ item_classes }} md:fj-hidden"
+        <a class="{{ item_classes }} md:hidden"
            href="{{ blog_page_link(current_page + 1) }}">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="fj-size-6 fj-inline-block"><rect width="256" height="256" fill="none"/><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="size-6 inline-block"><rect width="256" height="256" fill="none"/><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
         </a>
       {% endif %}
     {% endif %}

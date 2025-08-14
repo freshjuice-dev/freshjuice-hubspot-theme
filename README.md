@@ -1,82 +1,99 @@
-# 🍹FreshJuice – HubSpot CMS Theme
+# 🍹 FreshJuice DEV – Developer Edition of the FreshJuice HubSpot Theme
 
 [![GitHub Release](https://img.shields.io/github/v/release/freshjuice-dev/freshjuice-hubspot-theme)](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/releases)
 [![GitHub last commit](https://img.shields.io/github/last-commit/freshjuice-dev/freshjuice-hubspot-theme)](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/commits/main)
 [![GitHub License](https://img.shields.io/github/license/freshjuice-dev/freshjuice-hubspot-theme)](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/blob/main/LICENSE)
-
 [![GitHub watchers](https://img.shields.io/github/watchers/freshjuice-dev/freshjuice-hubspot-theme)](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/watchers)
 [![GitHub forks](https://img.shields.io/github/forks/freshjuice-dev/freshjuice-hubspot-theme)](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/network/members)
 [![GitHub Repo stars](https://img.shields.io/github/stars/freshjuice-dev/freshjuice-hubspot-theme)](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/stargazers)
 
-A modern, clean, and minimalistic theme for HubSpot CMS themes. This theme is designed to help you get started with your HubSpot CMS theme development quickly. It includes a modern frameworks and tools like Tailwind CSS, Alpine.js.
+FreshJuice DEV is a modern, clean, and minimalistic HubSpot CMS theme designed specifically for developers.
+Built with **Tailwind CSS** and **Alpine.js**, it offers full flexibility and a clean architecture, making it easy to customize and extend for real-world production use.
 
-[Demo website](https://freshjuice.dev/hubspot-theme/)
+[**Demo website →**](https://freshjuice.dev/developer-edition/demo/)
+
+---
 
 ## Purpose
 
-This theme is designed to help developers a head start on their HubSpot CMS theme development. While most of HubSpot themes are chunky and bloated, this theme is designed to be minimalistic and load only required components. Solution for pixel perfect design and fast loading website.
+This theme helps developers get a head start on HubSpot CMS theme development.
+While most HubSpot themes are heavy and bloated, FreshJuice DEV is intentionally minimal — it loads only the components you actually need, resulting in a pixel-perfect design and a fast-loading website.
 
+---
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/en/) (v20.0.0 or newer)
+- [Node.js](https://nodejs.org/en/) (v22.0.0 or newer)
 - [HubSpot CMS CLI](https://developers.hubspot.com/docs/cms/developer-reference/local-development-cli)
 
 ### Installation
 
-1. Clone the repo and CD into it
-1. Run `npm install` (Uses Node v20.0.0 or newer)
-1. Run `npm run prepare` to install [husky](https://typicode.github.io/husky/) hooks.
-1. For local development, run `npm run start`. This will run tailwindcss, esbuild, and hs-cli to watch, and rebuild, and upload to HubSpot as you dev.
-1. For production build, run `npm run build`. This will run tailwindcss, esbuild.
-1. For uploading to HubSpot, run `npm run upload:hubspot`. This will run hs-cli to upload theme to HubSpot.
+1. Clone the repo and `cd` into it.
+2. Run `npm install` (requires Node v22.0.0+).
+3. Run `npm run prepare` to install [Husky](https://typicode.github.io/husky/) hooks.
+4. For local development:
+   `npm run start` — runs Tailwind CSS, esbuild, and HubSpot CLI with file watching, rebuild, and live upload to HubSpot.
+5. For production build:
+   `npm run build` — builds Tailwind CSS and JavaScript.
+6. For uploading to HubSpot:
+   `npm run upload:hubspot` — uploads the theme via HubSpot CLI.
+
+---
 
 ## Tech Stack
 
-- [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework.
-- [Alpine.js](https://alpinejs.dev/): Alpine is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web.
-- [HubSpot CMS CLI](https://developers.hubspot.com/docs/cms/developer-reference/local-development-cli)
+- **[Tailwind CSS](https://tailwindcss.com/)** – Utility-first CSS framework.
+- **[Alpine.js](https://alpinejs.dev/)** – Minimal JavaScript framework for declarative interactivity.
+- **[HubSpot CMS CLI](https://developers.hubspot.com/docs/cms/developer-reference/local-development-cli)** – Local development toolkit for HubSpot.
+
+---
 
 ## Project Structure
 
-- **scripts**: contains helper scripts for building and uploading to HubSpot.
-- **source**: contains source files for the theme.
-- **theme**: contains the theme files that will be uploaded to HubSpot.
-  - **theme/css**: contains the compiled CSS files.
-  - **theme/images**: contains the images, and icons for the theme.
-  - **theme/js**: contains the compiled JS and vendor JS files.
-  - **theme/macros**: contains HubL macros for the theme.
-  - **theme/modules**: contains HubL modules for the theme.
-  - **theme/sections**: contains HubL sections for the theme.
-  - **theme/templates**: contains HubL templates for the theme.
-    - **theme/templates/layouts**: contains the layout templates for the theme.
-    - **theme/templates/partials**: contains the partial templates for the theme.
-    - **theme/templates/system**: contains the system templates for the theme.
+```plaintext
+source/                   # Theme source files
+├── css/                  # Source CSS files (Tailwind CSS)
+├── images/               # Source images and assets
+└── js/                   # Source JavaScript files
 
+theme/                    # Compiled theme files for HubSpot
+├── css/                  # Compiled CSS files
+├── images/               # Images and icons
+├── js/                   # Compiled JS and vendor scripts
+├── macros/               # HubL macros
+├── modules/              # HubL modules
+├── sections/             # HubL sections
+├── templates/            # HubL templates
+    ├── layouts/          # Layout templates
+    ├── partials/         # Partial templates
+    └── system/           # System templates
+```
+
+---
 
 ## Contributing
 
-If you notice an issue, feel free to [open an issue](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/issues).
+If you find an issue, [open an issue](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/issues).
+Contributions are welcome — fork the repo and submit a pull request.
 
-Any contributions you make are **greatly appreciated**. If you have any improvements, feel free to fork the repo and submit a pull request.
+---
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [releases on this repository](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/releases).
+We use [SemVer](http://semver.org/) for versioning.
+See the [releases page](https://github.com/freshjuice-dev/freshjuice-hubspot-theme/releases) for available versions.
+
+---
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](./LICENSE) for more information.
+Distributed under the MIT License. See the [LICENSE](./LICENSE) file for the full text.
 
-Here are the key points of the MIT license:
-
-- You can use, copy and modify the software.
-- You can distribute modified and unmodified versions of the software.
+**Key points of the MIT License**:
+- You can use, copy, and modify the software.
+- You can distribute original or modified versions of the software.
 - You can include the software in commercial products or services.
-- You have to include the same license in copies of the software.
-- You don't have to share your own code (unless you want to).
-- You don't have to notify the original authors, but it's a nice gesture.
-
-Do bear in mind that while the license does not require you to disclose your source code, it also does not grant you any explicit patent rights.
+- You must include the same license text in all copies or substantial portions of the software.
+- No warranty is provided and no patent rights are granted.

@@ -1,20 +1,48 @@
+@import "tailwindcss" source(none);
+
+@source "../../theme/**/*.html";
+@source "../../theme/**/*.js";
+@source "../js/farmerswife.js";
+@source "./**/*.css";
+
+
+@theme {
+  --color-cursor: #FFFFFF;
+  --color-cursor-500: #FFFFFF;
+  --color-terminal: #000000;
+  --color-terminal-500: #000000;
+
+  --font-cursive: "Caveat", cursive;
+
+  /* Aspect ratios (if you want these as variables too) */
+  --aspect-auto: auto;
+  --aspect-box: 1;
+  --aspect-landscape: 4 / 3;
+  --aspect-portrait: 3 / 4;
+  --aspect-video: 16 / 9;
+  --aspect-widescreen: 16 / 9;
+  --aspect-ultrawide: 18 / 5;
+  --aspect-golden: 1.6180 / 1;
+  --aspect-macbook: 16 / 10;
+
+  --spacing-screenSinNav: calc(100vh - 5rem);
+}
+
+
 /* Base */
-@import "tailwindcss/base";
-@import "base/reset.css";
-@import "base/animations.css";
-@import "base/typography.css";
-@import "base/forms.css";
-@import "base/buttons.css";
+@import "./base/reset.css";
+@import "./base/animations.css";
+@import "./base/typography.css";
+@import "./base/forms.css";
+@import "./base/buttons.css";
 
 /* 3rd party styles */
 /*@import "lite-youtube-embed";*/
 
 /* Components */
-@import "tailwindcss/components";
-@import "components/blog-comments.css";
-@import "components/yt-lite.css";
-@import "components/system.css";
+@import "./components/blog-comments.css";
+@import "./components/yt-lite.css";
+@import "./components/system.css";
 
 /* Utils */
-@import "tailwindcss/utilities";
-@import "utilities/utils.css";
+@import "./utilities/utils.css";

@@ -1,6 +1,6 @@
-<div class="fj-not-prose fj-container fj-flex fj-justify-center fj-items-center">
+<div class="not-prose container flex justify-center items-center">
   {% set href = module.cta_link.url.type == "EMAIL_ADDRESS" ? "mailto:" ~ module.cta_link.url.href : module.cta_link.url.href %}
-  <a class="fj-button fj-rounded-md"
+  <a class="button rounded-md"
      href="{{ module.cta_link.url.type == "CALL_TO_ACTION" ? href : href|escape_url }}"
     {% if module.cta_link.open_in_new_tab %} target="_blank" {% endif %}
     {% if module.cta_link.rel %} rel="{{ module.cta_link.rel|escape_attr }}" {% endif %}>

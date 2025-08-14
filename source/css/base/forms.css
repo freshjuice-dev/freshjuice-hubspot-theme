@@ -1,10 +1,10 @@
 form {
 
   .hs-recaptcha .grecaptcha-badge {
-    @apply fj-rounded-md fj-overflow-hidden;
+    @apply rounded-md overflow-hidden;
   }
   fieldset {
-    @apply fj-relative;
+    @apply relative;
   }
 
   [type="text"],
@@ -22,7 +22,7 @@ form {
   [multiple],
   textarea,
   select {
-    @apply fj-block fj-w-full fj-rounded-lg fj-border fj-border-gray-300 fj-bg-white fj-text-gray-900 placeholder:fj-text-stone-600 focus:fj-border-blue-500 focus:fj-ring-blue-500;
+    @apply block w-full rounded-lg border border-gray-300 bg-white text-gray-900 placeholder:text-stone-600 focus:border-blue-500 focus:ring-blue-500;
 
     /* font-size: 1rem; */
     /* line-height: 1.5rem; */
@@ -35,24 +35,24 @@ form {
 
   .radio-rows {
     .inputs-list {
-      @apply fj-flex;
+      @apply flex;
 
       li {
-        @apply fj-mr-12;
+        @apply mr-12;
       }
     }
   }
 
   [type="radio"] {
-    @apply fj-mr-2;
+    @apply mr-2;
   }
 
   ul.hs-error-msgs {
-    @apply fj-text-sm;
-    @apply fj-list-none fj-m-0 fj-p-0;
+    @apply text-sm;
+    @apply list-none m-0 p-0;
 
     label {
-      @apply fj-text-red-500;
+      @apply text-red-500;
     }
   }
 

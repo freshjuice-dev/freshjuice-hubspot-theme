@@ -1,34 +1,34 @@
-<div class="fj-not-prose fj-flex fj-justify-center fj-items-center fj-place-items-center lg:fj-place-items-baseline fj-mx-auto">
-  <div class="fj-max-w-96 lg:fj-w-full fj-grid fj-place-items-center fj-p-12">
-    <div class="lg:fj-w-full fj-grid fj-gap-4">
-      <p class="fj-text-base fj-font-semibold fj-leading-none">{{ module.pricing_card.tier_name }}</p>
+<div class="not-prose flex justify-center items-center place-items-center lg:place-items-baseline mx-auto">
+  <div class="max-w-96 lg:w-full grid place-items-center p-12">
+    <div class="lg:w-full grid gap-4">
+      <p class="text-base font-semibold leading-none">{{ module.pricing_card.tier_name }}</p>
 
-      <div class="fj-grid fj-gap-2">
-        <div class="fj-flex fj-items-baseline fj-gap-x-1 fj-leading-none">
-          {% if module.pricing_card.price %}<span class="fj-text-4xl fj-font-bold">{{ module.pricing_card.price }}</span>{% endif %}
-          {% if module.pricing_card.price_details %}<span class="fj-text-sm fj-font-semibold">{{ module.pricing_card.price_details }}</span>{% endif %}
+      <div class="grid gap-2">
+        <div class="flex items-baseline gap-x-1 leading-none">
+          {% if module.pricing_card.price %}<span class="text-4xl font-bold">{{ module.pricing_card.price }}</span>{% endif %}
+          {% if module.pricing_card.price_details %}<span class="text-sm font-semibold">{{ module.pricing_card.price_details }}</span>{% endif %}
         </div>
 
-        <p class="fj-leading-tight fj-m-0 fj-text-base">{{ module.pricing_card.price_subtext }}</p>
+        <p class="leading-tight m-0 text-base">{{ module.pricing_card.price_subtext }}</p>
       </div>
 
       {% set href = module.pricing_card.cta_link.url.href %}
       {% if module.pricing_card.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
         {% set href = "mailto:" + href %}
       {% endif %}
-      <a class="fj-button fj-button--small fj-normal-case	fj-text-sm fj-text-white fj-font-semibold fj-text-center"
+      <a class="button button--small normal-case	text-sm text-white font-semibold text-center"
          href="{{ href|escape_url }}" {% if module.pricing_card.cta_link.open_in_new_tab %}
         target="_blank"{% endif %} {% if module.pricing_card.cta_link.rel %}
       rel="{{ module.pricing_card.cta_link.rel|escape_attr }}"{% endif %}>
         {{ module.pricing_card.cta_label }}
       </a>
 
-      <p class="fj-text-sm fj-font-semibold fj-leading-tight">{{ module.pricing_card.features_title }}</p>
+      <p class="text-sm font-semibold leading-tight">{{ module.pricing_card.features_title }}</p>
 
-      <ul class="fj-space-y-2 fj-text-sm">
+      <ul class="space-y-2 text-sm">
         {% for feature in module.pricing_card.features_list %}
-          <li class="fj-flex fj-gap-x-3 fj-leading-tight">
-            <svg class="fj-shrink-0 fj-size-6 fj-text-blue-600" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true">
+          <li class="flex gap-x-3 leading-tight">
+            <svg class="shrink-0 size-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true">
               <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path>
             </svg>
 

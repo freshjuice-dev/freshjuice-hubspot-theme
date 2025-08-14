@@ -1,14 +1,14 @@
 {% if module.quotes_group | length == 2 %}
-  {% set grid_col_class = 'lg:fj-grid-cols-2' %}
+  {% set grid_col_class = 'lg:grid-cols-2' %}
 {% endif %}
 
 {% if module.quotes_group | length == 3 %}
-  {% set grid_col_class = 'lg:fj-grid-cols-3' %}
+  {% set grid_col_class = 'lg:grid-cols-3' %}
 {% endif %}
 
-<div class="fj-not-prose fj-grid fj-grid-cols-1 fj-max-w-lg lg:fj-max-w-full fj-place-items-center lg:fj-place-items-baseline fj-mx-auto {{ grid_col_class or 'fj-max-w-2xl' }}">
+<div class="not-prose grid grid-cols-1 max-w-lg lg:max-w-full place-items-center lg:place-items-baseline mx-auto {{ grid_col_class or 'max-w-2xl' }}">
   {% for item in module.quotes_group %}
-    <div class="fj-w-full fj-border-gray-300 fj-flex fj-flex-col fj-place-content-center fj-justify-center fj-gap-4 fj-p-12 {{ 'fj-border-t lg:fj-border-t-0 lg:fj-border-l' if loop.index0 }}">
+    <div class="w-full border-gray-300 flex flex-col place-content-center justify-center gap-4 p-12 {{ 'border-t lg:border-t-0 lg:border-l' if loop.index0 }}">
       {% if item.company_logo.src %}
         {% set sizeAttrs = 'width="{{ item.company_logo.width|escape_attr }}" height="{{ item.company_logo.height|escape_attr }}"' %}
         {% if item.company_logo.size_type == 'auto' %}
@@ -20,24 +20,24 @@
         <img src="{{ item.company_logo.src|escape_url }}" alt="{{ item.company_logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
       {% endif %}
 
-      <blockquote class="fj-text-lg">
-        <p class="fj-m-0">{{ item.blockquote }}</p>
+      <blockquote class="text-lg">
+        <p class="m-0">{{ item.blockquote }}</p>
       </blockquote>
 
       {% if item.author_photo or item.author_name %}
-        <div class="fj-flex fj-items-center fj-gap-4">
+        <div class="flex items-center gap-4">
           {% if item.author_photo %}
 
             {% if item.author_photo.src %}
-              <img class="fj-object-cover fj-size-12 fj-rounded-full"
+              <img class="object-cover size-12 rounded-full"
                    width="48" height="48"
                    src="{{ resize_image_url(item.author_photo.src, 48, 48, 48) }}"
                    alt="{{ item.author_photo.alt|escape_attr }}" loading="lazy">
             {% endif %}
           {% endif %}
 
-          <div class="fj-gap-2 fj-text-base fj-break-words">
-            <p class="fj-font-bold">{{ item.author_name or "" }}</p>
+          <div class="gap-2 text-base break-words">
+            <p class="font-bold">{{ item.author_name or "" }}</p>
             <p>{{ item.author_job_title or "" }}</p>
           </div>
         </div>

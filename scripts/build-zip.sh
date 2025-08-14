@@ -3,10 +3,10 @@
 
 VERSION=$(node -p "require('./package.json').version")
 
-mkdir -p ./_temp/FreshJuice ./_dist
+mkdir -p ./_temp/FreshJuiceDEV ./_dist
 
-cp -r ./theme/* ./_temp/FreshJuice
+cp -r ./theme/* ./_temp/FreshJuiceDEV
 
 cd ./_temp
 
-zip -rm ../_dist/freshjuice-hubspot-theme-v$VERSION.zip ./FreshJuice -x "*/.DS_Store"
+zip -rm ../_dist/freshjuice-hubspot-theme-v$VERSION-ce.zip ./FreshJuiceDEV -x "*/.DS_Store"
