@@ -65,7 +65,7 @@ theme/                    # Compiled theme files for HubSpot
 ├── macros/               # HubL macros
 ├── modules/              # HubL modules
 ├── sections/             # HubL sections
-├── templates/            # HubL templates
+└── templates/            # HubL templates
     ├── layouts/          # Layout templates
     ├── partials/         # Partial templates
     └── system/           # System templates
